@@ -11,6 +11,30 @@
 // O primeiro para percorrer cada número de 2 até 50.
 // O segundo para verificar se o número atual é primo.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 for (let num = 2; num <= 50; num++) {
   let primo = true;
 
