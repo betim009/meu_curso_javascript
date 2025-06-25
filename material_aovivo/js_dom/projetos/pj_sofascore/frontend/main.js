@@ -1,22 +1,15 @@
+import { createRodadas } from "./scripts/createRodadas.js";
 import { getBrasileirao } from "./services/getBrasileirao.js";
 
 const resultadoPartidas = document.getElementById("resultado-partidas");
+const resultadoProximos = document.getElementById("resultado-proximos");
 
 async function main() {
-    const api = await getBrasileirao();
-    console.log(api);
+  const api = await getBrasileirao();
 
-    api.forEach(element => {
-        resultadoPartidas.innerHTML += `
-            <h6>${element.rodada} Rodada</h6>
-        `
-        element.jogos.forEach(jogo => {
-            resultadoPartidas.innerHTML += `
-                <p>${jogo.mandante} ${jogo.placar} ${jogo.visitante}</p>
-            `
-        })
-        resultadoPartidas.innerHTML += `<hr>`
-    });
+  createRodadas(api, 11, resultadoPartidas);
+  createRodadas(api, 12, resultadoProximos);
 }
 
-main()
+main();
+  

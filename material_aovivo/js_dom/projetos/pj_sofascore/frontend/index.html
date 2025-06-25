@@ -13,18 +13,29 @@
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
     <header class="my-header">
-        <h1>SOFASCORE</h1>
+        <h1>Sofascore</h1>
+
+        <nav>
+            <a href="#">Mundial de clubes</a>
+            <a href="#">Brasileirao</a>
+        </nav>
+
+        <div class="d-flex gap-3">
+            <input type="text" placeholder="search" class="form-control">
+            <i class="bi bi-search"></i>
+        </div>
     </header>
 
 
-    <div class="container mt-3">
+    <div class="container mt-3 min-100">
         <div class="row">
-            <div class="col-3">
+            <div class="col-4">
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
@@ -50,24 +61,24 @@
                 </div>
             </div>
 
-            <div class="col-6">
+            <div class="col-4">
 
-                <div id="resultado-partidas" class="resultado-partidas">
-                    <h4>Rodadas do Campeonato Brasileiro</h4>
+                <div id="resultado-partidas" class="card-jogos">
+                    <h5>Rodadas do Campeonato Brasileiro</h5>
 
                 </div>
             </div>
+
+            <div class="col-4">
+                <div id="resultado-proximos" class="card-jogos">
+                    <h5>Proximos Jogos</h5>
+                </div>
+            </div>
         </div>
-
-
-
-
-
-
-
     </div>
 
-
+    <footer class="my-footer">
+    </footer>
 
 
 

@@ -2,13 +2,44 @@ body {
     background-color: #ededed;
 }
 
-.my-header {
+.my-header, .my-footer {
     background-color: oklch(88.2% 0.059 254.128);
     height: 120px;
 }
 
-.resultado-partidas {
+.my-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    nav {
+        display: flex;
+        gap: 30px;
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            color: rgb(50, 50, 62);
+            font-weight: bold;
+        }
+    }
+}
+
+.bi-search {
+    font-size: 24px;
+    color: red;
+    cursor: pointer;
+}
+
+.card-jogos {
     background-color: white;
     padding: 10px;
     border-radius: 10px;
+}
+
+.min-100 {
+    min-height: 100vh;
 }
