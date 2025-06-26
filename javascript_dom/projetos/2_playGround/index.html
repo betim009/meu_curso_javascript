@@ -15,25 +15,34 @@
       const personagem = document.getElementById("personagem");
 
       // posição inicial
-      let posX = 0;
-      let posY = 0;
+      let posX = 350;
+      let posY = 530;
       const passo = 10;
       const limiteX = 800 - 64; // largura do cenario - tamanho do personagem
       const limiteY = 600 - 64;
 
+      personagem.style.left = `${posX}px`;
+      personagem.style.top = `${posY}px`;
+
       window.addEventListener("keydown", function (event) {
         switch (event.key) {
           case "ArrowRight":
+          if (posX >= 480) return null
             if (posX + passo <= limiteX) posX += passo;
+            console.log(posX, posY)
             break;
           case "ArrowLeft":
+            if (posX <= 240) return null
             if (posX - passo >= 0) posX -= passo;
+            console.log(posX, posY)
             break;
           case "ArrowDown":
             if (posY + passo <= limiteY) posY += passo;
+            console.log(posX, posY)
             break;
           case "ArrowUp":
             if (posY - passo >= 0) posY -= passo;
+            console.log(posX, posY)
             break;
         }
 
