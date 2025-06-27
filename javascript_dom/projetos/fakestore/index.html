@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FakeStore - Produtos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;">FakeStore</a></div>
+    <nav class="nav">
+      <!-- <a href="index.html">Home</a> -->
+      <div class="dropdown">
+        <button class="dropbtn">Categorias</button>
+        <div class="dropdown-content" id="dropdownCategories">
+          <!-- Categorias serão inseridas via JS -->
+        </div>
+      </div>
+      <a href="cart.html">Carrinho</a>
+      <a href="#contato">Contato</a>
+      <span class="icon search" id="searchIcon" title="Buscar"></span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Buscar produtos..." style="display:none;" />
+      <span class="icon profile" title="Perfil"></span>
+    </nav>
+  </header>
+  <section class="hero">
+    <h1 class="hero-title">Bem-vindo à FakeStore</h1>
+    <p class="hero-desc">Os melhores produtos, com os melhores preços. Confira nossa seleção exclusiva!</p>
+    <button class="hero-btn">Ver Produtos</button>
+  </section>
+  <main>
+    <h2 class="section-title">Produtos</h2>
+    <div id="productList" class="product-list"></div>
+  </main>
+  <footer class="footer">
+    &copy; 2024 FakeStore. Todos os direitos reservados.
+  </footer>
+  <script type="module" src="js/index.js"></script>
+</body>
+</html>

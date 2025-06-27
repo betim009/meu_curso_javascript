@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FakeStore - Carrinho</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo"><a href="index.html" style="text-decoration:none;color:inherit;">FakeStore</a></div>
+    <nav class="nav">
+      <div class="dropdown">
+        <button class="dropbtn">Categorias</button>
+        <div class="dropdown-content" id="dropdownCategories"></div>
+      </div>
+      <a href="cart.html">Carrinho</a>
+      <a href="#contato">Contato</a>
+      <span class="icon search" id="searchIcon" title="Buscar"></span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Buscar produtos..." style="display:none;" />
+      <span class="icon profile" title="Perfil"></span>
+    </nav>
+  </header>
+  <main>
+    <div class="cart-page-layout">
+      <div class="cart-payment-side">
+        <h2 class="section-title">Pagamento</h2>
+        <div class="payment-options">
+          <label><input type="radio" name="payment" value="cartao" checked> Cartão de crédito</label>
+          <label><input type="radio" name="payment" value="pix"> Pix (à vista)</label>
+        </div>
+        <div id="cartCardPayment" class="card-payment" style="display: block;">
+          <div class="card-fields">
+            <input type="text" placeholder="Nome no cartão" class="card-input">
+            <input type="text" placeholder="Número do cartão" class="card-input">
+            <input type="text" placeholder="Validade (MM/AA)" class="card-input">
+            <input type="text" placeholder="CVV" class="card-input">
+          </div>
+          <div id="installments" class="installments"></div>
+        </div>
+        <div id="cartPixPayment" class="pix-payment" style="display: none;">
+          <div class="pix-qrcode">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=PagamentoPixFakeStore" alt="QR Code Pix">
+            <p>Escaneie o QR code para pagar com Pix</p>
+          </div>
+        </div>
+        <div id="cartTotal" class="cart-total"></div>
+      </div>
+      <div class="cart-content-side">
+        <h2 class="section-title">Seu Carrinho</h2>
+        <div id="cartItems" class="cart-list"></div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    &copy; 2024 FakeStore. Todos os direitos reservados.
+  </footer>
+  <script type="module" src="js/cart.js"></script>
+</body>
+</html>
