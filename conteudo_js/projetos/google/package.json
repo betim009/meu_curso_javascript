@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "dotenv": "^16.4.7",
-    "googleapis": "^144.0.0"
-  }
-}
