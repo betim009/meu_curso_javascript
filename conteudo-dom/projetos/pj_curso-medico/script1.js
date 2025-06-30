@@ -7,15 +7,17 @@ const dorReferida = document.getElementById("dor-referida");
 const tipoDor = document.getElementById("tipo-dor");
 const duracaoDor = document.getElementById("duracao-dor");
 const ritmoIntestinal = document.getElementById("ritmo-intestinal");
-const enviar = document.getElementById("enviar");
 
 const outrosSintomas = document.getElementById("outros-sintomas");
 const resultadoSintomas = document.getElementById("resultado-sintomas");
+const divSalvos = document.getElementById("sintomas-salvos");
 
 //Guardar resultados
 
 let resultado = [];
 let doencas = [];
+
+let sintomasSalvos = [];
 
 //Eventos
 localDor.addEventListener("input", function (event) {
@@ -853,10 +855,6 @@ ritmoIntestinal.addEventListener("input", function (event) {
   }
 });
 
-enviar.addEventListener("click", function () {
-  console.log(resultado);
-});
-
 outrosSintomas.addEventListener("input", function ({ target }) {
   sintomas.forEach((element, index) => {
     const { value } = target;
@@ -870,9 +868,44 @@ outrosSintomas.addEventListener("input", function ({ target }) {
     resultadoSintomas.innerHTML = "";
     filtrar.forEach((e) => {
       resultadoSintomas.innerHTML += `
-         <input type="checkbox" class="btn-check" id="${e}" name="${e}" value="${e}" autocomplete="off">
+        <input 
+          type="checkbox" 
+          class="btn-check sintomas-check" 
+          id="${e}" 
+          name="${e}" 
+          value="${e}" 
+          autocomplete="off"
+        >
         <label class="btn btn-outline-danger" for="${e}">${e}</label><br>
       `;
+    });
+    document.querySelectorAll(".sintomas-check").forEach((e) => {
+      e.addEventListener("click", function () {
+        console.log(e);
+        if (sintomasSalvos.includes(e.value)) {
+          sintomasSalvos = sintomasSalvos.filter(
+            (element) => element !== e.value
+          );
+        } else {
+          sintomasSalvos.push(e.value);
+        }
+        divSalvos.innerHTML = "";
+
+        sintomasSalvos.forEach((el) => {
+          divSalvos.innerHTML += `
+          <input 
+            type="checkbox" 
+            class="btn-check sintomas-check checked" 
+            id="${el}" 
+            name="${el}" 
+            value="${el}" 
+            autocomplete="off"
+          >
+          <label class="btn btn-outline-danger" for="${el}">${el}</label>
+          
+          `;
+        });
+      });
     });
   });
 });
