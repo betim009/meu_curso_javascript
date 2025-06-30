@@ -1,3 +1,15 @@
+function showMessage(msg, isSuccess = false) {
+  const message = document.getElementById('message');
+  message.textContent = msg;
+  message.style.color = isSuccess ? '#198754' : '#ff6b6b';
+  message.style.fontWeight = '500';
+  message.style.display = 'block';
+  setTimeout(() => {
+    message.textContent = '';
+    message.style.display = 'none';
+  }, 3000);
+}
+
 function createAccount(event) {
     event.preventDefault();
 
@@ -19,6 +31,6 @@ function createAccount(event) {
     // Colocando valor dentro do localStorage
     localStorage.setItem("accounts", JSON.stringify(accounts));
 
-    // Alerta do resultado
-    alert("Conta Criada com Sucesso!");
+    // Mensagem de sucesso
+    showMessage("Conta Criada com Sucesso!", true);
 }

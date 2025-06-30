@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Google Tradutor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Mini Google Tradutor</h1>
+        <div class="translator-box">
+            <div class="controls">
+                <select id="source-lang">
+                    <option value="pt">Português</option>
+                    <option value="en">Inglês</option>
+                    <option value="es">Espanhol</option>
+                    <option value="fr">Francês</option>
+                </select>
+                <button id="swap-btn" title="Inverter idiomas">⇄</button>
+                <select id="target-lang">
+                    <option value="en">Inglês</option>
+                    <option value="pt">Português</option>
+                    <option value="es">Espanhol</option>
+                    <option value="fr">Francês</option>
+                </select>
+            </div>
+            <div class="areas">
+                <textarea id="text-input" placeholder="Digite o texto aqui..."></textarea>
+                <textarea id="text-output" placeholder="Tradução" readonly></textarea>
+            </div>
+            <div class="actions">
+                <button id="translate-btn">Traduzir</button>
+                <button id="copy-btn" title="Copiar tradução">Copiar</button>
+                <span id="loading" style="display:none;">Traduzindo...</span>
+            </div>
+            <div id="error-message"></div>
+        </div>
+    </div>
+    <script type="module" src="src/script.js"></script>
+</body>
+
+</html>

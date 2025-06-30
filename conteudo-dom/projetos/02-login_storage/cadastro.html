@@ -9,17 +9,21 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Latest compiled JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom Dark Mode CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <header class="d-flex justify-content-center">
-    <a href="login.html" class="nav-link m-5" type="submit">Login</a>
+  <header class="w-100" style="background: #23272b;">
+    <nav class="container-fluid d-flex justify-content-start align-items-center px-4" style="height: 56px;">
+      <a href="login.html" class="nav-link px-3" id="nav-login">Login</a>
+      <a href="cadastro.html" class="nav-link px-3" id="nav-cadastro">Cadastro</a>
+    </nav>
   </header>
 
   <main>
-    <div class="container d-flex flex-column align-items-center justify-content-center bg-light mt-5 p-2"
-      style="width: 30%;">
+    <div class="container d-flex flex-column align-items-center justify-content-center bg-light mt-5 p-2 shadow rounded-4" style="width: 30%; background: #23272b !important;">
       <img style="height: 80px;" src="logo.png" alt="logo">
       <h1 class="display-6">Cadastro</h1>
       <form class="d-flex flex-column" id="loginForm" style="width: 80%;" id="cadastroForm"
@@ -40,6 +44,11 @@
   </main>
 
   <script src="scripts/cadastro.js"></script>
+  <script>
+    // Destacar página atual
+    document.getElementById('nav-cadastro').classList.add('fw-bold');
+    document.getElementById('nav-login').classList.remove('fw-bold');
+  </script>
 </body>
 
 </html>
