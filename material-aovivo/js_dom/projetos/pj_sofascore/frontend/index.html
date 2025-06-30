@@ -27,8 +27,8 @@
         </nav>
 
         <div class="d-flex gap-3">
-            <input type="text" placeholder="search" class="form-control">
-            <i class="bi bi-search"></i>
+            <input id="input-search" type="text" placeholder="search" class="form-control">
+            <i class="bi bi-search" id="btn-search"></i>
         </div>
     </header>
 
@@ -39,7 +39,7 @@
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            <button id="btn-brasileirao" class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 Campeonato Brasileiro
                             </button>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            <button id="btn-mundial" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                 Campeonato de Mundial de Clubes
                             </button>
@@ -62,10 +62,8 @@
             </div>
 
             <div class="col-4">
-
                 <div id="resultado-partidas" class="card-jogos">
                     <h5>Rodadas do Campeonato Brasileiro</h5>
-
                 </div>
             </div>
 
