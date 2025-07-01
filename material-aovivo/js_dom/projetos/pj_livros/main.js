@@ -2,11 +2,23 @@ const {
   encontraLivroPreco,
   encontrarLivroId,
   encontrarLivroNome,
-  adicionarLivro
+  adicionarLivro,
 } = require(".");
+
 const livros = require("./livros");
 
+// Padrao Correto
+adicionarLivro({
+  id: 7,
+  titulo: "Turma da monica",
+  preco: 25.5,
+  categoria: "Gibi",
+  frete: false,
+});
 
-// Arquivo responsavel por executar as funcoes.
-adicionarLivro({titulo: ""})
+adicionarLivro({
+  id: 8, 
+  titulo: "Alberto"
+})
+
 console.log(livros)
