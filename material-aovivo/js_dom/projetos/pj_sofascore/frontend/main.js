@@ -30,7 +30,9 @@ inputSearch.addEventListener("input", ({ target }) => {
 });
 
 btnSearch.addEventListener("click", () => {
-  window.location.href = `/pages/search/index.html?search=${valorSearch}`;
+  valorSearch = valorSearch.toLowerCase()
+  localStorage.setItem("search", valorSearch)
+  window.location.href = `/pages/search/index.html`;
 });
 
 btnMundial.addEventListener("click", () => main("mundial", 0, 1));
