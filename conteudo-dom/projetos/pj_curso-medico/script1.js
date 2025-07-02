@@ -1,3 +1,4 @@
+import { localDaDor } from "./localDor.js";
 import { sintomas } from "./sintomas.js";
 
 const localDor = document.getElementById("local-dor");
@@ -21,146 +22,14 @@ let sintomasSalvos = [];
 
 //Eventos
 localDor.addEventListener("input", function (event) {
-  console.log(event.target.checked);
-  console.log(event.target.value);
-  console.log(doencas);
-
   const local = event.target.value;
   const checked = event.target.checked;
 
   if (checked == true) {
-    resultado.push(local);
-    if (local === "difusa") {
-      doencas.push("Adenite mesentérica (hiperplasia linfonodular)");
-      doencas.push("Cetoacidose diabética");
-      doencas.push("Crise falcêmica");
-      doencas.push("Diverticulite");
-      doencas.push("Doença celíaca");
-      doencas.push("Doença de Crohn)");
-      doencas.push("Febre familiar do Mediterrâneo");
-      doencas.push("Gastroenterite");
-      doencas.push("Herpes Zoster");
-      doencas.push("Ileite por AINE");
-      doencas.push("Intoxicação por chumbo");
-      doencas.push("Insuficiência suprarrenal aguda");
-      doencas.push("Neoplasias");
-      doencas.push("Peritonite primária");
-      doencas.push("Porfiria aguda");
-      doencas.push("Ruptura de baço");
-      doencas.push("Ruptura de aneurisma da aorta");
-      doencas.push("Tabes dorsalis");
-      doencas.push("Úlcera péptica perfurada");
-      doencas.push("Vasculite associada a IgA");
-      doencas.push("Verminoses");
-    } else if (local === "flanco_direito") {
-      doencas.push("Cólica renal");
-      doencas.push("Compressão de raízes nervosas");
-      doencas.push("Infarto pulmonar");
-      doencas.push("Pielonefrite");
-    } else if (local === "flanco_esquerdo") {
-      doencas.push("Cólica renal");
-      doencas.push("Colite isquêmica");
-      doencas.push("Compressão de raízes nervosas");
-      doencas.push("Epiploite ou apendagite");
-      doencas.push("Pielonefrite");
-    } else if (local === "fossa_iliaca_direita") {
-      doencas.push("Adenite mesentérica (hiperplasia linfonodular)");
-      doencas.push("Apendicite");
-      doencas.push("Divertículo de Meckel");
-      doencas.push("Doença de Crohn");
-      doencas.push("Febre familiar do Mediterrâneo");
-      doencas.push("Febre tifoide");
-      doencas.push("Hérnia encarcerada");
-      doencas.push("Hérnia estrangulada");
-      doencas.push("Ileite actínica");
-      doencas.push("Ileite de pacientes imunocomprometidos");
-      doencas.push("Ileite por AINE");
-      doencas.push("Infecção respiratória");
-      doencas.push("Mucocele do apêndice");
-      doencas.push("Prenhez ectópica");
-      doencas.push("Retocolite ulcerativa");
-      doencas.push("Salpingite");
-      doencas.push("Torção de cisto de ovário");
-      doencas.push("Tuberculose intestinal");
-      doencas.push("Yersiniose");
-    } else if (local === "fossa_iliaca_esquerda") {
-      doencas.push("Constipação");
-      doencas.push("Diverticulite");
-      doencas.push("Epiploite ou apendagite");
-      doencas.push("Hérnia encarcerada");
-      doencas.push("Hérnia estrangulada");
-      doencas.push("Prenhez ectópica");
-      doencas.push("Retocolite ulcerativa");
-      doencas.push("Salpingite");
-      doencas.push("Torção de cisto de ovário");
-      doencas.push("Vólvulo");
-    } else if (local === "hipocondrio_direito") {
-      doencas.push("Abscesso hepático");
-      doencas.push("Colecistite");
-      doencas.push("Crise falcêmica");
-      doencas.push("Hepatite aguda");
-      doencas.push("Hérnia diafragmática");
-      doencas.push("Hiperlipidemia");
-      doencas.push("Infarto pulmonar");
-      doencas.push("Infecção respiratória");
-    } else if (local === "hipocondrio_esquerdo") {
-      doencas.push("Abscesso esplênico");
-      doencas.push("Colite isquêmica");
-      doencas.push("Hérnia diafragmática");
-      doencas.push("Infarto agudo do miocárdio");
-      doencas.push("Infarto esplênico");
-      doencas.push("Infarto pulmonar");
-      doencas.push("Pancreatite");
-      doencas.push("Pericardite");
-      doencas.push("Ruptura de baço");
-      doencas.push("Úlcera gástrica");
-    } else if (local === "regiao_epigastrica") {
-      doencas.push("Abscesso hepático");
-      doencas.push("Apendicite");
-      doencas.push("Colecistite");
-      doencas.push("Doença do refluxo gastro-esofágico");
-      doencas.push("Gastrite");
-      doencas.push("Hiperlipidemia");
-      doencas.push("Infarto agudo do miocárdio");
-      doencas.push("Infarto pulmonar");
-      doencas.push("Insuficiência suprarrenal aguda");
-      doencas.push("Isquemia mesentérica");
-      doencas.push("Obstrução intestinal");
-      doencas.push("Pancreatite");
-      doencas.push("Pericardite");
-      doencas.push("Síndrome de hiperemese canabinoide");
-      doencas.push("Síndrome de Mallory-Weiss");
-      doencas.push("Úlcera péptica perfurada");
-      doencas.push("Úlcera duodenal");
-      doencas.push("Úlcera gástrica");
-    } else if (local === "regiao_hipogastrica") {
-      doencas.push("Doença inflamatória pélvica");
-      doencas.push("Endometriose");
-      doencas.push("Hematoma do músculo reto");
-      doencas.push("Ileite actínica");
-      doencas.push("Ileite de pacientes imunocomprometidos");
-      doencas.push("Infecção urinária");
-      doencas.push("Intolerância a lactose");
-      doencas.push("Prenhez ectópica");
-      doencas.push("Retocolite ulcerativa");
-      doencas.push("Tabes dorsalis");
-    } else if (local === "regiao_mesogastrica") {
-      doencas.push("Cetoacidose diabética");
-      doencas.push("Constipação");
-      doencas.push("Doença celíaca");
-      doencas.push("Febre tifoide");
-      doencas.push("Gastroenterite");
-      doencas.push("Hematoma do músculo reto");
-      doencas.push("Intolerância a lactose");
-      doencas.push("Isquemia mesentérica");
-      doencas.push("Obstrução intestinal");
-      doencas.push("Ruptura de aneurisma da aorta");
-      doencas.push("Vasculite associada a IgA");
-      doencas.push("Verminoses");
-      doencas.push("Vólvulo");
-    }
+    const filtro = localDaDor.filter((element) => element.localDaDor === local);
+    console.log(filtro);
   } else {
-    resultado = resultado.filter((item) => item != local);
+    return null;
   }
 });
 
@@ -172,121 +41,11 @@ caracteristicasInicio.addEventListener("input", function (event) {
   const checked = event.target.checked;
 
   if (checked == true) {
-    resultado.push(caracteristicas);
-    if (caracteristicas === "desconforto") {
-      doencas.push("Abscesso esplênico");
-      doencas.push("Constipação");
-      doencas.push("Diverticulite");
-      doencas.push("Doença celíaca");
-      doencas.push("Doença de Crohn");
-      doencas.push("Doença do refluxo gastro-esofágico");
-      doencas.push("Doença inflamatória pélvica");
-      doencas.push("Endometriose");
-      doencas.push("Febre tifoide");
-      doencas.push("Gastrite");
-      doencas.push("Hepatite aguda");
-      doencas.push("Hérnia diafragmática");
-      doencas.push("Hérnia encarcerada");
-      doencas.push("Hérnia estrangulada");
-      doencas.push("Herpes Zoster");
-      doencas.push("Ileite actínica");
-      doencas.push("Ileite de pacientes imunocomprometidos");
-      doencas.push("Ileite por AINE");
-      doencas.push("Infarto agudo do miocárdio");
-      doencas.push("Infarto pulmonar");
-      doencas.push("Infecção respiratória");
-      doencas.push("Infecção urinária");
-      doencas.push("Intolerância a lactose");
-      doencas.push("Mucocele do apêndice");
-      doencas.push("Neoplasias");
-      doencas.push("Obstrução intestinal");
-      doencas.push("Pericardite");
-      doencas.push("Peritonite primária");
-      doencas.push("Pielonefrite");
-      doencas.push("Porfiria aguda");
-      doencas.push("Prenhez ectópica");
-      doencas.push("Retocolite ulcerativa");
-      doencas.push("Salpingite");
-      doencas.push("Síndrome de hiperemese canabinoide");
-      doencas.push("Tuberculose intestinal");
-      doencas.push("Úlcera duodenal");
-      doencas.push("Úlcera gástrica");
-      doencas.push("Vasculite associada a IgA");
-      doencas.push("Verminoses");
-      doencas.push("Yersiniose");
-    } else if (caracteristicas === "migratoria") {
-      doencas.push("Apendicite");
-      doencas.push("Compressão de raízes nervosas");
-      doencas.push("Insuficiência suprarrenal aguda");
-    } else if (caracteristicas === "progressiva") {
-      doencas.push("Abscesso hepático");
-      doencas.push("Apendicite");
-      doencas.push("Cetoacidose diabética");
-      doencas.push("Colecistite");
-      doencas.push("Constipação");
-      doencas.push("Crise falcêmica");
-      doencas.push("Diverticulite");
-      doencas.push("Divertículo de Meckel");
-      doencas.push("Doença celíaca");
-      doencas.push("Doença de Crohn");
-      doencas.push("Febre tifoide");
-      doencas.push("Gastrite");
-      doencas.push("Hérnia encarcerada");
-      doencas.push("Hérnia estrangulada");
-      doencas.push("Herpes Zoster");
-      doencas.push("Ileite de pacientes imunocomprometidos");
-      doencas.push("Infarto agudo do miocárdio");
-      doencas.push("Infarto esplênico");
-      doencas.push("Infecção respiratória");
-      doencas.push("Infecção urinária");
-      doencas.push("Insuficiência suprarrenal aguda");
-      doencas.push("Isquemia mesentérica");
-      doencas.push("Neoplasias");
-      doencas.push("Obstrução intestinal");
-      doencas.push("Pancreatite");
-      doencas.push("Pericardite");
-      doencas.push("Peritonite primária");
-      doencas.push("Pielonefrite");
-      doencas.push("Ruptura de baço");
-      doencas.push("Salpingite");
-      doencas.push("Tabes dorsalis");
-      doencas.push("Torção de cisto de ovário");
-      doencas.push("Tuberculose intestinal");
-      doencas.push("Úlcera péptica perfurada");
-      doencas.push("Úlcera duodenal");
-      doencas.push("Úlcera gástrica");
-      doencas.push("Vasculite associada a IgA");
-      doencas.push("Vólvulo");
-    } else if (caracteristicas === "referida") {
-      doencas.push("Abscesso hepático");
-      doencas.push("Abscesso esplênico");
-      doencas.push("Compressão de raízes nervosas");
-    } else if (caracteristicas === "subita") {
-      doencas.push("Adenite mesentérica (hiperplasia linfonodular)");
-      doencas.push("Colecistite");
-      doencas.push("Cólica renal");
-      doencas.push("Colite Isquêmica");
-      doencas.push("Crise falcêmica");
-      doencas.push("Divertículo de Meckel");
-      doencas.push("Epiploite ou apendagite");
-      doencas.push("Febre familiar do Mediterrâneo");
-      doencas.push("Gastroenterite");
-      doencas.push("Hematoma do músculo reto");
-      doencas.push("Hiperlipidemia");
-      doencas.push("Infarto esplênico");
-      doencas.push("Infarto pulmonar");
-      doencas.push("Intoxicação por chumbo");
-      doencas.push("Isquemia mesentérica");
-      doencas.push("Pancreatite");
-      doencas.push("Prenhez ectópica");
-      doencas.push("Ruptura de baço");
-      doencas.push("Ruptura de aneurisma da aorta");
-      doencas.push("Síndrome de Mallory-Weiss");
-      doencas.push("Tabes dorsalis");
-      doencas.push("Torção de cisto de ovário");
-      doencas.push("Úlcera péptica perfurada");
-      doencas.push("Yersiniose");
-    }
+    console.log("Entrou");
+    const filtro = localDaDor.filter(
+      (element) => element.localDaDor === caracteristicas
+    );
+    console.log("alo", filtro);
   } else {
     resultado = resultado.filter((item) => item != caracteristicas);
   }
