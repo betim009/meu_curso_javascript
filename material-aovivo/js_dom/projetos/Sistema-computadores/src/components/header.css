@@ -1,0 +1,119 @@
+/* Header Styles */
+header {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-navbar {
+    padding: 0.5rem 0;
+}
+
+.header-brand {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #2c3e50 !important;
+    text-decoration: none;
+}
+
+.header-brand:hover {
+    color: #3498db !important;
+}
+
+/* Navigation Links */
+.navbar-nav .nav-link {
+    color: #495057 !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #3498db !important;
+}
+
+/* Search Form */
+.navbar .form-control {
+    border-radius: 20px;
+    border: 1px solid #dee2e6;
+    padding: 0.5rem 1rem;
+    min-width: 200px;
+}
+
+.navbar .form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+.navbar .btn-primary {
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    background-color: #3498db;
+    border-color: #3498db;
+    font-weight: 500;
+}
+
+.navbar .btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+/* Login and Checkout buttons */
+.header-login,
+.header-checkout {
+    margin-left: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        margin-top: 1rem;
+    }
+    
+    .navbar .form-control {
+        margin: 0.5rem 0;
+        min-width: 100%;
+    }
+    
+    .navbar .btn-primary {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+    
+    .header-login,
+    .header-checkout {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .header-brand {
+        font-size: 1.1rem;
+    }
+    
+    .navbar .form-control {
+        font-size: 0.9rem;
+    }
+}
+
+.my-card {
+    width: 300px;
+    height: 540px;
+    margin-bottom: 20px;
+
+
+}
+
+.card-img-top {
+    height: 200px;
+ 
+
+}
+
+.row {
+    margin-top: 80px;
+
+}
