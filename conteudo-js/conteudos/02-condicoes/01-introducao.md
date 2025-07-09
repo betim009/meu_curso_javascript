@@ -36,19 +36,6 @@ idade >= 16   // depende do valor de idade
 
 ---
 
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Nível](https://img.shields.io/badge/Nível-Iniciante-brightgreen)
-![Tempo](https://img.shields.io/badge/Tempo-2--3%20horas-blue)
-
----
-
-### 📊 Progresso do Módulo
-```
-[░░░░░░░░░░] 0% - Iniciando o Módulo
-```
-
----
-
 ## 📚 **CONTEÚDO DO MÓDULO**
 
 - **Introdução**: O que são estruturas de condição
