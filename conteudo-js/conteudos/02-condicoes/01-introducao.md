@@ -1,5 +1,41 @@
 # 🎯 MÓDULO 2: Estruturas de Condições em JavaScript
 
+## O que são condições em programação?
+
+Condições são instruções que permitem ao programa **tomar decisões** com base em situações diferentes. Elas funcionam como perguntas do tipo "Se... então... senão...". O programa avalia uma expressão (normalmente uma comparação) e, dependendo se o resultado é verdadeiro (`true`) ou falso (`false`), executa um bloco de código ou outro.
+
+### Por que usar condições?
+- Para controlar o fluxo do programa.
+- Para reagir a diferentes entradas do usuário.
+- Para validar dados e evitar erros.
+- Para criar programas inteligentes e interativos.
+
+### Exemplo simples em JavaScript:
+```javascript
+const idade = 18;
+
+if (idade >= 18) {
+  console.log("Você é maior de idade!");
+} else {
+  console.log("Você é menor de idade!");
+}
+```
+
+No exemplo acima, o programa verifica se a variável `idade` é maior ou igual a 18. Se for, exibe uma mensagem; senão, exibe outra.
+
+### Expressões booleanas
+Uma condição sempre resulta em um valor **booleano**: `true` (verdadeiro) ou `false` (falso).
+
+Exemplos de expressões booleanas:
+```javascript
+10 > 5        // true
+3 === 4       // false
+"a" !== "b"   // true
+idade >= 16   // depende do valor de idade
+```
+
+---
+
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Nível](https://img.shields.io/badge/Nível-Iniciante-brightgreen)
 ![Tempo](https://img.shields.io/badge/Tempo-2--3%20horas-blue)
@@ -15,14 +51,12 @@
 
 ## 📚 **CONTEÚDO DO MÓDULO**
 
-| Aula | Tópico | Descrição | ⏱️ Tempo |
-|------|--------|-----------|----------|
-| 1 | **Introdução** | O que são estruturas de condição | 15 min |
-| 2 | **If, Else, Else If** | Decisões simples e compostas | 40 min |
-| 3 | **Operador Ternário** | Decisão em uma linha | 20 min |
-| 4 | **Switch/Case** | Múltiplas escolhas | 30 min |
-| 5 | **Boas Práticas** | Erros comuns e dicas | 15 min |
-| 6 | **Projeto Prático** | Sistema de Decisão | 50 min |
+- **Introdução**: O que são estruturas de condição
+- **If, Else, Else If**: Decisões simples e compostas
+- **Operador Ternário**: Decisão em uma linha
+- **Switch/Case**: Múltiplas escolhas
+- **Boas Práticas**: Erros comuns e dicas
+- **Projeto Prático**: Sistema de Decisão
 
 ---
 
