@@ -19,28 +19,12 @@ const movies = [
 **Enunciado:**  
 Use um `for` tradicional para exibir no console os títulos de todos os filmes.
 
-**Gabarito:**
-
-```javascript
-for (let i = 0; i < movies.length; i++) {
-    console.log(movies[i].title);
-}
-```
-
 ---
 
 ## 🧪 Exercício 2: Usando `for...of`
 
 **Enunciado:**  
 Use `for...of` para mostrar o gênero (`genre`) de cada filme da lista.
-
-**Gabarito:**
-
-```javascript
-for (const movie of movies) {
-    console.log(movie.genre);
-}
-```
 
 ---
 
@@ -50,14 +34,6 @@ for (const movie of movies) {
 Use `forEach` para exibir a seguinte frase para cada filme:  
 `"O filme [título] foi lançado em [ano]."`
 
-**Gabarito:**
-
-```javascript
-movies.forEach(movie => {
-    console.log(`O filme ${movie.title} foi lançado em ${movie.year}.`);
-});
-```
-
 ---
 
 ## 🧪 Exercício 4: Desafio com `for`
@@ -65,40 +41,12 @@ movies.forEach(movie => {
 **Enunciado:**  
 Usando `for`, crie um novo array chamado `recentes` apenas com filmes lançados depois de 2010.
 
-**Gabarito:**
-
-```javascript
-const recentes = [];
-
-for (let i = 0; i < movies.length; i++) {
-    if (movies[i].year > 2010) {
-        recentes.push(movies[i]);
-    }
-}
-
-console.log(recentes);
-```
-
 ---
 
 ## 🧪 Exercício 5: Contar gêneros com `forEach`
 
 **Enunciado:**  
 Use `forEach` para contar quantos filmes são do gênero `"Action"`.
-
-**Gabarito:**
-
-```javascript
-let contagem = 0;
-
-movies.forEach(movie => {
-    if (movie.genre === "Action") {
-        contagem++;
-    }
-});
-
-console.log(`Filmes de ação: ${contagem}`);
-```
 
 ---
 
@@ -110,10 +58,6 @@ Use `forEach` com o índice (`index`) para imprimir:
 `"[2] Titanic"`  
 E assim por diante.
 
-**Gabarito:**
+---
 
-```javascript
-movies.forEach((movie, index) => {
-    console.log(`[${index + 1}] ${movie.title}`);
-});
-```
+**Confira o gabarito em:** [02-exercicios-loops-gabarito.md](./02-exercicios-loops-gabarito.md)

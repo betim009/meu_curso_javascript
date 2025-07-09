@@ -1,128 +1,26 @@
+# 📚 Módulo 03 – Loops e Métodos de Array
 
-# 🧠 Revisão JavaScript - Arrays, Loops e Template Literals
-
-Fala meu consagrado! Aqui tá aquele resuminho brabo com exemplos de JavaScript, pra ninguém ficar voando. 🛸
-
----
-
-## 🔤 Template Literals
-
-Em vez de concatenar com `+`, usamos a crase (`` ` ``) pra inserir variáveis direto na string.
-
-```js
-const myName = "Alberto";
-console.log(`Seja bem vindo ${myName}!`);
-```
+Bem-vindo ao módulo de laços de repetição e métodos modernos de array em JavaScript! Aqui você vai aprender a automatizar tarefas, processar listas e dominar o poder dos loops e funções do ECMAScript.
 
 ---
 
-## 🧱 Trabalhando com Arrays
+## Sumário do Módulo
 
-### Criando um array:
-```js
-const timesSerieA = ['Flamengo', 'São Paulo', 'Cruzeiro', 'Palmeiras'];
-```
-
-### Acessando valores do array:
-```js
-console.log(timesSerieA[0]); // 'Flamengo'
-```
-
-### Alterando valores:
-```js
-timesSerieA[1] = 'Sport';
-console.log(timesSerieA[1]); // 'Sport'
-```
-
-### Adicionando e Removendo elementos:
-
-```js
-// Adiciona no final
-timesSerieA.push('Botafogo');
-
-// Adiciona no início
-timesSerieA.unshift('Fluminense');
-
-// Remove o último
-timesSerieA.pop();
-
-// Remove o primeiro
-timesSerieA.shift();
-
-console.log(timesSerieA);
-```
-
-### Tamanho do array:
-```js
-console.log(timesSerieA.length); // Mostra quantos elementos tem
-```
+- [00-guia-rapido.md](./00-guia-rapido.md) — Guia rápido e exemplos de consulta
+- [01-introducao.md](./01-introducao.md) — O que são loops, por que usar, exemplos do cotidiano
+- [02-avancando.md](./02-avancando.md) — for, for...of, for...in
+- [03-metodos-arrays-ecma.md](./03-metodos-arrays-ecma.md) — forEach, map, filter, find, reduce, some, every
+- [04-boas-praticas.md](./04-boas-praticas.md) — Dicas, erros comuns, boas práticas
+- [05-atividades.md](./05-atividades.md) — Exercícios integradores e desafios finais
+  - [05-atividades-gabarito.md](./05-atividades-gabarito.md)
+- [06-projeto-pratico.md](./06-projeto-pratico.md) — Mini-projeto: dashboard de compras
+  - [06-projeto-pratico-gabarito.md](./06-projeto-pratico-gabarito.md)
+- [01-exercicios-numeros.md](./01-exercicios-numeros.md) — Exercícios de lógica com arrays numéricos
+  - [01-exercicios-numeros-gabarito.md](./01-exercicios-numeros-gabarito.md)
+- [02-exercicios-loops.md](./02-exercicios-loops.md) — Exercícios de laços e arrays de objetos
+  - [02-exercicios-loops-gabarito.md](./02-exercicios-loops-gabarito.md)
+- [07-projeto-bonus.md](./07-projeto-bonus.md) — Mini-projeto bônus: exibindo personagens de livros
 
 ---
 
-## 🧪 Exercícios com Arrays
-
-### 1. Pegue o valor "Serviços" do array menu
-```js
-const menu = ['Home', 'Serviços', 'Portfólio', 'Links'];
-const menuServices = menu[1];
-console.log(menuServices); // Serviços
-```
-
-### 2. Adicione "Contato" ao final do menu2
-```js
-const menu2 = ['Home', 'Serviços', 'Portfólio', 'Links'];
-menu2.push('Contato');
-console.log(menu2);
-```
-
----
-
-## 🔁 Loop for (laço de repetição)
-
-### Exemplo de contador:
-```js
-let count = 0;
-const limit = 10;
-
-for (let index = 1; index <= limit; index += 1) {
-    console.log(count += 1);
-}
-```
-
-### Outra forma:
-```js
-for (let i = 1; i <= 10; i += 1) {
-    console.log(`Valor do index: ${i}`);
-}
-```
-
----
-
-## ➕ Somando valores de um array
-
-```js
-const numbers = [2, 2]; // pode testar com mais números
-let sum = 0;
-
-for (let index = 0; index < numbers.length; index += 1) {
-    sum += numbers[index];
-}
-
-console.log(sum); // Mostra a soma total
-```
-
----
-
-## 📋 Exibindo todos os itens de um array
-
-```js
-const headers = ['Inicio', 'Sobre', 'Contato', 'Saiba Mais'];
-
-for (let i = 0; i < headers.length; i += 1) {
-    console.log(headers[i]);
-}
-```
-
----
-
-Se tiver dúvida, volta nos exemplos e faz igual na sua máquina. Bora pra cima! 🚀🔥
+> Explore, pratique e experimente! O domínio de loops e métodos de array é fundamental para qualquer dev JavaScript. 
