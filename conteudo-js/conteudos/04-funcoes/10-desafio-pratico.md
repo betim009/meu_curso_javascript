@@ -1,3 +1,9 @@
+# Desafio Prático: Funções em JavaScript
+
+Leia atentamente o enunciado abaixo e resolva utilizando funções.
+
+---
+
 ## 📝 Desafio: Encontrando o Pedido com a Maior Nota
 
 ### 📌 Objetivo
@@ -53,4 +59,4 @@ console.log(maiorNota([[123, 5], [133, 2], [99, 5], [100, 4]])); // [99, 5]
 - Caso haja empate na nota, compare as quantidades.
 - Retorne o pedido no formato `[quantidade, nota]`.
 
-Boa sorte! 💡💻
+Boa sorte! 💡💻 

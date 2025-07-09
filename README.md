@@ -31,20 +31,44 @@ Seja muito bem-vindo(a)! Este repositório é dedicado ao ensino de **JavaScript
   - [06-projeto-pratico.md](conteudo-js/conteudos/02-condicoes/06-projeto-pratico.md)
   - [07-atividades.md](conteudo-js/conteudos/02-condicoes/07-atividades.md)
 
-- 🔁 **3 - Arrays e Estruturas de Repetição**
-  - (Atualize conforme a estrutura real da pasta 03-arrays-loops)
+- 🔁 **3 - Loops e Métodos de Array**
+  - [00-guia-rapido.md](conteudo-js/conteudos/03-arrays-loops/00-guia-rapido.md)
+  - [01-introducao.md](conteudo-js/conteudos/03-arrays-loops/01-introducao.md)
+  - [02-avancando.md](conteudo-js/conteudos/03-arrays-loops/02-avancando.md)
+  - [03-metodos-arrays-ecma.md](conteudo-js/conteudos/03-arrays-loops/03-metodos-arrays-ecma.md)
+  - [04-boas-praticas.md](conteudo-js/conteudos/03-arrays-loops/04-boas-praticas.md)
+  - [05-atividades.md](conteudo-js/conteudos/03-arrays-loops/05-atividades.md)
+    - [05-atividades-gabarito.md](conteudo-js/conteudos/03-arrays-loops/05-atividades-gabarito.md)
+  - [06-projeto-pratico.md](conteudo-js/conteudos/03-arrays-loops/06-projeto-pratico.md)
+    - [06-projeto-pratico-gabarito.md](conteudo-js/conteudos/03-arrays-loops/06-projeto-pratico-gabarito.md)
+  - [01-exercicios-numeros.md](conteudo-js/conteudos/03-arrays-loops/01-exercicios-numeros.md)
+    - [01-exercicios-numeros-gabarito.md](conteudo-js/conteudos/03-arrays-loops/01-exercicios-numeros-gabarito.md)
+  - [02-exercicios-loops.md](conteudo-js/conteudos/03-arrays-loops/02-exercicios-loops.md)
+    - [02-exercicios-loops-gabarito.md](conteudo-js/conteudos/03-arrays-loops/02-exercicios-loops-gabarito.md)
+  - [07-projeto-bonus.md](conteudo-js/conteudos/03-arrays-loops/07-projeto-bonus.md)
 
 - 🧮 **4 - Funções**
-  - (Atualize conforme a estrutura real da pasta 04-funcoes)
+  - [01-introducao.md](conteudo-js/conteudos/04-funcoes/01-introducao.md)
+  - [02-tipos-funcoes.md](conteudo-js/conteudos/04-funcoes/02-tipos-funcoes.md)
+  - [03-formas-de-escrever.md](conteudo-js/conteudos/04-funcoes/03-formas-de-escrever.md)
+  - [04-funcoes-em-arrays.md](conteudo-js/conteudos/04-funcoes/04-funcoes-em-arrays.md)
+  - [05-funcoes-aninhadas.md](conteudo-js/conteudos/04-funcoes/05-funcoes-aninhadas.md)
+  - [06-funcoes-assincronas.md](conteudo-js/conteudos/04-funcoes/06-funcoes-assincronas.md)
+  - [07-boas-praticas.md](conteudo-js/conteudos/04-funcoes/07-boas-praticas.md)
+  - [08-atividades.md](conteudo-js/conteudos/04-funcoes/08-atividades.md)
+  - [09-atividades-gabarito.md](conteudo-js/conteudos/04-funcoes/09-atividades-gabarito.md)
+  - [10-exercicios-extras.md](conteudo-js/conteudos/04-funcoes/10-exercicios-extras.md)
+  - [11-gabarito-extras.md](conteudo-js/conteudos/04-funcoes/11-gabarito-extras.md)
+  - [10-desafio-pratico.md](conteudo-js/conteudos/04-funcoes/10-desafio-pratico.md)
 
 - 🧱 **5 - Objetos**
-  - (Atualize conforme a estrutura real da pasta 4_objetos)
+  - [readme.md](conteudo-js/conteudos/4_objetos/readme.md)
 
 - 📦 **6 - JSON**
-  - (Atualize conforme a estrutura real da pasta 5-json)
+  - [readme.md](conteudo-js/conteudos/5-json/readme.md)
 
 - 🏗️ **7 - Classes**
-  - (Atualize conforme a estrutura real da pasta 6_classes)
+  - [readme.md](conteudo-js/conteudos/6_classes/readme.md)
 
 ---
 
