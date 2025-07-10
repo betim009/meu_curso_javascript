@@ -42,93 +42,33 @@ seletorLocalDor.addEventListener("input", function (event) {
   })
 });
 
-seletorCaracDor.addEventListener("input", function (event) {
-  const valorCaracDor = event.target.value;
-  const checked = event.target.checked;
+// Função utilitária para aplicar a lógica de filtragem e atualização do resultado
+function aplicarFiltro(seletor, data, campo) {
+  seletor.addEventListener("input", function (event) {
+    const valor = event.target.value;
+    const checked = event.target.checked;
 
-  if (checked == true) {
-    const filtro = dataCaracDor.filter((element) => element.caracteristicasInicio == valorCaracDor).map(e => e.doenca);
-    console.log(filtro);
-    
-    resultado = [...resultado, ...filtro]
+    if (checked == true) {
+      const filtro = data.filter((element) => element[campo] == valor).map(e => e.doenca);
+      resultado = [...resultado, ...filtro];
+      const repetidas = resultado.filter((item, index) => resultado.indexOf(item) !== index);
+      resultado = [...new Set(repetidas)].sort();
+    }
 
-    const repetidas = resultado.filter((item, index) => resultado.indexOf(item) !== index);
-    resultado = [...new Set(repetidas)].sort()
+    seletorResultadoFinal.innerHTML = "";
+    resultado.forEach(e => {
+      seletorResultadoFinal.innerHTML += `<p>${e}</p>`;
+    });
+  });
+}
 
-  } 
-
-  seletorResultadoFinal.innerHTML = ""
-  resultado.forEach(e => {
-    seletorResultadoFinal.innerHTML += `<p>${e}</p>`
-  })
-});
-
-seletorIntensidadeDor.addEventListener("input", function (event) {
-  const valorIntensidadeDor = event.target.value;
-  const checked = event.target.checked;
-
-  if (checked == true) {
-    const filtro = dataIntensidadeDor.filter((element) => element.Intensidade == valorIntensidadeDor).map(e => e.doenca);
-
-    resultado = [...resultado, ...filtro]
-
-    const repetidas = resultado.filter((item, index) => resultado.indexOf(item) !== index);
-    resultado = [...new Set(repetidas)].sort()
-  } 
-
-  seletorResultadoFinal.innerHTML = ""
-  resultado.forEach(e => {
-    seletorResultadoFinal.innerHTML += `<p>${e}</p>`
-  })
-});
-
-seletorReferidaDor.addEventListener("input", function (event) {
-  const valorReferidaDor = event.target.value;
-  const checked = event.target.checked;
-
-  if (checked == true) {
-    const filtro = dataReferidaDor.filter((element) => element.dor_referida == valorReferidaDor);
-    console.log(filtro);
-  } else {
-    return null;
-  }
-});
-
-seletorTipoDor.addEventListener("input", function (event) {
-  const valorTipoDor = event.target.value;
-  const checked = event.target.checked;
-
-  if (checked == true) {
-    const filtro = dataTipoDor.filter((element) => element.tipo_dor == valorTipoDor);
-    console.log(filtro);
-  } else {
-    return null;
-  }
-});
-
-seletorDuracaoDor.addEventListener("input", function (event) {
-  const valorDuracaoDor = event.target.value;
-  const checked = event.target.checked;
-
-  if (checked == true) {
-    const filtro = dataDuracaoDor.filter((element) => element.duracao_dor == valorDuracaoDor);
-    console.log(filtro);
-  } else {
-    return null;
-  }
-});
-
-seletorRitmoIntestinal.addEventListener("input", function (event) {
-  const valorRitmoIntestinal = event.target.value;
-  const checked = event.target.checked;
-
-  if (checked == true) {
-    const filtro = dataRitmoIntestinal.filter((element) => element.ritmo_intestinal == valorRitmoIntestinal);
-    console.log(filtro);
-  } else {
-    return null;
-  }
-});
+// Aplica a lógica para todos os seletores relevantes
+aplicarFiltro(seletorCaracDor, dataCaracDor, 'caracteristicasInicio');
+aplicarFiltro(seletorIntensidadeDor, dataIntensidadeDor, 'Intensidade');
+aplicarFiltro(seletorReferidaDor, dataReferidaDor, 'dor_referida');
+aplicarFiltro(seletorTipoDor, dataTipoDor, 'tipo_dor');
+aplicarFiltro(seletorDuracaoDor, dataDuracaoDor, 'duracao_dor');
+aplicarFiltro(seletorRitmoIntestinal, dataRitmoIntestinal, 'ritmo_intestinal');
 
 outrosSintomas.addEventListener("input", function ({ target }) {
   sintomas.forEach((element, index) => {
@@ -182,6 +122,48 @@ outrosSintomas.addEventListener("input", function ({ target }) {
         });
       });
     });
+  });
+});
+
+// Função para habilitar/desabilitar os outros formulários
+function toggleOtherForms(enabled) {
+  const formsToToggle = [
+    seletorCaracDor,
+    seletorIntensidadeDor,
+    seletorReferidaDor,
+    seletorTipoDor,
+    seletorDuracaoDor,
+    seletorRitmoIntestinal
+  ];
+  formsToToggle.forEach(form => {
+    if (form) {
+      form.querySelectorAll('input[type="checkbox"]').forEach(input => {
+        input.disabled = !enabled;
+      });
+    }
+  });
+  // Outros sintomas (campo de texto)
+  if (outrosSintomas) {
+    outrosSintomas.disabled = !enabled;
+  }
+}
+
+// Função para verificar se algum checkbox do Local da Dor está marcado
+function checkLocalDorSelected() {
+  const checkboxes = seletorLocalDor.querySelectorAll('input[type="checkbox"]');
+  return Array.from(checkboxes).some(cb => cb.checked);
+}
+
+// Inicialmente desabilita os outros formulários
+window.addEventListener('DOMContentLoaded', () => {
+  toggleOtherForms(false);
+});
+
+// Adiciona listener para todos os checkboxes do Local da Dor
+seletorLocalDor.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+  cb.addEventListener('change', () => {
+    const enabled = checkLocalDorSelected();
+    toggleOtherForms(enabled);
   });
 });
 
