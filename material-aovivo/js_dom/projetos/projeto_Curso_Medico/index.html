@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raciocínio Médico da Emergência</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-color: #f1eded;
+
+            h2 {
+                color: #EC4B65;
+            }
+
+            ;
+
+            p {
+                color: #323232;
+            }
+        }
+
+        .btn-outline-danger {
+            margin-bottom: 10px;
+            width: 200px;
+        }
+
+        .btn-outline-danger:hover {
+            background-color: #EC4B65 !important;
+            color: white !important;
+        }
+
+        .my-card {
+            background-color: white;
+            width: 800px;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<!-- Container para centralizar -->
+
+<body class="container">
+    <div class="row mt-5 my-card">
+        <div class="col-lg-6 col-sm-12">
+            <h2>Local da Dor</h2>
+            <p>Onde é a dor?</p>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+            <form id="local-dor">
+                <input type="checkbox" class="btn-check" id="flanco_direito" name="flanco_direito"
+                    value="flanco_direito" autocomplete="off">
+                <label class="btn btn-outline-danger" for="flanco_direito">Flanco direito</label><br>
+
+                <input type="checkbox" class="btn-check" id="flanco_esquerdo" name="flanco_esquerdo"
+                    value="flanco_esquerdo" autocomplete="off">
+                <label class="btn btn-outline-danger" for="flanco_esquerdo">Flanco esquerdo</label><br>
+
+                <input type="checkbox" class="btn-check" id="fossa_iliaca_direita" name="fossa_iliaca_direita"
+                    value="fossa_iliaca_direita" autocomplete="off">
+                <label class="btn btn-outline-danger" for="fossa_iliaca_direita">Fossa ilíaca direita</label><br>
+
+                <input type="checkbox" class="btn-check" id="fossa_iliaca_esquerda" name="fossa_iliaca_esquerda"
+                    value="fossa_iliaca_esquerda" autocomplete="off">
+                <label class="btn btn-outline-danger" for="fossa_iliaca_esquerda">Fossa ilíaca esquerda</label><br>
+
+                <input type="checkbox" class="btn-check" id="hipocondrio_direito" name="hipocondrio_direito"
+                    value="hipocondrio_direito" autocomplete="off">
+                <label class="btn btn-outline-danger" for="hipocondrio_direito">Hipocôndrio direito</label><br>
+
+                <input type="checkbox" class="btn-check" id="hipocondrio_esquerdo" name="hipocondrio_esquerdo"
+                    value="hipocondrio_esquerdo" autocomplete="off">
+                <label class="btn btn-outline-danger" for="hipocondrio_esquerdo">Hipocôndrio esquerdo</label><br>
+
+                <input type="checkbox" class="btn-check" id="regiao_epigastrica" name="regiao_epigastrica"
+                    value="regiao_epigastrica" autocomplete="off">
+                <label class="btn btn-outline-danger" for="regiao_epigastrica">Região epigástrica</label><br>
+
+                <input type="checkbox" class="btn-check" id="regiao_hipogastrica" name="regiao_hipogastrica"
+                    value="regiao_hipogastrica" autocomplete="off">
+                <label class="btn btn-outline-danger" for="regiao_hipogastrica">Região hipogástrica</label><br>
+
+                <input type="checkbox" class="btn-check" id="regiao_mesogastrica" name="regiao_mesogastrica"
+                    value="regiao_mesogastrica" autocomplete="off">
+                <label class="btn btn-outline-danger" for="regiao_mesogastrica">Região mesogástrica</label><br>
+
+                <input type="checkbox" class="btn-check" id="difusa" name="difusa" value="difusa" autocomplete="off">
+                <label class="btn btn-outline-danger" for="difusa">Difusa</label><br>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="row my-card mt-2">
+        <div class="col-lg-6 col-sm-12">
+            <h2>Características do Início da Dor</h2>
+            <p>
+                Como a dor começou?
+            </p>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+            <form id="caracteristicas-inicio">
+                <input type="checkbox" class="btn-check" id="desconforto" name="desconforto" value="desconforto"
+                    autocomplete="off">
+                <label class="btn btn-outline-danger" for="desconforto">Desconforto</label><br>
+
+                <input type="checkbox" class="btn-check" id="migratoria" name="migratoria" value="migratoria"
+                    autocomplete="off">
+                <label class="btn btn-outline-danger" for="migratoria">Migratória</label><br>
+
+                <input type="checkbox" class="btn-check" id="progressiva" name="progressiva" value="progressiva"
+                    autocomplete="off">
+                <label class="btn btn-outline-danger" for="progressiva">Progressiva</label><br>
+
+                <input type="checkbox" class="btn-check" id="referida" name="referida" value="referida"
+                    autocomplete="off">
+                <label class="btn btn-outline-danger" for="referida">Referida</label><br>
+
+                <input type="checkbox" class="btn-check" id="subita" name="subita" value="subita" autocomplete="off">
+                <label class="btn btn-outline-danger" for="subita">Súbita</label><br>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="row my-card mt-2">
+        <div class="col-lg-6 col-sm-12">
+            <h2>Intensidade da Dor</h2>
+            <p>
+                Qual a intensidade da dor que está sentindo?
+            </p>
+        </div>
+        <br>
+        <br>
+        <div class="col-lg-6 col-sm-12">
+            <form id="intensidade-dor">
+                <input type="checkbox" class="btn-check" id="fraca" name="fraca" value="fraca" autocomplete="off">
+                <label class="btn btn-outline-danger" for="fraca">Fraca</label><br>
+
+                <input type="checkbox" class="btn-check" id="media" name="media" value="media" autocomplete="off">
+                <label class="btn btn-outline-danger" for="media">Média</label><br>
+
+                <input type="checkbox" class="btn-check" id="forte" name="forte" value="forte" autocomplete="off">
+                <label class="btn btn-outline-danger" for="forte">Forte</label><br>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="row my-card mt-2">
+        <div class="col-lg-6 col-sm-12">
+            <h2>Dor Referida</h2>
+            <p>
+                A dor se irradia para alguma outra região?
+            </p>
+        </div>
+        <br>
+        <br>
+        <div class="col-lg-6 col-sm-12">
+            <form id="dor-referida">
+                <input type="checkbox" class="btn-check" id="dorso" name="dorso" value="dorso" autocomplete="off">
+                <label class="btn btn-outline-danger" for="dorso">Dorso</label><br>
+
+                <input type="checkbox" class="btn-check" id="ombro_direito" name="ombro_direito" value="ombro_direito"
+                    autocomplete="off">
+                <label class="btn btn-outline-danger" for="ombro_direito">Ombro direito</label><br>
+
+                <input type="checkbox" class="btn-check" id="ombro_esquerdo" name="ombro_esquerdo"
+                    value="ombro_esquerdo" autocomplete="off">
+                <label class="btn btn-outline-danger" for="ombro_esquerdo">Ombro esquerdo</label><br>
+
+                <input type="checkbox" class="btn-check" id="regiao_inguinal" name="regiao_inguinal"
+                    value="regiao_inguinal" autocomplete="off">
+                <label class="btn btn-outline-danger" for="regiao_inguinal">Região inguinal</label><br>
+
+                <input type="checkbox" class="btn-check" id="sem_dor" name="sem_dor" value="sem_dor" autocomplete="off">
+                <label class="btn btn-outline-danger" for="sem_dor">Sem dor referida</label><br>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="row my-card mt-2">
+        <div class="col-lg-6 col-sm-12">
+            <h2>Tipo da Dor</h2>
+            <p>
+                Como você descreveria a dor?
+            </p>
+        </div>
+        <br>
+        <br>
+        <div class="col-lg-6 col-sm-12">
+            <form id="tipo-dor">
+                <input type="checkbox" class="btn-check" id="aperto" name="aperto" value="aperto" autocomplete="off">
+                <label class="btn btn-outline-danger" for="aperto">Aperto</label><br>
+
+                <input type="checkbox" class="btn-check" id="colica" name="colica" value="colica" autocomplete="off">
+                <label class="btn btn-outline-danger" for="colica">Cólica</label><br>
+
+                <input type="checkbox" class="btn-check" id="constante" name="constante" value="constante"
+                    autocomplete="off">
+                <label class="btn btn-outline-danger" for="constante">Constante</label><br>
+
+                <input type="checkbox" class="btn-check" id="fisgada" name="fisgada" value="fisgada" autocomplete="off">
+                <label class="btn btn-outline-danger" for="fisgada">Fisgada</label><br>
+
+                <input type="checkbox" class="btn-check" id="superficial" name="superficial" value="superficial"
+                    autocomplete="off">
+                <label class="btn btn-outline-danger" for="superficial">Superficial</label><br>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="row my-card mt-2">
+        <div class="col-lg-6 col-sm-12">
+            <h2>Duração da Dor</h2>
+            <p>
+                A dor é recente ou persistente?
+            </p>
+        </div>
+        <br>
+        <br>
+        <div class="col-lg-6 col-sm-12">
+            <form id="duracao-dor">
+                <input type="checkbox" class="btn-check" id="aguda" name="aguda" value="aguda" autocomplete="off">
+                <label class="btn btn-outline-danger" for="aguda">Aguda</label><br>
+
+                <input type="checkbox" class="btn-check" id="cronica" name="cronica" value="cronica" autocomplete="off">
+                <label class="btn btn-outline-danger" for="cronica">Crônica</label><br>
+            </form>
+        </div>
+    </div>
+
+    <div class="row my-card mt-2">
+        <div class="col-lg-6 col-sm-12">
+            <h2>Ritmo Intestinal</h2>
+            <p>
+                Você percebeu alguma alteração no ritmo intestinal recentemente?
+            </p>
+        </div>
+        <br>
+        <br>
+        <div class="col-lg-6 col-sm-12">
+            <form id="ritmo-intestinal">
+                <input type="checkbox" class="btn-check" id="alteracao_recente" name="alteracao_recente"
+                    value="alteracao_recente" autocomplete="off">
+                <label class="btn btn-outline-danger" for="alteracao_recente">Alteração recente</label><br>
+
+                <input type="checkbox" class="btn-check" id="constipacao" name="constipacao" value="constipacao"
+                    autocomplete="off">
+                <label class="btn btn-outline-danger" for="constipacao">Constipação</label><br>
+
+                <input type="checkbox" class="btn-check" id="diarreia" name="diarreia" value="diarreia"
+                    autocomplete="off">
+                <label class="btn btn-outline-danger" for="diarreia">Diarreia</label><br>
+
+                <input type="checkbox" class="btn-check" id="diarreia_com_muco" name="diarreia_com_muco"
+                    value="diarreia_com_muco" autocomplete="off">
+                <label class="btn btn-outline-danger" for="diarreia_com_muco">Diarreia com muco</label><br>
+
+                <input type="checkbox" class="btn-check" id="diarreia_muco_sanguinolenta"
+                    name="diarreia_muco_sanguinolenta" value="diarreia_muco_sanguinolenta" autocomplete="off">
+                <label class="btn btn-outline-danger" for="diarreia_muco_sanguinolenta">Diarreia
+                    muco-sanguinolenta</label><br>
+
+                <input type="checkbox" class="btn-check" id="diarreia_sanguinolenta" name="diarreia_sanguinolenta"
+                    value="diarreia_sanguinolenta" autocomplete="off">
+                <label class="btn btn-outline-danger" for="diarreia_sanguinolenta">Diarreia sanguinolenta</label><br>
+
+                <input type="checkbox" class="btn-check" id="sem_alteracao" name="sem_alteracao" value="sem_alteracao"
+                    autocomplete="off">
+                <label class="btn btn-outline-danger" for="sem_alteracao">Sem alteração</label><br>
+            </form>
+        </div>
+    </div>
+
+    <div class="row my-card mb-3 mt-2">
+        <div class="col-lg-6">
+            <h2>Outros Sinais e Sintomas</h2>
+            <p>
+                Que outros sintomas ocorrem com a dor?
+            </p>
+            <label for="outros-sintomas" class="form-label"></label>
+            <input type="email" class="form-control" id="outros-sintomas" aria-describedby="outrosSintomas"
+                placeholder="Outros Sintomas">
+
+            <div id="resultado-sintomas" class="mt-3">
+            </div>
+        </div>
+        <div class="col-lg-6" id="sintomas-salvos">
+
+        </div>
+    </div>
+    <div class="row my-card mb-3 mt-2">
+        <div class="col-lg-12" id="resultado-final">
+
+        </div>
+    </div>
+    <script type="module" src="script1.js"></script>
+</body>
+
+</html>
