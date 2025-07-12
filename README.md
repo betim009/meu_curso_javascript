@@ -11,16 +11,15 @@ Seja muito bem-vindo(a)! Este repositório é dedicado ao ensino de **JavaScript
 ### 📚 Conteúdo
 
 - 🟢 **0 - Introdução**
-  - [0_intro](conteudo-js/conteudos/0_intro/)
+  - [00-intro](conteudo-js/conteudos/00-intro/)
 
 - 🔢 **1 - Tipos de Dados**
   - [01-introducao.md](conteudo-js/conteudos/01-dados/01-introducao.md)
-  - [02-tabela-resumo.md](conteudo-js/conteudos/01-dados/02-tabela-resumo.md)
-  - [03-arrays.md](conteudo-js/conteudos/01-dados/03-arrays.md)
-  - [04-objetos.md](conteudo-js/conteudos/01-dados/04-objetos.md)
-  - [05-metodos.md](conteudo-js/conteudos/01-dados/05-metodos.md)
-  - [06-datas.md](conteudo-js/conteudos/01-dados/06-datas.md)
-  - [07-atividades.md](conteudo-js/conteudos/01-dados/07-atividades.md)
+  - [02-arrays.md](conteudo-js/conteudos/01-dados/02-arrays.md)
+  - [03-objetos.md](conteudo-js/conteudos/01-dados/03-objetos.md)
+  - [04-metodos.md](conteudo-js/conteudos/01-dados/04-metodos.md)
+  - [05-datas.md](conteudo-js/conteudos/01-dados/05-datas.md)
+  - [06-tabela-resumo.md](conteudo-js/conteudos/01-dados/06-tabela-resumo.md)
 
 - 🟠 **2 - Estruturas Condicionais**
   - [01-introducao.md](conteudo-js/conteudos/02-condicoes/01-introducao.md)
@@ -29,7 +28,7 @@ Seja muito bem-vindo(a)! Este repositório é dedicado ao ensino de **JavaScript
   - [04-switch-case.md](conteudo-js/conteudos/02-condicoes/04-switch-case.md)
   - [05-boas-praticas.md](conteudo-js/conteudos/02-condicoes/05-boas-praticas.md)
   - [06-projeto-pratico.md](conteudo-js/conteudos/02-condicoes/06-projeto-pratico.md)
-  - [07-atividades.md](conteudo-js/conteudos/02-condicoes/07-atividades.md)
+  - [08-atividades.md](conteudo-js/conteudos/02-condicoes/08-atividades.md)
 
 - 🔁 **3 - Loops e Métodos de Array**
   - [00-guia-rapido.md](conteudo-js/conteudos/03-arrays-loops/00-guia-rapido.md)
@@ -60,15 +59,20 @@ Seja muito bem-vindo(a)! Este repositório é dedicado ao ensino de **JavaScript
   - [10-exercicios-extras.md](conteudo-js/conteudos/04-funcoes/10-exercicios-extras.md)
   - [11-gabarito-extras.md](conteudo-js/conteudos/04-funcoes/11-gabarito-extras.md)
   - [10-desafio-pratico.md](conteudo-js/conteudos/04-funcoes/10-desafio-pratico.md)
+  - [12-exercicios-geometria.md](conteudo-js/conteudos/04-funcoes/12-exercicios-geometria.md)
+  - [12-gabarito-geometria.md](conteudo-js/conteudos/04-funcoes/12-gabarito-geometria.md)
 
 - 🧱 **5 - Objetos**
   - [readme.md](conteudo-js/conteudos/4_objetos/readme.md)
 
 - 📦 **6 - JSON**
-  - [readme.md](conteudo-js/conteudos/5-json/readme.md)
+  - [01-introducao.md](conteudo-js/conteudos/5-json/01-introducao.md)
+  - [02-exercicios.md](conteudo-js/conteudos/5-json/02-exercicios.md)
 
 - 🏗️ **7 - Classes**
-  - [readme.md](conteudo-js/conteudos/6_classes/readme.md)
+  - [01-introducao.md](conteudo-js/conteudos/6_classes/01-introducao.md)
+  - [02-atividades.md](conteudo-js/conteudos/6_classes/02-atividades.md)
+  - [03-gabarito.md](conteudo-js/conteudos/6_classes/03-gabarito.md)
 
 ---
 
