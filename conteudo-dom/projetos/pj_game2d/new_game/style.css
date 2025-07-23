@@ -1,0 +1,36 @@
+body {
+  background: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#mapa {
+  position: relative;
+  width: 800px;
+  height: 600px;
+  background: #000;
+  border: 2px solid #fff;
+}
+
+#hero {
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  width: 48px;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+#box {
+  position: absolute;
+  left: 300px;
+  top: 300px;
+  width: 48px;
+  height: auto;
+  user-select: none;
+  pointer-events: none;
+}
