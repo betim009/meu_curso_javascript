@@ -27,8 +27,7 @@ async function getSources() {
     `
     }
 
-
-    console.log(res)
+    
 }
 
 getSources()

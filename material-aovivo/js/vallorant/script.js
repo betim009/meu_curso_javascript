@@ -9,15 +9,19 @@ function addKill(objeto){
 }
 
 function addDeath(objeto){
-    return null
+    objeto.death += 1
+    return objeto
 }
 
 function addAssist(objeto){
-    return null
+    objeto.assist += 1
+    return objeto
 }
 
 function calcKDA(objeto){
-    return null
+    if (!objeto.death) return (objeto.kill + objeto.assist)  
+    const KDA = (objeto.kill + objeto.assist) / objeto.death
+    return KDA
 }
 
 // Executando funcoes
@@ -32,4 +36,8 @@ console.table(
 
 console.table(
     personagem1
+)
+
+console.log(
+    calcKDA(personagem)
 )

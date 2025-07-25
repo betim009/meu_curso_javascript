@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nunito", sans-serif;
+  background-color: #f1f1f1;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+#div-macbooks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f1f1;
+  width: 80%;
+  height: 120vh;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.card {
+  border: 1px solid black;
+  width: 300px;
+  border-radius: 10px;
+  height: 350px;
+  background-color: white;
+
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  cursor: pointer;
+
+  h4 {
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  button {
+    background-color: #f1f1f1;
+    width: 120px;
+    border: none;
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 30px;
+    font-weight: 900;
+    cursor: pointer;
+  }
+
+  button:hover {
+    /* Cor base */
+    background-color: #808080;
+    /* Efeito neon */
+    box-shadow: 0 0 1px black, 0 0 2px black, 0 0 4px black;
+    color: white;
+  }
+}
+
+.img-macbook {
+  width: 300px;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #f1f1f1;
+  font-family: "Nunito";
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  a:hover {
+    color: darkgray;
+  }
+}

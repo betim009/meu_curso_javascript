@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div id="resultado"></div>
+
+
+    <script>
+        const hardwares = [
+            'Processador (CPU)',
+            'Placa-mãe (Motherboard)',
+            'Memória RAM',
+            'Disco Rígido (HD)',
+            'Unidade de Estado Sólido (SSD)',
+            'Placa de Vídeo (GPU)',
+            'Fonte de Alimentação',
+            'Gabinete',
+            'Cooler / Sistema de Resfriamento',
+            'Monitor',
+              'Processador (CPU)',
+            'Placa-mãe (Motherboard)',
+            'Memória RAM',
+            'Disco Rígido (HD)',
+            'Unidade de Estado Sólido (SSD)',
+            'Placa de Vídeo (GPU)',
+            'Fonte de Alimentação',
+            'Gabinete',
+            'Cooler / Sistema de Resfriamento',
+            'Monitor'
+        ];
+
+
+
+        function criarHardware(posicaoInicial, posicaoFinal) {
+            const resultado = document.getElementById('resultado')
+            
+            for (let index = posicaoInicial; index < posicaoFinal; index++) {
+                const element = hardwares[index];
+                console.log(element)
+                resultado.innerHTML += `
+                <h2>${element}</h2>
+            `
+            }
+        }
+        criarHardware(0, 5)
+        criarHardware(5, 10)
+        criarHardware(10, 15)
+        criarHardware(15, 20)
+
+
+
+
+    </script>
+</body>
+
+</html>
