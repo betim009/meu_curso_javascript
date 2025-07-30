@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+}
+
+header {
+  background-color: black;
+  height: 10vh;
+}
+
+footer {
+  background-color: black;
+  height: 10vh;
+}
+
+.div-flex {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-1 {
+  width: 55%;
+
+  p {
+    text-align: justify;
+  }
+}
+
+.div-2 {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  header {
+    background-color: black;
+    height: auto;
+  }
+
+  footer {
+    background-color: black;
+    height: auto;
+  }
+
+  .div-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .div-1 {
+    width: 90%;
+  }
+
+  .div-2 {
+    width: 90%;
+
+    img {
+      min-width: 520px;
+      min-height: 520px;
+    }
+  }
+}
