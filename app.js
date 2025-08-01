@@ -1,23 +1,33 @@
-const order = [
-  { nome: "Hambúrguer", quantidade: 10, preco: 12.5 },
-  { nome: "Cachorro-quente", quantidade: 15, preco: 8.0 },
-  { nome: "Batata Frita", quantidade: 20, preco: 6.5 },
-  { nome: "Refrigerante", quantidade: 25, preco: 5.0 },
-  { nome: "Milkshake", quantidade: 12, preco: 10.0 },
-];
+  function funcaoMMC(lista) {
+    let resultado = [];
+    let divisor = 2;
 
-// Calcular o preco FINAL
+    while (!lista.every(n => n === 1)) {
+      let foiDividido = false;
 
-function valorFinal() {
-  let valor = 0; // ESTADO
-  // const [valor, setValor] = useState(0)
-  order.forEach((e) => {
-    valor += e.quantidade * e.preco;
-    // setValor[valor += e.quantidade * e.preco]
-  });
+      for (let i = 0; i < lista.length; i++) {
+        if (lista[i] % divisor === 0) {
+          lista[i] = lista[i] / divisor;
+          foiDividido = true;
+        }
+      }
 
-  return valor;
-}
+      if (foiDividido) {
+        resultado.push(divisor);
+      } else {
+        divisor++;
+      }
+    }
 
-const resultado = order.reduce((acc, e) => e.quantidade * e.preco + acc, 0);
-// setCheckout(resultado)
+    // Calcula o produto de todos os divisores encontrados
+    const mmc = resultado.reduce((acc, val) => acc * val, 1);
+    console.log("MMC:", mmc);
+    return mmc;
+  }
+
+  funcaoMMC([2, 3, 4])
+
+// Loop até [1, 1, 1]
+// → Se algum número divide
+//    → divide e armazena
+// → Senão, aumenta o divisor

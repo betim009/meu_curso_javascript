@@ -1,5 +1,6 @@
 * {
   margin: 0;
+  font-family: "Nunito", sans-serif;
 }
 
 body {
@@ -11,15 +12,75 @@ body {
 header {
   height: 120px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   font-family: "Nunito", sans-serif;
   background-color: #f1f1f1;
   width: 100%;
   margin-bottom: 30px;
+
+  nav {
+    display: flex;
+    gap: 50px;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    .active {
+      border-bottom: 1.6px black solid;
+      font-weight: bold;
+    }
+  }
 }
 
-#div-macbooks {
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.div-search {
+  background-color: #f1f1f1;
+  height: 80px;
+  width: 80%;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  align-items: center;
+
+  nav {
+    display: flex;
+    gap: 30px;
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  input {
+    width: 150px;
+    height: 25px;
+    border-radius: 6px;
+  }
+
+  button {
+    width: 150px;
+    height: 31px;
+    margin-right: 10px;
+    border-radius: 6px;
+    background-color: darkgray;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+  }
+}
+
+#div-macbooks,
+#div-iphones,
+#div-ipads {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -33,7 +94,7 @@ header {
 }
 
 .card {
-  border: 1px solid black;
+  border: 1.5px solid black;
   width: 300px;
   border-radius: 10px;
   height: 350px;
@@ -43,6 +104,13 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+
+  img {
+    height: 150px;
+    width: fit-content;
+    background-color: red;
+  }
 
   cursor: pointer;
 

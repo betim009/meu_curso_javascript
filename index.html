@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-
-    
 </head>
-
 <body>
-    <div class="row">
-        <div></div>
-        <div class="div-2">
-            <div>1</div>
-            <div>2</div>
-        </div>
-    </div>
-</body>
+    
+    <button id="btn">Click</button>
+    <button id="btn1">Click</button>
 
+
+
+
+    <script>
+        const btn = document.getElementById('btn');
+        const btn1 = document.getElementById('btn1');
+
+        function handleClick() {
+            alert("Hello!")
+        }
+
+        
+        btn.addEventListener('click', handleClick)
+        btn1.addEventListener('click', handleClick)
+
+    </script>
+</body>
 </html>
