@@ -1,0 +1,14 @@
+Desafio: 
+
+- Voce vai replicar com filter (OK).
+-------
+
+- Voce vai recriar o projeto!
+- Recriar o projeto, com apenas 1 base de dados. 
+- Uma unica variavel, com ambas listas. 
+- Mas eh 1 lista soh!
+- Nesse projeto, voce pode escolher sua preferencia. 
+- for com if, ou filter e forEach
+- Mas escolhendo um padrao, deve manter ele tentar resolver com esse padrao ate o fim. 
+
+--------- 
