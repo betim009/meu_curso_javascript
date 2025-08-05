@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+}
+
+.game-window {
+  height: 100vh;
+  width: 100vw;
+  background-color: darkcyan;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.hero-content {
+  border: 2px solid darkgrey;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.hero-content-before:hover {
+  cursor: pointer;
+  zoom: 1.1;
+  background-color: rgb(48, 150, 150);
+}
+
+.active {
+  background-color: rgb(232, 96, 96);
+}
+
+.hero {
+  height: 80px;
+}
