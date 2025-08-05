@@ -1,1 +1,9 @@
 https://olhardigital.com.br/
+
+
+-> Remover o texto bem vindo.
+
+-> Para cada div com a class flex:
+    criar outra div, colocando um novo titulo e um paragrafo dentro
+    voce ja tem o paragrafo.
+    vai precisar criar um h3
