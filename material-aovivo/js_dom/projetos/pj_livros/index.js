@@ -50,9 +50,33 @@ function adicionarLivro(livro) {
   livros.push(livro);
 }
 
+function alterarIdLivro(id, novoId) {
+  for (const element of livros) {
+    if (element.id === id) {
+      element.id = novoId
+      return "Id do livro alterado."
+    }
+  }
+
+  return "Nao encontramos livro com esse id"
+}
+
+function alterarNomeLivro(id, novoTitulo) {
+  for (const element of livros) {
+    if (element.id === id) {
+      element.titulo = novoTitulo
+      return "Titulo do livro alterado."
+    }
+  }
+
+  return "Nao encontramos o livro com esse id"
+}
+
 module.exports = {
   encontrarLivroId,
   encontrarLivroNome,
   encontraLivroPreco,
   adicionarLivro,
+  alterarIdLivro,
+  alterarNomeLivro
 };
