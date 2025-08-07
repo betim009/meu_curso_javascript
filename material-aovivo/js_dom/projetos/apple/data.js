@@ -17,7 +17,7 @@ export const macbooks = [
     {
         id: 4,
         url: "https://http2.mlstatic.com/D_NQ_NP_2X_801112-MLA46516512347_062021-F.webp",
-        title: "Apple Macbook Air (13 polegadas, 2020, Chip M1, 256 GB de SSD) - Cinza-espacial"
+        title: "Apple Macbook Air (15 polegadas, 2020, Chip M1, 256 GB de SSD) - Cinza-espacial"
     },
     {
         id: 5,
@@ -35,7 +35,7 @@ export const iphones = [
     {
         id: 1,
         url: "https://http2.mlstatic.com/D_NQ_NP_2X_779617-MLA71782867320_092023-F.webp",
-        title: "iPhone 12 (64 GB, Preto, Tela 6.1 pol.) - Apple"
+        title: "iPhone 14 (64 GB, Preto, Tela 6.1 pol.) - Apple"
     },
     {
         id: 2,
