@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  font-family: "Mozilla Headline", sans-serif;
+  font-size: 14px;
+}
+
+.game-window {
+  height: 100vh;
+  width: 100vw;
+  background-color: darkcyan;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  gap: 30px;
+}
+
+.hero-content {
+  border: 2px solid darkgrey;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.hero-content-before:hover {
+  cursor: pointer;
+  zoom: 1.1;
+  background-color: rgb(48, 150, 150);
+}
+
+.active {
+  background-color: rgb(232, 96, 96);
+}
+
+.hero {
+  height: 80px;
+}
+
+#div-start {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.input-nome {
+  width: 200px;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+}
+
+.btn-enviar {
+  background-image: url("./assets/button.png");
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: 24px;
+}
+
+.btn-pressed {
+  background-image: url("./assets/button1.png");
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: 24px;
+}
