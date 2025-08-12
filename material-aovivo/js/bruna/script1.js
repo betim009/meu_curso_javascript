@@ -1,1 +1,0 @@
-const { guitarras } = require("./data");

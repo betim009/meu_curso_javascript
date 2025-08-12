@@ -1,8 +1,9 @@
+function main() {
   function funcaoMMC(lista) {
     let resultado = [];
     let divisor = 2;
 
-    while (!lista.every(n => n === 1)) {
+    while (!lista.every((n) => n === 1)) {
       let foiDividido = false;
 
       for (let i = 0; i < lista.length; i++) {
@@ -25,9 +26,21 @@
     return mmc;
   }
 
-  funcaoMMC([2, 3, 4])
+  function calcularMDC(array) {
+    if (!array.length) return 0;
 
-// Loop até [1, 1, 1]
-// → Se algum número divide
-//    → divide e armazena
-// → Senão, aumenta o divisor
+    const menor = Math.min(...array);
+
+    // só dá pra pular de 2 em 2 quando TODOS são pares
+    const todosPares = array.every((n) => n % 2 === 0);
+    const passo = todosPares ? 2 : 1;
+
+    for (let candidato = menor; candidato >= 1; candidato -= passo) {
+      if (array.every((n) => n % candidato === 0)) {
+        return candidato;
+      }
+    }
+
+    return 1;
+  }
+}
