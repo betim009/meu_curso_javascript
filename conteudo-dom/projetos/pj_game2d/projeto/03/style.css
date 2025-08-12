@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    font-family: "Tiny5", sans-serif;
+}
+
+.game-window {
+    height: 100vh;
+    width: 100vw;
+    background: url("assets/fundo-céu.jpg") no-repeat;
+    background-size: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.flex {
+    display: flex;
+    gap: 30px;
+}
+
+.hero-content {
+    border: 2px solid rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.hero-content-before:hover {
+    cursor: pointer;
+    zoom: 1.1;
+    background-color: rgba(92, 185, 248, 0.72);
+}
+
+.active {
+    background-color: rgb(76, 178, 247);
+}
+
+.hero {
+    height: 150px;
+}
+
+#div-start {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.input-nome {
+    width: 200px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.btn-enviar {
+    background-image: url("./assets/button.png");
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+.btn-enviar:active {
+    background-image: url("./assets/button1.png");
+}
+
+.exibir-nome {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    width: 200%;
+    text-align: center;
+}

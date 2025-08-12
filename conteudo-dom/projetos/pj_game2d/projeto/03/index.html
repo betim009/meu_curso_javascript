@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Pixelify+Sans:wght@400..700&family=Playwrite+DK+Loopet:wght@100..400&family=Tiny5&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="game-window" id="game-window">
+        <div>
+            <h4 id="name-hero"></h4>
+        </div>
+
+        <div class="flex">
+            <div class="hero-content hero-content-before">
+                <img src="assets/hero1.png" alt="" class="hero hero1" name="hero1">
+            </div>
+            <div class="hero-content hero-content-before">
+                <img src="assets/hero2.png" alt="" class="hero hero2" name="hero2">
+            </div>
+            <div class="hero-content hero-content-before">
+                <img src="assets/hero3.png" alt="" class="hero hero3" name="hero3">
+            </div>
+        </div>
+
+        <div hidden id="div-start">
+            <input type="text" placeholder="nome do personagem.." class="input-nome" id="input-nome"/>
+            <button class="btn-enviar" id="btn-enviar"></button>
+        </div>
+    </div>
+
+    <script type="module" src="index.js"></script>
+
+</body>
+
+</html>
