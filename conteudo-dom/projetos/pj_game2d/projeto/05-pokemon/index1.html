@@ -1,0 +1,17 @@
+<div id="sprite"></div>
+
+<style>
+  /* 1 frame = 1024x256, sheet = 1024x1024 (1x4) */
+  #sprite{
+    width: 1024px;
+    height: 256px;
+    background: url('./charmander.png') 0 0 no-repeat;
+    image-rendering: pixelated;
+    animation: walk .8s steps(4) infinite;
+  }
+  /* desloca no eixo Y: 0 → -1024px (4 * 256) */
+  @keyframes walk {
+    from { background-position: 0    0; }
+    to   { background-position: 0 -1024px; }
+  }
+</style>

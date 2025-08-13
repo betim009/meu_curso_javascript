@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Charmander Animado (Canvas Puro)</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: grid;
+            place-items: center;
+            background: #0f131a;
+            overflow: hidden;
+        }
+
+        canvas {
+            image-rendering: pixelated;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, .35);
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="cv"></canvas>
+    <script>
+        (function () {
+            const IMG_SRC = './charmander.png'; // spritesheet
+            const totalFrames = 4;              // ajuste se necessário
+            const targetH = 256;                // altura exibida
+            const fps = 8;                      // velocidade
+            const forceOrientation = '';        // 'horizontal' | 'vertical' | '' (auto)
+
+            // Remove quaisquer <img> soltas que possam estar na página
+            document.querySelectorAll('img').forEach(el => el.remove());
+
+            const canvas = document.getElementById('cv');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            img.src = IMG_SRC;
+
+            img.onload = () => {
+                const W = img.width;
+                const H = img.height;
+
+                // Detecta orientação
+                let horizontal;
+                if (forceOrientation === 'horizontal') horizontal = true;
+                else if (forceOrientation === 'vertical') horizontal = false;
+                else horizontal = (W % totalFrames === 0) || !(H % totalFrames === 0);
+
+                const frameW = horizontal ? Math.floor(W / totalFrames) : W;
+                const frameH = horizontal ? H : Math.floor(H / totalFrames);
+
+                // Ajusta tamanho do canvas por escala
+                const scale = targetH / frameH;
+                canvas.width = Math.max(1, Math.floor(frameW * scale));
+                canvas.height = Math.max(1, Math.floor(frameH * scale));
+
+                let frame = 0;
+                function draw() {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    const sx = horizontal ? frame * frameW : 0;
+                    const sy = horizontal ? 0 : frame * frameH;
+                    ctx.drawImage(img, sx, sy, frameW, frameH, 0, 0, canvas.width, canvas.height);
+                }
+                draw();
+
+                setInterval(() => { frame = (frame + 1) % totalFrames; draw(); }, 1000 / fps);
+            };
+
+            img.onerror = () => console.error('Não consegui carregar', IMG_SRC);
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game 2D - Sprite simples (CSS)</title>
+  <style>
+    /* --- Sprite base --- */
+    .sprite {
+      width: 256px;
+      /* largura de 1 frame */
+      height: 256px;
+      /* altura de 1 frame */
+      /* altura de 1 frame */
+      image-rendering: pixelated;
+      /* mantém o pixel art nítido */
+      background-repeat: no-repeat;
+      transform: scale(0.5);
+      /* "zoom" 2x */
+      transform-origin: top left;
+    }
+
+    /* Idle: 4 frames na horizontal, spritesheet total 1024px (4 * 256) */
+    .idle-charmander {
+      background-image: url('charmander.png');
+      animation: anim-idle 1.2s steps(4) infinite;
+      background-size: 1024px 256px;
+    }
+
+    .idle-squirtle {
+      background-image: url('squirtle.png');
+      animation: anim-idle 1.2s steps(4) infinite;
+      background-size: 1024px 256px;
+    }
+
+
+    @keyframes anim-idle {
+      from {
+        background-position: 0 0;
+      }
+
+      to {
+        background-position: -1024px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sprite idle-charmander" aria-label="Idle"></div>
+  <div class="sprite idle-squirtle" aria-label="Idle"></div>
+
+</body>
+
+</html>

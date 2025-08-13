@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game 2D — simples</title>
+    <style>
+        /* Tela cheia */
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background: #111;
+        }
+
+        #stage {
+            width: 100vw;
+            height: 100vh;
+            background: #222;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Sprite básico (32x32) */
+        .sprite {
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            image-rendering: pixelated;
+            /* nítido */
+            background-repeat: no-repeat;
+            transform-origin: bottom left;
+        }
+
+        /* Idle: 11 frames => 11*32 = 352px */
+        .idle {
+            background-image: url('assets/Idle.png');
+            animation: idle 1.1s steps(11) infinite;
+        }
+
+        @keyframes idle {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: -352px 0;
+            }
+        }
+
+        /* Run: 12 frames => 12*32 = 384px */
+        .run {
+            background-image: url('assets/Run.png');
+            animation: run 0.8s steps(12) infinite;
+        }
+
+        @keyframes run {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: -384px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="stage">
+        <div id="hero" class="sprite idle" aria-label="heroi"></div>
+    </div>
+
+    <script>
+        // Estado mínimo
+        const hero = document.getElementById('hero');
+        let x = 50;           // posição horizontal
+        let velocidade = 0;   // 0 parado; >0 andando
+        const SCALE = 2;
+
+        // Loop simples só para mover (animação é CSS)
+        function atualizar() {
+            x += velocidade;
+            hero.style.transform = `translateX(${x}px) scale(${SCALE})`;
+            requestAnimationFrame(atualizar);
+        }
+        requestAnimationFrame(atualizar); // inicia
+
+        // Teclas: seta para a direita liga/desliga correr
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'ArrowRight') {
+                hero.classList.remove('idle');
+                hero.classList.add('run');
+                velocidade = 2;
+            }
+        });
+        document.addEventListener('keyup', (e) => {
+            if (e.code === 'ArrowRight') {
+                hero.classList.remove('run');
+                hero.classList.add('idle');
+                velocidade = 0;
+            }
+        });
+    </script>
+</body>
+
+</html>
