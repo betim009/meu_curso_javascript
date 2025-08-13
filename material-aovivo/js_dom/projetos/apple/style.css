@@ -42,8 +42,10 @@ main {
 
 .div-search {
   background-color: #f1f1f1;
-  height: 80px;
-  width: 80%;
+  /* ATENCAO */
+  height: 80px; 
+    /* ATENCAO */
+  min-width: 80vw;
   border-radius: 10px;
   margin-bottom: 50px;
   display: flex;
@@ -87,8 +89,10 @@ main {
   align-items: center;
   justify-content: center;
   background-color: #f1f1f1;
-  width: 80%;
-  height: 120vh;
+    /* ATENCAO */
+  width: 80vw;
+    /* ATENCAO */
+  min-height: 120vh;
   border-radius: 10px;
   margin-bottom: 50px;
 }
@@ -164,3 +168,4 @@ footer {
     color: darkgray;
   }
 }
+
