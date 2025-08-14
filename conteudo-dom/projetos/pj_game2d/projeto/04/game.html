@@ -6,33 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Game 2D - Sprite simples (CSS)</title>
   <style>
-    /* Layout mínimo */
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      min-height: 100dvh;
-      display: grid;
-      place-items: center;
-      background: #111;
-      color: #fff;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background-color: red;
     }
 
-    .row {
-      display: flex;
-      gap: 48px;
-      align-items: end;
-    }
-
-    .col {
+    .grid {
       display: grid;
-      gap: 8px;
-      justify-items: center;
-      font-size: 14px;
-      opacity: .9;
+      gap: 50px;
+      justify-content: center;
+      margin-top: 50px;
     }
 
     /* --- Sprite base --- */
@@ -45,13 +28,16 @@
       /* mantém o pixel art nítido */
       background-repeat: no-repeat;
       transform: scale(2);
-      /* "zoom" 2x */
-      transform-origin: top left;
     }
 
     /* Idle: 11 frames, spritesheet 352px de largura (11 * 32) */
     .idle {
       background-image: url('assets/Idle.png');
+      animation: anim-idle 1.1s steps(11) infinite;
+    }
+
+    .idle-yellow {
+      background-image: url('assets/IdleYellow.png');
       animation: anim-idle 1.1s steps(11) infinite;
     }
 
@@ -63,13 +49,16 @@
       to {
         background-position: -352px 0;
       }
-
-      /* 11 * 32 */
     }
 
     /* Run: 12 frames, spritesheet 384px de largura (12 * 32) */
     .run {
       background-image: url('assets/Run.png');
+      animation: anim-run 0.8s steps(12) infinite;
+    }
+
+    .run-yellow {
+      background-image: url('assets/RunYellow.png');
       animation: anim-run 0.8s steps(12) infinite;
     }
 
@@ -81,20 +70,33 @@
       to {
         background-position: -384px 0;
       }
+    }
 
-      /* 12 * 32 */
+    .hit {
+      background-image: url('assets/Hit.png');
+      animation: anim-hit 0.5s steps(7) infinite;
+    }
+
+    @keyframes anim-hit {
+      from {
+        background-position: 0 0;
+      }
+
+      to {
+        background-position: -224px 0;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="row">
-    <div class="col">
-      <div class="sprite idle" aria-label="Idle"></div>
-    </div>
-    <div class="col">
-      <div class="sprite run" aria-label="Run"></div>
-    </div>
+  <div class="grid">
+    <div class="sprite idle" aria-label="Idle"></div>
+    <div class="sprite run" aria-label="Run"></div>
+    <div class="sprite hit" aria-label="Hit"></div>
+
+    <div class="sprite idle-yellow" aria-label="Idle-Yellow"></div>
+    <div class="sprite run-yellow" aria-label="Run-Yellow"></div>
   </div>
 </body>
 
