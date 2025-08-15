@@ -8,32 +8,39 @@
   <style>
     /* --- Sprite base --- */
     .sprite {
-      width: 256px;
+      width: 64px;
       /* largura de 1 frame */
-      height: 256px;
+      height: 64px;
       /* altura de 1 frame */
       /* altura de 1 frame */
       image-rendering: pixelated;
       /* mantém o pixel art nítido */
       background-repeat: no-repeat;
-      transform: scale(0.5);
+      transform: scale(1.5);
       /* "zoom" 2x */
       transform-origin: top left;
+
+      margin-bottom: 80px;
     }
 
     /* Idle: 4 frames na horizontal, spritesheet total 1024px (4 * 256) */
     .idle-charmander {
-      background-image: url('charmander.png');
+      background-image: url('charmander2.png');
       animation: anim-idle 1.2s steps(4) infinite;
-      background-size: 1024px 256px;
+      background-size: 256px 64px;
+    }
+
+    .idle-bulbasauro {
+      background-image: url('bulbasauro.png');
+      animation: anim-idle 1.2s steps(4) infinite;
+      background-size: 256px 64px;
     }
 
     .idle-squirtle {
       background-image: url('squirtle.png');
       animation: anim-idle 1.2s steps(4) infinite;
-      background-size: 1024px 256px;
+      background-size: 256px 64px;
     }
-
 
     @keyframes anim-idle {
       from {
@@ -41,7 +48,7 @@
       }
 
       to {
-        background-position: -1024px 0;
+        background-position: -256px 0;
       }
     }
   </style>
@@ -49,6 +56,7 @@
 
 <body>
   <div class="sprite idle-charmander" aria-label="Idle"></div>
+  <div class="sprite idle-bulbasauro" aria-label="Idle"></div>
   <div class="sprite idle-squirtle" aria-label="Idle"></div>
 
 </body>

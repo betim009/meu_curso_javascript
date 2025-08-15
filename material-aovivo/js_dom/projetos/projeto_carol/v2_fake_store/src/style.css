@@ -1,0 +1,13 @@
+#div-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card {
+    width: 300px;
+    border: 1px solid black;
+    img {
+        width: 200px;
+    }
+}
