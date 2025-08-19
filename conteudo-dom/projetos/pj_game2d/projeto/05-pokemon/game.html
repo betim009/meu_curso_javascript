@@ -42,6 +42,12 @@
       background-size: 256px 64px;
     }
 
+    .idle-envolving {
+      background-image: url('envolving.png');
+      animation: anim-idle-envolving 1.2s steps(5, end) 1 forwards;
+      background-size: 384px 64px;
+    }
+
     @keyframes anim-idle {
       from {
         background-position: 0 0;
@@ -51,11 +57,21 @@
         background-position: -256px 0;
       }
     }
+
+    @keyframes anim-idle-envolving {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: -320px 0;
+      }
+    }
   </style>
 </head>
 
 <body>
   <div class="sprite idle-charmander" aria-label="Idle"></div>
+  <div class="sprite idle-envolving" aria-label="Idle"></div>
   <div class="sprite idle-bulbasauro" aria-label="Idle"></div>
   <div class="sprite idle-squirtle" aria-label="Idle"></div>
 

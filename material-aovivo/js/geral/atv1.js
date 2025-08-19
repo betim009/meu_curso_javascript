@@ -1,5 +1,22 @@
 const { usuarios, saques, depositos } = require("./data.js");
 
-// 1. Faca abaixo:
+let contador = 0;
+const usuariosInativos = [];
 
-// 2. Faca Abaixo:
+for (const element of usuarios) {
+    if (element.status === "inativo") {
+        contador += 1
+        usuariosInativos.push(element)
+    }
+}
+
+const inativos = usuarios.filter(element => element.status === "inativo");
+
+let totalSaques = 0;
+for (const element of saques) {
+    if (element.usuarioId === 2) {
+        totalSaques += element.valor
+    }
+}
+
+console.log(totalSaques)
