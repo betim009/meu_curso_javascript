@@ -1,5 +1,4 @@
-const { saques } = require("./data.js")
-
+const { saques, depositos } = require("./data.js");
 
 /*
     Cria o nome
@@ -8,17 +7,50 @@ const { saques } = require("./data.js")
     Deve Executar a funcao
 
     Console para exibir o resultado! 
-*/ 
+*/
 
 function getSaquesByUsario(id) {
-    const saquesUsuario = [];
-    for (const element of saques) {
-        if (element.usuarioId === id) {
-            saquesUsuario.push(element)
-        }
+  const saquesUsuario = [];
+  for (const element of saques) {
+    if (element.usuarioId === id) {
+      saquesUsuario.push(element);
     }
-    return saquesUsuario
-};
+  }
+  return saquesUsuario;
+}
 
-console.log(getSaquesByUsario(5))
-console.log(getSaquesByUsario(2))
+function getTotais(usuarioId) {
+  const saquesUsuario = [];
+  for (const element of saques) {
+    if (element.usuarioId === usuarioId) {
+      saquesUsuario.push(element);
+    }
+  }
+
+  const depositosUsuario = [];
+  for (const element of depositos) {
+    if (element.usuarioId === usuarioId) {
+      depositosUsuario.push(element);
+    }
+  }
+
+  let totalSaques = 0;
+  for (const element of saquesUsuario) {
+    totalSaques += element.valor;
+  }
+
+  let totalDepositos = 0;
+  for (const element of depositosUsuario) {
+    totalDepositos += element.valor;
+  }
+
+  return {
+    depositos: depositosUsuario,
+    saques: saquesUsuario,
+    saldo: totalDepositos - totalSaques,
+  };
+}
+
+console.log(getTotais(1));
+console.log(getTotais(3));
+console.log(getTotais(4));
