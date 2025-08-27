@@ -1,46 +1,44 @@
-const livros = [
+export const livros = [
     {
         id: 1,
         titulo: "O Senhor dos Anéis: A Sociedade do Anel",
         preco: 55.55,
-        categoria: "Literatura Fantástica",
+        categoria: "Fantasia",
         frete: true
     },
     {
         id: 2,
-        titulo: "Livro A",
+        titulo: "Hobbit",
         preco: 45.5,
-        categoria: "Romance",
+        categoria: "Fantasia",
         frete: false
     },
     {
         id: 3,
-        titulo: "Livro B",
+        titulo: "A bela e a fera",
         preco: 45.5,
         categoria: "Romance",
         frete: false
     },
     {
         id: 4,
-        titulo: "Livro C",
+        titulo: "1964",
         preco: 45.5,
-        categoria: "Aventura",
+        categoria: "Drama",
         frete: false
     },
     {
         id: 5,
-        titulo: "Livro D",
+        titulo: "Matrix",
         preco: 45.5,
-        categoria: "Romance",
+        categoria: "Fantasia",
         frete: false
     },
     {
         id: 6,
-        titulo: "Livro E",
+        titulo: "Harry Potter",
         preco: 45.5,
-        categoria: "Romance",
+        categoria: "Fantasia",
         frete: false
     },
-]
-
-module.exports = livros
+];
