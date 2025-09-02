@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form id="form-cadastro">
+        <label for="input-nome">Nome</label>
+        <input type="text" name="nome" id="input-nome" required>
+
+        <label for="input-email">Email</label>
+        <input type="email" name="email" id="input-email" required>
+
+        <label for="input-idade">Idade</label>
+        <input type="number" name="idade" id="input-idade" min="1" max="120">
+
+        <label for="input-telefone">Telefone</label>
+        <input type="tel" name="telefone" id="input-telefone">
+
+        <label for="input-telefone">Senha</label>
+        <input type="password" name="senha" id="input-senha">
+
+        <select name="genero" id="select-genero">
+            <option value="mas">Masculino</option>
+            <option value="fem">Femenino</option>
+        </select>
+
+        <p>Renda Familiar:</p>
+        <input type="radio" name="renda" id="renda1" value="2000" checked>
+        <label for="renda1">Até 2000</label>
+
+        <input type="radio" name="renda" id="renda2" value="5000">
+        <label for="renda2">Até 5000</label>
+
+        <input type="radio" name="renda" id="renda3" value="10000">
+        <label for="renda3">Até 10000</label>
+
+        <p>Escolarida</p>
+        <input type="checkbox" name="fundamental" id="input-fundamental" checked>
+        <label for="input-fundamental">Ensino Fundamental</label>
+
+        <input type="checkbox" name="medio" id="input-medio">
+        <label for="input-medio">Ensino Medio</label>
+
+        <input type="checkbox" name="superior" id="input-superior">
+        <label for="input-superior">Ensino Superior</label>
+
+        <input type="submit" value="Cadastrar">
+    </form>
+
+    <script>
+        const formCadastro = document.getElementById("form-cadastro");
+
+        const dados = {
+            nome: "",
+            email: "",
+            idade: "",
+
+
+        };
+
+        formCadastro.addEventListener("change", (event) => {
+            console.log(event.target.name, event.target.value);
+        });
+    </script>
+</body>
+
+</html>
