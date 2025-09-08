@@ -60,12 +60,32 @@
             nome: "",
             email: "",
             idade: "",
-
-
+            senha: "",
+            idade: "",
+            genero: "",
+            telefone: "",
+            renda: "2000",
+            fundamental: true,
+            medio: false,
+            superior: false
         };
 
         formCadastro.addEventListener("change", (event) => {
             console.log(event.target.name, event.target.value);
+            const name = event.target.name
+            const value = event.target.value
+
+            dados[name] = value
+
+            if (name === "fundamental" || name === "medio" || name === "superior") {
+                dados[name] = event.target.checked
+            }
+        });
+
+        formCadastro.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            console.log(dados)
         });
     </script>
 </body>
