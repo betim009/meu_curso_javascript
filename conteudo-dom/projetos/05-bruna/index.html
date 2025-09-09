@@ -6,31 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bazar</title>
 
+    <link rel="stylesheet" href="./src/assets/index.css">
+
+    <!-- CDN VUE -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
+<body id="app">
 
-    <div id="app">
-        <h1>{{ message }}</h1>
-        <button @click="count++">Cliquei {{ count }} vezes</button>
-    </div>
+    <header class="bg-red-600">
+        <h1>BAZAR</h1>
 
-    <script>
-        const { createApp, ref } = Vue
+        <nav>
+            <a href="./src/pages/contato/">Contato</a>
+            <a href="./src/pages/sobre/">Sobre</a>
+            <a href="./src/pages/doacoes/">Doacoes</a>
 
-        createApp({
-            setup() {
-                const message = ref("Hello Vue 3 via CDN!")
-                const count = ref(0)
-                return { message, count }
-            }
-        }).mount("#app")
+            <div>
+                <a href="./src/pages/doacao/">Doar</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div v-for="(produto, i) in produtos" :key="i">
+                <img :src="produto.thumb" class="w-20" />
+                <h3>{{ produto.produto }}</h3>
+                <p>Categoria: {{ produto.categoria }}</p>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
 
-        
-    </script>
-
-    <script type="module" src="index.mjs"></script>
+    <script type="module" src="index.mjs" defer></script>
 </body>
 
 </html>
