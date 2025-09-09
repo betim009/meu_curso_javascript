@@ -1,35 +1,40 @@
 import { produtos } from "./produtos.js";
+import { createElements } from "./scripts/createElements.js";
 
-// SELETORES
-const divResultados = document.getElementById("resultado");
-const inputPesquisar = document.getElementById("input-pesquisar");
-const btnPesquisar = document.getElementById("btn-pesquisar");
+window.addEventListener("load", () => {
+  // Seletores
+  const inputPesquisar = document.getElementById("input-pesquisar");
+  const btnPesquisar = document.getElementById("btn-pesquisar");
+  const divCarrinho = document.getElementById("carrinho");
 
-// LOOPS
-for (const element of produtos) {
-  divResultados.innerHTML += `
-        <div class="card">
-            <img src="${element.img}" />
-            <h2>${element.produto}</h2>
-            <p>${element.preco}</p>
-        </div>
-    `;
-}
+  // Variaveis Globais
+  let valorTotalCarrinho = 0;
 
-btnPesquisar.addEventListener("click", () => {
-  const valorBusca = inputPesquisar.value;
+  // Execucoes
+  createElements(produtos);
+  const btnsCarrinho = document.querySelectorAll(".btn-carrinho");
 
-  const filtro = produtos.filter((element) => element.produto === valorBusca);
+  btnsCarrinho.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      const cafe = produtos[index];
 
-  divResultados.innerHTML = "";
+      valorTotalCarrinho += cafe.preco;
 
-  for (const element of filtro) {
-    divResultados.innerHTML += `
-        <div class="card">
-            <img src="${element.img}" />
-            <h2>${element.produto}</h2>
-            <p>${element.preco}</p>
-        </div>
-    `
-  }
+      divCarrinho.innerHTML = `
+        <p>${valorTotalCarrinho}</p>
+      `;
+    });
+  });
+
+  // Eventos
+  btnPesquisar.addEventListener("click", () => {
+    const valorBusca = inputPesquisar.value;
+
+    const filtro = produtos.filter((element) =>
+      element.produto
+        .toLocaleLowerCase()
+        .includes(valorBusca.toLocaleLowerCase())
+    );
+    createElements(filtro);
+  });
 });
