@@ -14,7 +14,7 @@
         <input type="text" name="nome" id="input-nome" required>
 
         <label for="input-email">Email</label>
-        <input type="email" name="email" id="input-email" required>
+        <input type="email" name="email" id="input-email">
 
         <label for="input-idade">Idade</label>
         <input type="number" name="idade" id="input-idade" min="1" max="120">
@@ -53,9 +53,27 @@
         <input type="submit" value="Cadastrar">
     </form>
 
+    <div>
+        <ol id="lista-cadastro">
+
+        </ol>
+
+        <form hidden id="form-alterar">
+            <input type="text" id="novo-nome" placeholder="alterar nome">
+
+            <button type="submit" id="btn-alterar">Alterar</button>
+        </form>
+    </div>
+
     <script>
         const formCadastro = document.getElementById("form-cadastro");
+        const formAlterar = document.getElementById("form-alterar");
+        const listaCadastro = document.getElementById("lista-cadastro");
+        const novoNome = document.getElementById("novo-nome");
+        const btnAlterar = document.getElementById("btn-alterar");
 
+
+        const cadastros = [];
         const dados = {
             nome: "",
             email: "",
@@ -69,6 +87,7 @@
             medio: false,
             superior: false
         };
+        let nome = "";
 
         formCadastro.addEventListener("change", (event) => {
             console.log(event.target.name, event.target.value);
@@ -85,8 +104,47 @@
         formCadastro.addEventListener("submit", (event) => {
             event.preventDefault();
 
-            console.log(dados)
+            const novosDados = { ...dados };
+            cadastros.push(novosDados);
+
+            listaCadastro.innerHTML = "";
+            cadastros.forEach(element => {
+                listaCadastro.innerHTML += `
+                    <li>
+                        <p>${element.nome}</p>
+                    </li>
+                `
+            });
         });
+
+        listaCadastro.addEventListener("click", (event) => {
+            event.preventDefault()
+            const element = event.target
+            formAlterar.hidden = false
+
+            nome = element.textContent;
+        });
+
+        formAlterar.addEventListener("submit", () => {
+            event.preventDefault()
+
+            const nomeAlterar = novoNome.value;
+            console.log(nome)
+            console.log(nomeAlterar)
+
+            const encontrarIndexNome = cadastros.findIndex(element => element.nome === nome)
+
+            cadastros[encontrarIndexNome].nome = nomeAlterar
+
+            listaCadastro.innerHTML = "";
+            cadastros.forEach(element => {
+                listaCadastro.innerHTML += `
+                    <li>
+                        <p>${element.nome}</p>
+                    </li>
+                `
+            });
+        })
     </script>
 </body>
 
