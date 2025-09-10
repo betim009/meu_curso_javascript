@@ -17,25 +17,27 @@
 
 <body id="app">
 
-    <header class="bg-red-600">
-        <h1>BAZAR</h1>
-
-        <nav>
-            <a href="./src/pages/contato/">Contato</a>
-            <a href="./src/pages/sobre/">Sobre</a>
-            <a href="./src/pages/doacoes/">Doacoes</a>
-
+    <header class="flex justify-between items-center p-4 bg-red-600">
+        <h1 class="text-white font-bold text-xl">BAZAR</h1>
+        <nav class="flex space-x-4 items-center">
+            <a href="./src/pages/contato/" class="text-white hover:underline">Contato</a>
+            <a href="./src/pages/sobre/" class="text-white hover:underline">Sobre</a>
+            <a href="./src/pages/doacoes/doacoes.html" class="text-white hover:underline">Doacoes</a>
             <div>
-                <a href="./src/pages/doacao/">Doar</a>
+                <a href="./src/pages/doacao/doacao.html"
+                    class="bg-white text-red-600 font-bold py-1 px-3 rounded hover:bg-gray-100">Doar</a>
             </div>
         </nav>
     </header>
     <main>
-        <section>
-            <div v-for="(produto, i) in produtos" :key="i">
-                <img :src="produto.thumb" class="w-20" />
-                <h3>{{ produto.produto }}</h3>
-                <p>Categoria: {{ produto.categoria }}</p>
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-4 my-2">
+            <div v-for="(produto, i) in produtos" :key="i" class="bg-gray-100 p-4 rounded shadow w-[300px] mx-auto">
+                <img :src="produto.thumb" class="w-20 mb-2 rounded" />
+                <h3 class="font-bold text-lg mb-1">{{ produto.produto }}</h3>
+                <p class="text-gray-700">Categoria: {{ produto.categoria }}</p>
+                <div>
+                    <a :href="'./src/pages/solicitacao/solicitacao.html?id=' + (produto.id || i)" class="block mt-3 text-center bg-red-600 text-white font-bold py-2 px-4 rounded hover:bg-red-700">Solicitar</a>
+                </div>
             </div>
         </section>
     </main>

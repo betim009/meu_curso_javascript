@@ -53,7 +53,15 @@ const pokemons = [
 // Regras: usar a base de dados `pokemons` acima.
 // Não é permitido usar estruturas de repetição (for, while, etc.) nem funções.
 // Use apenas acesso direto aos índices do array, operadores e condicionais.
-
+let reverso = "";
+pokemons.forEach((pokemon) => {
+  for (let index = pokemon.nome.length - 1; index >= 0; index--) {
+    const letra = pokemon.nome[index];
+    reverso += letra;
+  }
+  reverso += " ";
+});
+console.log(reverso);
 // 1) Verifique se o tipo do primeiro pokemon é "agua". Se for, exiba "Primeiro é aquático".
 // 2) Compare o tipo do segundo pokemon com "fogo" e exiba "É de fogo" ou "Não é de fogo".
 // 3) Crie uma condicional que verifique se o tipo do terceiro pokemon é diferente de "eletrico".
@@ -66,8 +74,6 @@ const pokemons = [
 // 10) Se o tipo do sexto pokemon for "inseto" OU "planta", exiba "É um pokemon de tipo frágil contra fogo".
 //
 // ========================================================================
-
-
 
 // ================= EXERCÍCIOS 11–30 (Apenas LOOPS, sem condicionais) =================
 // Regras: use somente loops (`for`, `for...of`, `while`, `forEach`) para percorrer
@@ -86,6 +92,7 @@ const pokemons = [
 // 20) Construa um novo array `resumo` contendo objetos no formato `{ nome, fraqueza: desvantagem1 }`.
 // 21) Preencha um array `indices` com os valores 0,1,2,... até `pokemons.length - 1` usando um loop.
 // 22) Construa uma string `nomesReverso` com os nomes em ordem invertida, percorrendo com um loop decrescente.
+
 // 23) Crie uma matriz `tabela` onde cada linha é `[nome, vantagem1, vantagem2]`.
 // 24) Monte um array `intercalado` no formato: [nome, tipo, nome, tipo, ...] para todos os pokemons.
 // 25) Crie um novo array `duplicados` contendo cada pokemon duas vezes seguidas (A, A, B, B, C, C...).

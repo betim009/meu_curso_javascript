@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bazar</title>
+
+    <!-- CDN VUE -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body id="app">
+
+    <header class="flex justify-between items-center p-4 bg-red-600">
+        <h1 class="text-white font-bold text-xl">
+            <a href="../../../index.html">BAZAR</a>    
+        </h1>
+        <nav class="flex space-x-4 items-center">
+            <a href="./src/pages/contato/" class="text-white hover:underline">Contato</a>
+            <a href="./src/pages/sobre/" class="text-white hover:underline">Sobre</a>
+            <a href="./src/pages/doacoes/doacoes.html" class="text-white hover:underline">Doacoes</a>
+            <div>
+                <a href="./src/pages/doacao/doacao.html"
+                    class="bg-white text-red-600 font-bold py-1 px-3 rounded hover:bg-gray-100">Doar</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <form class="w-1/2 mx-auto my-2" @submit.prevent="enviarFormulario">
+                <input type="text" placeholder="digite o seu nome" class="block w-full mb-4 p-2 border rounded"
+                    v-model="form.nome">
+                <input type="email" placeholder="digite o seu email" class="block w-full mb-4 p-2 border rounded"
+                    v-model="form.email">
+                <input type="tel" placeholder="digite o seu telefone" class="block w-full mb-4 p-2 border rounded"
+                    v-model="form.telefone">
+
+                <input type="text" placeholder="renda familiar (R$)" class="block w-full mb-4 p-2 border rounded"
+                    v-model="form.renda">
+                <input type="number" min="1" step="1" placeholder="quantas pessoas na família"
+                    class="block w-full mb-4 p-2 border rounded" v-model="form.qtdPessoas">
+
+                <input type="text" value="Tijuca" disabled
+                    class="block w-full mb-4 p-2 border rounded bg-gray-200 text-gray-500 cursor-not-allowed"
+                    v-model="form.bairro">
+
+                <input type="text" placeholder="digite o seu endereço completo"
+                    class="block w-full mb-4 p-2 border rounded" v-model="form.endereco">
+
+                <textarea name="" id="" placeholder="Escreva a sua mensagem"
+                    class="block w-full mb-4 p-2 border rounded" v-model="form.mensagem"></textarea>
+
+                <input type="submit" value="Enviar"
+                    class="block w-full mb-4 p-2 border rounded bg-red-600 text-white font-bold cursor-pointer">
+            </form>
+        </section>
+    </main>
+    <footer></footer>
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    form: {
+                        produtoId: null,
+                        nome: '',
+                        email: '',
+                        telefone: '',
+                        bairro: 'Tijuca',
+                        endereco: '',
+                        renda: '',
+                        qtdPessoas: "",
+                        mensagem: '',
+                    }
+                }
+            },
+            mounted() {
+                const params = new URLSearchParams(window.location.search);
+                this.form.produtoId = params.get('id');
+            },
+            methods: {
+                enviarFormulario() {
+                    // Monte um payload com todos os dados, incluindo o id da URL
+                    const payload = { ...this.form };
+                    console.log('Dados da solicitação:', payload);
+                    alert('Solicitação registrada no console com ID do produto: ' + (this.form.produtoId || 'não informado'));
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+
+</html>
