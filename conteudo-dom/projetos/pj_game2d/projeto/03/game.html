@@ -1,89 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game 2D — simples</title>
     <style>
-    .personagem {
-      width: 32px; /* largura de 1 frame */
-      height: 32px; /* altura de 1 frame */
-      background: url('assets/Run.png') no-repeat;
-      animation: correr 1s steps(12) infinite;
-      position: absolute;
-      left: 0;
-      top: 0;
-      animation-play-state: paused; /* inicia parado no frame 1 */
-      image-rendering: pixelated;   /* opcional: deixa estilo retrô nítido */
-    }
-
-    .game-area {
-      position: relative;
-      width: 100%;
-      height: 200px; /* área de jogo simples */
-      border: 1px dashed #ccc;
-      overflow: hidden;
-    }
-
-    @keyframes correr {
-      from { background-position: 0 0; }
-      to { background-position: -384px 0; } /* 32px * 12 frames */
-    }
-  </style>
-</head>
-<body>
-    <h2>Pagina Game</h2>
-    <div class="game-area">
-      <div class="personagem" id="player"></div>
-    </div>
-<script>
-    (function () {
-      const player = document.getElementById('player');
-
-      // Estado
-      let movingRight = false;
-      let x = 0;               // posição horizontal
-      const speed = 2;         // pixels por frame
-      let rafId = null;
-
-      // Garante que inicia no primeiro frame (pausado)
-      player.style.animationPlayState = 'paused';
-      player.style.backgroundPosition = '0 0';
-      player.style.transform = 'translateX(0px)';
-
-      function step() {
-        if (!movingRight) {
-          rafId = null;
-          return; // para o loop quando não estiver movendo
+        /* Tela cheia */
+        html,
+        body {
+            height: 100%;
         }
-        x += speed;
-        player.style.transform = `translateX(${x}px)`;
-        rafId = requestAnimationFrame(step);
-      }
 
-      // Inicia movimento/animacao no keydown da seta para a direita
-      window.addEventListener('keydown', (e) => {
-        if (e.code === 'ArrowRight') {
-          e.preventDefault();
-          if (!movingRight) {
-            movingRight = true;
-            player.style.animationPlayState = 'running';
-            if (rafId === null) {
-              rafId = requestAnimationFrame(step);
+        body {
+            margin: 0;
+            background: #111;
+        }
+
+        #stage {
+            width: 100vw;
+            height: 100vh;
+            background: #222;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Sprite básico (32x32) */
+        .sprite {
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            bottom: -0px;
+            left: 0;
+            image-rendering: pixelated;
+            /* nítido */
+            background-repeat: no-repeat;
+            transform-origin: bottom left;
+        }
+
+        /* Idle: 11 frames => 11*32 = 352px */
+        .idle-humano {
+            background-image: url('assets/Idle.png');
+            animation: idle 1.1s steps(11) infinite;
+        }
+
+        .idle-yellow {
+            background-image: url('assets/IdleYellow.png');
+            animation: idle 1.1s steps(11) infinite;
+        }
+
+        @keyframes idle {
+            from {
+                background-position: 0 0;
             }
-          }
-        }
-      });
 
-      // Pausa movimento/animacao no keyup
-      window.addEventListener('keyup', (e) => {
-        if (e.code === 'ArrowRight') {
-          e.preventDefault();
-          movingRight = false;
-          player.style.animationPlayState = 'paused';
+            to {
+                background-position: -352px 0;
+            }
         }
-      });
-    })();
-  </script>
+
+        /* Run: 12 frames => 12*32 = 384px */
+        .run-humano {
+            background-image: url('assets/Run.png');
+            animation: run 0.8s steps(12) infinite;
+        }
+
+        .run-yellow {
+            background-image: url('assets/RunYellow.png');
+            animation: run 0.8s steps(12) infinite;
+        }
+
+        @keyframes run {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: -384px 0;
+            }
+        }
+
+        #box {
+            width: 64px;
+            height: 64px;
+            position: absolute;
+            bottom: -10px;
+            right: 1000px;
+            background-image: url('assets/box.png');
+            image-rendering: pixelated;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="stage">
+        <div id="hero" class="sprite" aria-label="heroi"></div>
+        <div id="box"></div>
+    </div>
+
+    <script>
+        const buscarHeroi = localStorage.getItem("hero")
+        let idle = ""
+        let run = ""
+
+        if (buscarHeroi === "humano") {
+            const hero = document.getElementById('hero');
+            hero.classList.add("idle-humano")
+            idle = "idle-humano"
+            run = "run-humano"
+        } else if (buscarHeroi === "yellow") {
+            const hero = document.getElementById('hero');
+            hero.classList.add("idle-yellow")
+            idle = "idle-yellow"
+            run = "run-yellow"
+        }
+
+        // Estado mínimo
+        const hero = document.getElementById('hero');
+        const box = document.getElementById('box');
+        let x = 50;           // posição horizontal
+        let velocidade = 0;   // 0 parado; >0 andando
+        const SCALE = 2;
+
+        // Box position (left edge)
+        const boxRight = 1000; // right offset in px
+        const boxWidth = 32 * SCALE; // 64px
+        const stageWidth = window.innerWidth;
+        const boxLeft = stageWidth - boxRight - boxWidth;
+
+        // Loop simples só para mover (animação é CSS)
+        function atualizar() {
+            let nextX = x + velocidade;
+            if (nextX + 32 * SCALE > (boxLeft + 18)) {
+                nextX = boxLeft - 32 * SCALE;
+                console.log("BOX", nextX)
+            }
+            x = nextX;
+            console.log(x);
+            hero.style.transform = `translateX(${x}px) scale(${SCALE})`;
+            requestAnimationFrame(atualizar);
+        }
+        requestAnimationFrame(atualizar); // inicia
+
+        // Teclas: seta para a direita liga/desliga correr
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'ArrowRight') {
+                hero.classList.remove(idle);
+                hero.classList.add(run);
+                velocidade = 2;
+            }
+        });
+        document.addEventListener('keyup', (e) => {
+            if (e.code === 'ArrowRight') {
+                hero.classList.remove(run);
+                hero.classList.add(idle);
+                velocidade = 0;
+            }
+        });
+    </script>
 </body>
+
 </html>

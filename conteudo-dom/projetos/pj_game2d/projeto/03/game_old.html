@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .personagem {
+      width: 32px; /* largura de 1 frame */
+      height: 32px; /* altura de 1 frame */
+      background: url('assets/Run.png') no-repeat;
+      animation: correr 1s steps(12) infinite;
+      position: absolute;
+      left: 0;
+      top: 0;
+      animation-play-state: paused; /* inicia parado no frame 1 */
+      image-rendering: pixelated;   /* opcional: deixa estilo retrô nítido */
+    }
+
+    .game-area {
+      position: relative;
+      width: 100%;
+      height: 200px; /* área de jogo simples */
+      border: 1px dashed #ccc;
+      overflow: hidden;
+    }
+
+    @keyframes correr {
+      from { background-position: 0 0; }
+      to { background-position: -384px 0; } /* 32px * 12 frames */
+    }
+  </style>
+</head>
+<body>
+    <h2>Pagina Game</h2>
+    <div class="game-area">
+      <div class="personagem" id="player"></div>
+    </div>
+<script>
+    (function () {
+      const player = document.getElementById('player');
+
+      // Estado
+      let movingRight = false;
+      let x = 0;               // posição horizontal
+      const speed = 2;         // pixels por frame
+      let rafId = null;
+
+      // Garante que inicia no primeiro frame (pausado)
+      player.style.animationPlayState = 'paused';
+      player.style.backgroundPosition = '0 0';
+      player.style.transform = 'translateX(0px)';
+
+      function step() {
+        if (!movingRight) {
+          rafId = null;
+          return; // para o loop quando não estiver movendo
+        }
+        x += speed;
+        player.style.transform = `translateX(${x}px)`;
+        rafId = requestAnimationFrame(step);
+      }
+
+      // Inicia movimento/animacao no keydown da seta para a direita
+      window.addEventListener('keydown', (e) => {
+        if (e.code === 'ArrowRight') {
+          e.preventDefault();
+          if (!movingRight) {
+            movingRight = true;
+            player.style.animationPlayState = 'running';
+            if (rafId === null) {
+              rafId = requestAnimationFrame(step);
+            }
+          }
+        }
+      });
+
+      // Pausa movimento/animacao no keyup
+      window.addEventListener('keyup', (e) => {
+        if (e.code === 'ArrowRight') {
+          e.preventDefault();
+          movingRight = false;
+          player.style.animationPlayState = 'paused';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
