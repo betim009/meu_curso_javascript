@@ -12,19 +12,27 @@ window.addEventListener("load", () => {
 
   // Execucoes
   createElements(produtos);
-  const btnsCarrinho = document.querySelectorAll(".btn-carrinho");
+  const btnsCarrinho = document.querySelectorAll(".btn-carrinho"); // retorna uma lista de btns
+  const divsCards = document.querySelectorAll(".card"); // retorna uma lista de btns
 
   btnsCarrinho.forEach((btn, index) => {
     btn.addEventListener("click", () => {
-      const cafe = produtos[index];
+      const produto = produtos[index];
 
-      valorTotalCarrinho += cafe.preco;
+      valorTotalCarrinho += produto.preco;
 
       divCarrinho.innerHTML = `
         <p>${valorTotalCarrinho}</p>
       `;
     });
   });
+
+  divsCards.forEach((card, index) => {
+    card.addEventListener("click", () => {
+      const produto = produtos[index];
+      window.location.href = `produto.html?name=${produto.produto}`
+    })
+  })
 
   // Eventos
   btnPesquisar.addEventListener("click", () => {
