@@ -13,6 +13,16 @@ const btnBuscar = document.getElementById("btn-buscar");
 window.addEventListener("load", async () => {
   const users = await getUsers();
   createUsers(users);
+  const trsUsers = document.querySelectorAll(".tr-user"); // Retorna ARRAY
+
+  trsUsers.forEach((tr, index) => {
+    tr.addEventListener("click", () => {
+      const nome = tr.childNodes[1].textContent
+      alert()
+      // window.location.href = `src/pages/user/index.html?nome=${nome}`
+    })
+  });
+  
 });
 
 btnBuscar.addEventListener("click", async () => {
