@@ -66,85 +66,101 @@
     </div>
 
     <script>
-        const formCadastro = document.getElementById("form-cadastro");
-        const formAlterar = document.getElementById("form-alterar");
-        const listaCadastro = document.getElementById("lista-cadastro");
-        const novoNome = document.getElementById("novo-nome");
-        const btnAlterar = document.getElementById("btn-alterar");
+        window.addEventListener("load", () => {
+            const formCadastro = document.getElementById("form-cadastro");
+            const formAlterar = document.getElementById("form-alterar");
+            const listaCadastro = document.getElementById("lista-cadastro");
+            const novoNome = document.getElementById("novo-nome");
+            const btnAlterar = document.getElementById("btn-alterar");
 
+            let lsCadastros = []
+            const dados = {
+                nome: "",
+                email: "",
+                idade: "",
+                senha: "",
+                idade: "",
+                genero: "",
+                telefone: "",
+                renda: "2000",
+                fundamental: true,
+                medio: false,
+                superior: false
+            };
+            let nome = "";
 
-        const cadastros = [];
-        const dados = {
-            nome: "",
-            email: "",
-            idade: "",
-            senha: "",
-            idade: "",
-            genero: "",
-            telefone: "",
-            renda: "2000",
-            fundamental: true,
-            medio: false,
-            superior: false
-        };
-        let nome = "";
+            if (localStorage.getItem("lsCadastros")) {
+                lsCadastros = JSON.parse(localStorage.getItem("lsCadastros"))
 
-        formCadastro.addEventListener("change", (event) => {
-            console.log(event.target.name, event.target.value);
-            const name = event.target.name
-            const value = event.target.value
-
-            dados[name] = value
-
-            if (name === "fundamental" || name === "medio" || name === "superior") {
-                dados[name] = event.target.checked
+                listaCadastro.innerHTML = "";
+                lsCadastros.forEach(element => {
+                    listaCadastro.innerHTML += `
+                    <li>
+                        <p>${element.nome}</p>
+                    </li>
+                `
+                });
             }
-        });
 
-        formCadastro.addEventListener("submit", (event) => {
-            event.preventDefault();
+            formCadastro.addEventListener("change", (event) => {
+                console.log(event.target.name, event.target.value);
+                const name = event.target.name
+                const value = event.target.value
 
-            const novosDados = { ...dados };
-            cadastros.push(novosDados);
+                dados[name] = value
 
-            listaCadastro.innerHTML = "";
-            cadastros.forEach(element => {
-                listaCadastro.innerHTML += `
+                if (name === "fundamental" || name === "medio" || name === "superior") {
+                    dados[name] = event.target.checked
+                }
+            });
+
+            formCadastro.addEventListener("submit", (event) => {
+                const novosDados = { ...dados };
+                lsCadastros.push(novosDados)
+                localStorage.setItem("lsCadastros", JSON.stringify(lsCadastros))
+
+                if (localStorage.getItem("lsCadastros")) {
+                    const lsCadastros = JSON.parse(localStorage.getItem("lsCadastros"))
+
+                    listaCadastro.innerHTML = "";
+                    lsCadastros.forEach(element => {
+                        listaCadastro.innerHTML += `
                     <li>
                         <p>${element.nome}</p>
                     </li>
                 `
+                    });
+                }
             });
-        });
 
-        listaCadastro.addEventListener("click", (event) => {
-            event.preventDefault()
-            const element = event.target
-            formAlterar.hidden = false
+            listaCadastro.addEventListener("click", (event) => {
+                event.preventDefault()
+                const element = event.target
+                formAlterar.hidden = false
 
-            nome = element.textContent;
-        });
+                nome = element.textContent;
+            });
 
-        formAlterar.addEventListener("submit", () => {
-            event.preventDefault()
+            formAlterar.addEventListener("submit", () => {
+                const nomeAlterar = novoNome.value; // Variavel que coleta o novo valor
+                if (localStorage.getItem("lsCadastros")) { // Verificar se existe o localStorage lsCadastros
+                    const lsCadastros = JSON.parse(localStorage.getItem("lsCadastros")); // Resgatmos o lsCadastros
+                    const encontrarIndexNome = lsCadastros.findIndex(element => element.nome === nome) // Vai encontrar o index, de quem desejamos alterar
+                    lsCadastros[encontrarIndexNome].nome = nomeAlterar // de fato altera
 
-            const nomeAlterar = novoNome.value;
-            console.log(nome)
-            console.log(nomeAlterar)
-
-            const encontrarIndexNome = cadastros.findIndex(element => element.nome === nome)
-
-            cadastros[encontrarIndexNome].nome = nomeAlterar
-
-            listaCadastro.innerHTML = "";
-            cadastros.forEach(element => {
-                listaCadastro.innerHTML += `
+                    localStorage.setItem("lsCadastros", JSON.stringify(lsCadastros)) // Envia a nova base de dados para o localStorage
+                    listaCadastro.innerHTML = "";
+                    lsCadastros.forEach(element => {
+                        listaCadastro.innerHTML += `
                     <li>
                         <p>${element.nome}</p>
                     </li>
                 `
-            });
-        })
+                    });
+                }
+            })
+
+        });
     </script>
 </body>
 
