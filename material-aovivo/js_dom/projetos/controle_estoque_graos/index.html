@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .coluna {
+            display: grid;
+            gap: 10px;
+
+            input {
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#">Ir para Estoque</a>
+    </nav>
+
+
+    <form id="formularioCadastro">
+        <div class="coluna">
+            <input type="text" placeholder="nome" name="nome" required>
+            <input type="text" placeholder="valor unidade" name="valorUnidade" required>
+            <input type="text" placeholder="quantidade" name="quantidade" required>
+            <input type="text" placeholder="marca" name="marca" required>
+        </div>
+
+
+        <input type="radio" name="unidadeMedida" id="gramas" value="gramas" checked>
+        <label for="gramas">Gramas</label>
+
+        <input type="radio" name="unidadeMedida" id="kilogramas" value="kilogramas">
+        <label for="kilogramas">Kilogramas</label>
+
+        <div class="coluna">
+            <input type="text" placeholder="Valor da unidade de medida" name="valorUnidadeMedida" required>
+            <input type="submit" value="Cadastrar">
+        </div>
+
+    </form>
+
+
+    <script>
+        window.addEventListener("load", () => {
+            const formularioCadastro = document.getElementById("formularioCadastro");
+
+            const cadastro = {
+                nome: "",
+                valorUnidade: "",
+                quantidade: "",
+                marca: "",
+                unidadeMedida: "gramas",
+                valorUnidadeMedida: ""
+            };
+
+            formularioCadastro.addEventListener("change", (event) => {
+                event.preventDefault(); // Evitar da pagina ser recarregada.
+                const { name, value } = event.target;
+                cadastro[name] = value; // Esta passando para o objeto o valor digitado.
+            });
+
+            formularioCadastro.addEventListener("submit", (event) => {
+                if (localStorage.getItem("lsEstoque")) { // Se existe dados no LocalStorage
+                    const lsEstoque = JSON.parse(localStorage.getItem("lsEstoque")); // Resgata
+                    lsEstoque.push(cadastro); // Insere
+                    localStorage.setItem("lsEstoque", JSON.stringify(lsEstoque)); // Envia
+                } else { // Nao existe
+                    const lsEstoque = []; // Vamos iniciar uma base de dados
+                    lsEstoque.push(cadastro); // Cadastrar
+                    localStorage.setItem("lsEstoque", JSON.stringify(lsEstoque)); // Enviar para LocalStorage
+                };
+            });
+
+        });
+    </script>
+</body>
+
+</html>
