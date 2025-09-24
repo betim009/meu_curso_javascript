@@ -30,7 +30,7 @@
             width: 32px;
             height: 32px;
             position: absolute;
-            bottom: -0px;
+            bottom: 0;
             left: 0;
             image-rendering: pixelated;
             /* nítido */
@@ -117,12 +117,19 @@
             run = "run-yellow"
         }
 
-        // Estado mínimo
+        // Estado Horizontal do personagem
         const hero = document.getElementById('hero');
         const box = document.getElementById('box');
         let x = 50;           // posição horizontal
         let velocidade = 0;   // 0 parado; >0 andando
         const SCALE = 2;
+
+        // Estado vertical do personagem
+        let y = 0;             // posição vertical (0 = chão)
+        let velocidadeY = 0;   // velocidade vertical
+        const gravidade = 0.5; // força que puxa para baixo
+        const puloForca = -8; // força do pulo
+        let pulando = false;
 
         // Box position (left edge)
         const boxRight = 1000; // right offset in px
@@ -138,20 +145,43 @@
                 console.log("BOX", nextX)
             }
             x = nextX;
-            console.log(x);
-            hero.style.transform = `translateX(${x}px) scale(${SCALE})`;
+
+            // gravidade + pulo
+            if (pulando) {
+                y += velocidadeY;
+                velocidadeY += gravidade;
+                if (y > 0) { // voltou ao chão
+                    y = 0;
+                    pulando = false;
+                    velocidadeY = 0;
+                }
+            }
+
+            hero.style.transform = `translate(${x}px, ${y}px) scale(${SCALE})`;
             requestAnimationFrame(atualizar);
         }
-        requestAnimationFrame(atualizar); // inicia
+        requestAnimationFrame(atualizar);
 
         // Teclas: seta para a direita liga/desliga correr
         document.addEventListener('keydown', (e) => {
             if (e.code === 'ArrowRight') {
+                e.preventDefault();
                 hero.classList.remove(idle);
                 hero.classList.add(run);
                 velocidade = 2;
             }
         });
+
+        // Espaço para pular e Seta up
+        document.addEventListener('keydown', (e) => {
+            console.log(e)
+            if ((e.code === 'ArrowUp' && !pulando) || (e.code === 'Space' && !pulando)) {
+                e.preventDefault();
+                pulando = true;
+                velocidadeY = puloForca;
+            }
+        });
+
         document.addEventListener('keyup', (e) => {
             if (e.code === 'ArrowRight') {
                 hero.classList.remove(run);
