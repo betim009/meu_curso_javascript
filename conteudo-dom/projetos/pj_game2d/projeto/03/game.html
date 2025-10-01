@@ -128,36 +128,89 @@
         let y = 0;             // posição vertical (0 = chão)
         let velocidadeY = 0;   // velocidade vertical
         const gravidade = 0.5; // força que puxa para baixo
-        const puloForca = -8; // força do pulo
+        const puloForca = -8;  // força do pulo
         let pulando = false;
 
         // Box position (left edge)
-        const boxRight = 1000; // right offset in px
-        const boxWidth = 32 * SCALE; // 64px
+        const boxRight = 1000;            // deslocamento da direita em px (CSS: right: 1000px)
+        const boxWidth = 32 * SCALE;      // 64px (coerente com CSS)
         const stageWidth = window.innerWidth;
         const boxLeft = stageWidth - boxRight - boxWidth;
 
+        // Auxiliares verticais da box (para topo)
+        const boxHeight = parseInt(getComputedStyle(box).height, 10);           // 64
+        const boxBottomOffset = parseInt(getComputedStyle(box).bottom, 10) || 0; // -10
+        // Altura do topo da box acima da linha do chão (chão = 0). Ex.: 64 + (-10) = 54
+        const boxTopHeight = boxHeight + boxBottomOffset;
+
         // Loop simples só para mover (animação é CSS)
         function atualizar() {
+            // Projeções
             let nextX = x + velocidade;
-            if (nextX + 32 * SCALE > (boxLeft + 18)) {
-                nextX = boxLeft - 32 * SCALE;
-                console.log("BOX", nextX)
-            }
-            x = nextX;
+            let nextY = y;
 
-            // gravidade + pulo
+            const heroWidth = 32 * SCALE;
+            const heroHeight = 32 * SCALE;
+            const boxRightEdge = boxLeft + boxWidth;
+
+            // ----- GRAVIDADE / PULO (sempre que pulando) -----
             if (pulando) {
-                y += velocidadeY;
-                velocidadeY += gravidade;
-                if (y > 0) { // voltou ao chão
-                    y = 0;
-                    pulando = false;
-                    velocidadeY = 0;
-                }
+                nextY += velocidadeY;     // move vertical
+                velocidadeY += gravidade; // acelera para baixo
             }
 
+            // ----- ATERRISSAGEM NO TOPO DA BOX -----
+            // Checa se há sobreposição horizontal com a box
+            const overlapHorizontal = (nextX + heroWidth) > boxLeft && nextX < boxRightEdge;
+
+            // "Altura" do pé do herói acima do chão (chão = 0). Como y sobe negativo, usamos -y.
+            const heroBottomAltAntes = -y;
+            const heroBottomAltDepois = -nextY;
+
+            // Condição de cruzamento do topo: vinha de cima e está descendo, cruzando a cota do topo
+            if (
+                overlapHorizontal &&
+                velocidadeY > 0 &&              // está caindo
+                heroBottomAltAntes > boxTopHeight &&
+                heroBottomAltDepois <= boxTopHeight
+            ) {
+                // Cola no topo da caixa
+                nextY = -boxTopHeight;
+                pulando = false;
+                velocidadeY = 0;
+            }
+
+            // ----- COLISÃO LATERAL (APENAS SE NÃO ESTIVER ACIMA DO TOPO) -----
+            if (
+                overlapHorizontal &&
+                heroBottomAltDepois < boxTopHeight - 0.01 && // bloqueia só quando está ABAIXO do topo
+                velocidade > 0
+            ) {
+                nextX = boxLeft - heroWidth;
+            }
+
+            // ----- CHÃO -----
+            if (nextY > 0) { // passou do chão
+                nextY = 0;
+                pulando = false;
+                velocidadeY = 0;
+            }
+
+            // ----- DESPENCAR DA BORDA DA BOX -----
+            // Se não está pulando, mas está acima do chão e NÃO há apoio (fora da projeção da box),
+            // ativa a queda.
+            const sobreTopoDaBox = overlapHorizontal && Math.abs((-nextY) - boxTopHeight) < 0.5;
+            if (!pulando && nextY < 0 && !sobreTopoDaBox) {
+                pulando = true; // começa a cair
+                // garante uma queda suave caso estivesse "preso"
+                if (velocidadeY <= 0) velocidadeY = 0.1;
+            }
+
+            // Atualiza posição e desenha
+            x = nextX;
+            y = nextY;
             hero.style.transform = `translate(${x}px, ${y}px) scale(${SCALE})`;
+
             requestAnimationFrame(atualizar);
         }
         requestAnimationFrame(atualizar);
@@ -174,8 +227,7 @@
 
         // Espaço para pular e Seta up
         document.addEventListener('keydown', (e) => {
-            console.log(e)
-            if ((e.code === 'ArrowUp' && !pulando) || (e.code === 'Space' && !pulando)) {
+            if ((e.code === 'ArrowUp' || e.code === 'Space') && !pulando) {
                 e.preventDefault();
                 pulando = true;
                 velocidadeY = puloForca;
