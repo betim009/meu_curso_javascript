@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="resultado">
+
+    </div>
+    
+
+
+    <script>
+
+        async function getApi() {
+            const divResultado = document.getElementById("resultado")
+
+            const url = "https://68dd8cfcd7b591b4b78cc583.mockapi.io/graos";
+            const req = await fetch(url);
+            const res = await req.json();
+            
+            res.forEach(element => {
+                divResultado.innerHTML += `
+                    <h2>${element.name}</h2>
+                `
+            });
+        }
+
+        getApi()
+
+    </script>
+</body>
+</html>
