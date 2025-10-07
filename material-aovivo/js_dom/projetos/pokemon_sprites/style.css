@@ -1,0 +1,28 @@
+img {
+  zoom: 1.5;
+}
+
+.bar-hp {
+    width: 100px;
+    background-color: red;
+    height: 14px;
+    border-radius: 8px;
+}
+
+.hp {
+    font-weight: bold;
+    font-size: 12px;
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+}
+
+
+.golpes {
+  display: grid;
+  gap: 10px;
+
+  button {
+    width: 100px;
+  }
+}
