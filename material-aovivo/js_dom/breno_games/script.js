@@ -1,47 +1,21 @@
-import { createElements } from "./createElements.js";
+import { getApi } from "./src/services/fetchApi.js";
+import { createElements } from "./src/utils/createElements.js";
 
-window.addEventListener("load", () => {
-  // Seletores
-  const inputGame = document.getElementById("input-game");
-  const inputBrand = document.getElementById("input-brand");
-  const inputPrice = document.getElementById("input-price");
-  const inputCategory = document.getElementById("input-category");
-  const formCadastro = document.getElementById("form-cadastro");
+window.addEventListener("load", async () => {
   const displayGames = document.getElementById("display-games");
-  //outro seletor
 
-  // Variaveis globais
-  const gamesMock = [
-    {
-      game: "Batman",
-      brand: "DC",
-      price: "$30,00",
-      category: "Action",
-    },
-    {
-      game: "Superman",
-      brand: "DC",
-      price: "$20,00",
-      category: "Action",
-    },
-  ];
+  const games = await getApi(); // fetch do get dos dados
 
-  // Functions
-  createElements(displayGames, gamesMock)
+  createElements(displayGames, games); // Criando os elementos
+  const btnsDelete = document.querySelectorAll(".btn-delete");
 
-  // Eventos
-  formCadastro.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const data = {
-      game: inputGame.value,
-      brand: inputBrand.value,
-      price: inputPrice.value,
-      category: inputCategory.value,
-    };
-
-    gamesMock.push(data);
-
-    createElements(displayGames, gamesMock)
+  btnsDelete.forEach((btn, index) => {
+    btn.addEventListener("click", async () => {
+      const enpoint = `https://68e7bbac10e3f82fbf407d91.mockapi.io/games/${games[index].id}`;
+      await fetch(enpoint, {
+        method: "DELETE",
+      });
+      window.location.reload();
+    });
   });
 });
