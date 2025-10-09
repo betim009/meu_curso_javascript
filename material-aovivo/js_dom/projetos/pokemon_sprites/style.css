@@ -2,6 +2,18 @@ img {
   zoom: 1.5;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.pokemons {
+  img {
+    width: 50px;
+    cursor: pointer;
+  }
+}
+
 .bar-hp {
     width: 100px;
     background-color: red;

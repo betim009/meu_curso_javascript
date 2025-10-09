@@ -11,41 +11,100 @@
 
 <body>
 
-    <h5>Charizard</h5>
-    <div>
+    <div class="grid">
+        <div class="pokemon">
+            <div class="pokemons">
+                <img 
+                    id="gengar" 
+                    src="https://img.pokemondb.net/sprites/x-y/normal/gengar.png" 
+                    alt="Gengar"
+                >
+                
+                <img 
+                    id="dragonite"
+                    src="https://img.pokemondb.net/sprites/sun-moon/normal/dragonite.png" 
+                    alt="Dragonite"
+                >
 
-        <div class="bar-hp">
-            <p class="hp">78 HP</p>
+                <img src="https://img.pokemondb.net/sprites/scarlet-violet/normal/metagross.png" alt="Metagross">
+                <img src="https://img.pokemondb.net/sprites/sun-moon/shiny/gyarados-f.png" alt="Gyarados">
+                <img src="https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/sceptile.png"
+                    alt="Sceptile">
+                <img src="https://img.pokemondb.net/sprites/scarlet-violet/normal/charizard.png" alt="Charizard">
+            </div>
+
+
+            <h5 id="nome-pokemon">Charizard</h5>
+            <div>
+
+                <div class="bar-hp">
+                    <p class="hp">78 HP</p>
+                </div>
+            </div>
+            <img id="img-pokemon" src="https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif" alt="Charizard">
+
+            <div class="golpes">
+                <div>
+                    <label for="golpe1">Dragon Claw</label>
+                    <input type="radio" name="golpe" id="golpe1">
+                </div>
+
+                <div>
+                    <label for="golpe2">Ember</label>
+                    <input type="radio" name="golpe" id="golpe2">
+                </div>
+
+                <div>
+                    <label for="golpe3">Fire Fang</label>
+                    <input type="radio" name="golpe" id="golpe3">
+                </div>
+
+                <div>
+                    <label for="golpe4">Slash</label>
+                    <input type="radio" name="golpe" id="golpe4">
+                </div>
+                <button>Atacar</button>
+            </div>
+        </div>
+
+
+        <div class="pokemon">
+            <h5>Charizard</h5>
+            <div>
+
+                <div class="bar-hp">
+                    <p class="hp">78 HP</p>
+                </div>
+            </div>
+            <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif" alt="Charizard">
+
+            <div class="golpes">
+                <div>
+                    <label for="golpe1">Dragon Claw</label>
+                    <input type="radio" name="golpe" id="golpe1">
+                </div>
+
+                <div>
+                    <label for="golpe2">Ember</label>
+                    <input type="radio" name="golpe" id="golpe2">
+                </div>
+
+                <div>
+                    <label for="golpe3">Fire Fang</label>
+                    <input type="radio" name="golpe" id="golpe3">
+                </div>
+
+                <div>
+                    <label for="golpe4">Slash</label>
+                    <input type="radio" name="golpe" id="golpe4">
+                </div>
+                <button>Atacar</button>
+            </div>
         </div>
     </div>
-    <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif" alt="Charizard">
 
-    <div class="golpes">
-        <div>
-            <label for="golpe1">Dragon Claw</label>
-            <input type="radio" name="golpe" id="golpe1">
-        </div>
 
-        <div>
-            <label for="golpe2">Ember</label>
-            <input type="radio" name="golpe" id="golpe2">
-        </div>
-
-        <div>
-            <label for="golpe3">Fire Fang</label>
-            <input type="radio" name="golpe" id="golpe3">
-        </div>
-
-        <div>
-            <label for="golpe4">Slash</label>
-            <input type="radio" name="golpe" id="golpe4">
-        </div>
-        <button>Atacar</button>
-    </div>
-
-    <h5>Golduck</h5>
-    <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/golduck.gif" alt="Golduck">
-
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>
