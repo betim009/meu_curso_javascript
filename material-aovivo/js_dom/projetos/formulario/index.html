@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h2,
+        p {
+            color: black;
+            font-size: 20px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Ola mundo</h2>
+    <p>Ola mundo</p>
+
+    <!-- Dinamico com SEMANTICA -->
+    <form id="form">
+        <input type="email" name="email" id="a">
+        <input type="password" name="password" id="b">
+        <input type="tel" name="tel" id="c">
+        <input type="text" name="city" id="d">
+        <input type="text" name="country" id="e">
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <br>
+
+    <!-- Estatico sem SEMANTICA -->
+    <input type="email" name="" id="email">
+    <input type="password" name="" id="password">
+
+    <button id="btnEnviar">Enviar</button>
+
+
+
+
+
+   
+
+    <script>
+        // const inputEmail = document.getElementById("email");
+        // const inputPassword = document.getElementById("password");
+        // const btnEnviar = document.getElementById("btnEnviar");
+
+        // const dataEstatico = {
+        //     "email": "",
+        //     "password": "",
+        // };
+
+        // btnEnviar.addEventListener("click", () => {
+        //     dataEstatico.email = inputEmail.value;
+        //     dataEstatico.password = inputPassword.value;
+
+        //     console.log(dataEstatico);
+        // });
+
+        const myForm = document.getElementById("form");
+        const data = {
+            "email": "",
+            "password": "",
+            "tel": "",
+            "city": "",
+            "country": ""
+        };
+
+        myForm.addEventListener("change", (event) => {
+            const nameInput = event.target.name;
+            const valueInput = event.target.value;
+
+            data[nameInput] = valueInput;
+            console.log(data)
+        });
+    </script>
+</body>
+
+</html>
