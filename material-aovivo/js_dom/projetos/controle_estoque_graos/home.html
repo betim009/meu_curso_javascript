@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="text-prompt">Envia sua mensagem:</label>
+    <textarea name="" id="text-prompt">
+    </textarea>
+    <button id="btn-prompt">Enviar</button>
+
+    <div id="display">
+
+    </div>
+
+    <script>
+        const textArea = document.getElementById("text-prompt");
+        const btn = document.getElementById("btn-prompt");
+        const display = document.getElementById("display");
+
+            const apiKey = "AIzaSyBu6hfzm_Fqn9ZSL1ITwW7cIApOeZzG6us";
+
+            async function getResposta(prompt) {
+                const res = await fetch(
+                    "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + apiKey,
+                    {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            contents: [{ parts: [{ text: prompt }] }]
+                        })
+                    }
+                );
+
+                const data = await res.json();
+                return data.candidates[0].content.parts[0];
+                // console.log(data.candidates[0].content.parts[0].text);
+            }
+
+        btn.addEventListener("click", async () => {
+            const result = await getResposta(textArea.value);
+            display.innerHTML += `
+                <p>${result}</p>
+            `
+        });
+        // getResposta("Qual o melhor filme de comedia em 2025?");
+    </script>
+</body>
+
+</html>
