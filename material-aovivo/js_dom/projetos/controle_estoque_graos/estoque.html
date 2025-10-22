@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .cafe {
+            border: 1px solid black;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        .btn-alterar {
+            border: none;
+            background-color: darkcyan;
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 400;
+            font-family: sans-serif;
+        }
+
+        .btn-excluir {
+            border: none;
+            background-color: red;
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 400;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="estoque.html">Estoque</a>
+        <a href="cadastro.html">Cadastro</a>
+    </header>
+
+    <div id="resultado">
+
+    </div>
+
+
+
+    <script>
+
+        async function main() {
+            const divResultado = document.getElementById("resultado")
+
+            const url = "https://68dd8cfcd7b591b4b78cc583.mockapi.io/graos";
+            const req = await fetch(url);
+            const res = await req.json();
+
+            res.forEach(element => {
+                divResultado.innerHTML += `
+                    <div class="cafe">
+                        <h2>${element.name}</h2>
+                        <p>R$ ${element.price}</p>
+                        <div> 
+                            <button class="btn-alterar">Alterar</button>    
+                            <button class="btn-excluir" id="delete-${element.id}">Excluir</button>    
+                        </div>
+                    </div>
+                `
+            });
+
+            const btnsExcluir = document.querySelectorAll(".btn-excluir");
+
+            for (const btn of btnsExcluir) {
+                btn.addEventListener("click", async () => {
+                    const id = btn.id.split("-")[1];
+                    alert(id)
+                    const urlDelete = `https://68dd8cfcd7b591b4b78cc583.mockapi.io/graos/${id}`;
+                    const reqDelete = await fetch(urlDelete, {
+                        method: "DELETE"
+                    });
+                    const resDelete = await reqDelete.json();
+                    window.location.reload();
+                });
+            };
+        }
+
+        main();
+
+
+
+    </script>
+</body>
+
+</html>

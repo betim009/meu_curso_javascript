@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <a href="estoque.html">Estoque</a>
+        <a href="cadastro.html">Cadastro</a>
+    </header>
+
+    <form id="form-cadastro">
+        <input type="text" name="" id="name" placeholder="Nome do produto" required>
+        <input type="number" name="" id="price" placeholder="Preco do produto" required>
+
+        <input type="submit" value="Cadastrar">
+    </form>
+
+    <script>
+        const formCadastro = document.getElementById("form-cadastro");
+        const inputName = document.getElementById("name");
+        const inputPrice = document.getElementById("price");
+
+        const data = {
+            name: "",
+            price: ""
+        };
+
+        formCadastro.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            data.name = inputName.value;
+            data.price = inputPrice.value;
+
+            const url = "https://68dd8cfcd7b591b4b78cc583.mockapi.io/graos";
+            const req = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+            const res = await req.json();
+
+            window.location.reload();
+        });
+
+
+    </script>
+</body>
+
+</html>
