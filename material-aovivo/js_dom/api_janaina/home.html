@@ -5,23 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        #products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .card {
+            width: 300px;
+            border: 1px solid black;
+            border-radius: 10px;
+            height: 540px;
+        }
+
+        .card-top {
+            height: 300px;
+        }
+
+        .thumb {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
 </head>
 
 <body>
-    <h2>Bem vindo!</h2>
-    <p id="display-username"></p>
+    <header>
+        <h2>Bem vindo!</h2>
+        <p id="display-username"></p>
+
+        <a href="cart.html">CART</a>
+    </header>
+    <main>
+        <div id="products">
+
+        </div>
+    </main>
 
 
 
 
-    <script>
-        window.addEventListener("load", () => {
-            const displayUsername = document.getElementById("display-username");
-
-            const localStorageUsername = localStorage.getItem("username");
-            displayUsername.textContent = `Usuario logado: ${localStorageUsername}`;
-        });
-    </script>
+    <script type="module" src="src/home.js"></script>
 </body>
 
 </html>

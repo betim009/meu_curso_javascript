@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Cart</h2>
+
+
+
+
+    <script>
+        async function getApi () {
+            const url = "https://fakestoreapi.com/users";
+            const req = await fetch(url);
+            const res = await req.json();
+
+            const lsUsername = localStorage.getItem("username");
+
+            const findUsername = res.find(e => e.username === lsUsername);
+
+            console.log(findUsername.id)
+        }
+
+        getApi()
+    </script>
+</body>
+</html>

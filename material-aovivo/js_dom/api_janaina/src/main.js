@@ -25,10 +25,13 @@ window.addEventListener("load", () => {
     });
     const response = await request.json();
 
+    console.log(response)
+
     if (response.token) {
       localStorage.setItem("token", response.token);
       localStorage.setItem("username", data.username);
-      window.location.href = "home.html";
+      // localStorage.setItem("id", response.id);
+      // window.location.href = "home.html";
     }
   });
 });
