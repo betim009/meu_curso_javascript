@@ -8,6 +8,7 @@ window.addEventListener("load", async () => {
 
   createElements(displayGames, games); // Criando os elementos
   const btnsDelete = document.querySelectorAll(".btn-delete");
+  const btnsEditar = document.querySelectorAll(".btn-editar");
 
   btnsDelete.forEach((btn, index) => {
     btn.addEventListener("click", async () => {
@@ -16,6 +17,13 @@ window.addEventListener("load", async () => {
         method: "DELETE",
       });
       window.location.reload();
+    });
+  });
+
+  btnsEditar.forEach((btn, index) => {
+    btn.addEventListener("click", async () => {
+      const gameId = games[index].id
+      window.location.href = `/src/pages/editar.html?id=${gameId}`
     });
   });
 });
