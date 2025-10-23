@@ -7,11 +7,19 @@ img {
   grid-template-columns: auto auto;
 }
 
+.display {
+  background-color: rgb(209, 233, 211);
+}
+
 .pokemons {
   img {
     width: 60px;
     cursor: pointer;
   }
+
+  background-color: #ededed;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 .bar-hp {
@@ -29,9 +37,34 @@ img {
     text-align: center;
 }
 
+.painel-combate {
+  display: flex;
+  background-color: #ededed;
+  border-radius: 10px;
+}
+
+.painel-info {
+  font-family: serif;
+  width: 50%;
+}
+
+.btn-painel {
+  border: none;
+  background-color: red;
+  cursor: pointer;
+  color: white;
+  width: 120px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.btn-painel:hover {
+  background-color: rgb(95, 11, 11);
+}
 
 .golpes {
   display: grid;
+  grid-template-columns: auto auto;
   gap: 10px;
 
   button {

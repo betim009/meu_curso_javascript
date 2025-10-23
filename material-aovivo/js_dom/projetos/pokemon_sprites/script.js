@@ -42,6 +42,8 @@ const minhaEquipe = [
 const nomePokemon = document.getElementById("nome-pokemon");
 const imgPokemon = document.getElementById("img-pokemon");
 const hp = document.getElementById("hp");
+const btnPokemons = document.getElementById("btn-pokemons");
+const painelPokemons = document.getElementById("painel-pokemons");
 
 // GENGAR
 const gengar = document.getElementById("gengar");
@@ -83,4 +85,12 @@ dragonite.addEventListener("click", () => {
   inputGolpe2.value = minhaEquipe[1].move2;
   inputGolpe3.value = minhaEquipe[1].move3;
   inputGolpe4.value = minhaEquipe[1].move4;
+});
+
+btnPokemons.addEventListener("click", () => {
+  if (painelPokemons.hidden === false) {
+    painelPokemons.hidden = true;
+  } else {
+    painelPokemons.hidden = false;
+  }
 });
