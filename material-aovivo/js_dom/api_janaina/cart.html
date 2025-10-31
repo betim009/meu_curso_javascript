@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h2>Cart</h2>
 
+    <table>
+        <thead>
+            <tr>
+                <th>DATA</th>
+            </tr>
+        </thead>
+        <tbody id="tableDisplay">
+
+        </tbody>
+    </table>
 
 
 
     <script>
-        async function getApi () {
+        async function getApi() {
+            const tableDisplay = document.getElementById("tableDisplay");
+
             const url = "https://fakestoreapi.com/users";
             const req = await fetch(url);
             const res = await req.json();
@@ -21,10 +35,29 @@
 
             const findUsername = res.find(e => e.username === lsUsername);
 
-            console.log(findUsername.id)
+            const urlCarts = "https://fakestoreapi.com/carts";
+            const reqCarts = await fetch(urlCarts);
+            const resCarts = await reqCarts.json();
+
+            const filterCarts = resCarts.filter(e => e.userId === findUsername.id);
+
+            filterCarts.forEach(element => {
+                tableDisplay.innerHTML += `
+                    <tr>
+                        <td>${element.date}</td>
+                        <td>${element.products[0].productId}</td>
+                    </tr>
+                `
+            });
+            
         }
 
-        getApi()
+
+
+        window.addEventListener("load", async () => {
+            await getApi()
+        })
     </script>
 </body>
+
 </html>
