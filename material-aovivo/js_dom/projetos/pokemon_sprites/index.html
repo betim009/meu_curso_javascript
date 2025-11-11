@@ -5,115 +5,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
 
+    <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
     <div class="grid">
-        <div class="pokemon">
+        <div class="my-panel">
             <div class="display">
-                <div class="bar-hp">
-                    <p class="hp" id="hp">78 HP</p>
+                <div>
+                    <div class="bar-hp">
+                        <p class="hp" id="hp">78 HP</p>
+                    </div>
+                    <img id="img-pokemon" src="https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif"
+                        alt="Charizard" />
                 </div>
-                <img id="img-pokemon" src="https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif"
-                    alt="Charizard">
             </div>
             <div class="painel-combate">
                 <div class="painel-info">
                     <h2>What will <span id="nome-pokemon">Charizard</span> do ? </h2>
-                    <button class="btn-painel">Combat</button>
+                    <button class="btn-painel" id="btn-combat">Combat</button>
                     <button class="btn-painel">Bag</button>
                     <button class="btn-painel">Out</button>
                     <button class="btn-painel" id="btn-pokemons">Pokemons</button>
                 </div>
-                <div class="golpes">
-                    <div>
-                        <label for="golpe1" id="move1">Dragon Claw</label>
-                        <input type="radio" name="golpe" id="golpe1">
-                    </div>
+                <div id="painel-golpes" hidden>
+                    <div class="golpes">
+                        <div>
+                            <button id="move3" class="move ubuntu-bold">
+                                Dragon Claw
+                            </button>
+                        </div>
 
-                    <div>
-                        <label for="golpe2" id="move2">Ember</label>
-                        <input type="radio" name="golpe" id="golpe2">
-                    </div>
+                        <div>
+                            <button id="move2" class="move ubuntu-bold">
+                                Ember
+                            </button>
+                        </div>
 
-                    <div>
-                        <label for="golpe3" id="move3">Fire Fang</label>
-                        <input type="radio" name="golpe" id="golpe3">
-                    </div>
+                        <div>
+                            <button id="move3" class="move ubuntu-bold">
+                                Fire Fang
+                            </button>
+                        </div>
 
-                    <div>
-                        <label for="golpe4" id="move4">Slash</label>
-                        <input type="radio" name="golpe" id="golpe4">
+                        <div>
+                            <button id="move4" class="move ubuntu-bold">
+                                Slash
+                            </button>
+                        </div>
+                        <button class="btn-atack ubuntu-bold">Atacar</button>
                     </div>
-                    <button>Atacar</button>
                 </div>
             </div>
-            <div class="pokemons" id="painel-pokemons" hidden>
-                <img id="gengar" src="https://img.pokemondb.net/sprites/x-y/normal/gengar.png" alt="Gengar">
+            <div id="painel-pokemons" hidden>
+                <div class="list-pokemons">
+                    <div class="flex">
+                        <img id="gengar" src="https://img.pokemondb.net/sprites/x-y/normal/gengar.png" alt="Gengar">
+                        <div>
+                            <h3>Gengar</h3>
+                            <p>Ghost</p>
+                        </div>
+                    </div>
 
-                <img id="dragonite" src="https://img.pokemondb.net/sprites/sun-moon/normal/dragonite.png"
-                    alt="Dragonite">
+                    <div class="flex">
+                        <img id="dragonite" src="https://img.pokemondb.net/sprites/sun-moon/normal/dragonite.png"
+                            alt="Dragonite">
+                        <div>
+                            <h3>Dragonite</h3>
+                            <p>Dragon</p>
+                        </div>
+                    </div>
 
-                <img src="https://img.pokemondb.net/sprites/scarlet-violet/normal/metagross.png" alt="Metagross">
-                <img src="https://img.pokemondb.net/sprites/sun-moon/shiny/gyarados-f.png" alt="Gyarados">
-                <img src="https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/sceptile.png"
-                    alt="Sceptile">
-                <img src="https://img.pokemondb.net/sprites/scarlet-violet/normal/charizard.png" alt="Charizard">
+                    <div class="flex">
+                        <img src="https://img.pokemondb.net/sprites/scarlet-violet/normal/metagross.png"
+                            alt="Metagross">
+                        <div>
+                            <h3>Metagross</h3>
+                            <p>Rock</p>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <img src="https://img.pokemondb.net/sprites/sun-moon/shiny/gyarados-f.png" alt="Gyarados">
+                        <div>
+                            <h3>Gyrados</h3>
+                            <p>Water</p>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <img src="https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/sceptile.png"
+                            alt="Sceptile">
+                        <div>
+                            <h3>Sceptile</h3>
+                            <p>Grass</p>
+                        </div>
+                    </div>
+
+                    <div class="flex">
+                        <img src="https://img.pokemondb.net/sprites/scarlet-violet/normal/charizard.png"
+                            alt="Charizard">
+                        <div>
+                            <h3>Charizard</h3>
+                            <p>Fire</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <div class="versus-panel">
 
-        <div class="pokemon">
-            <div class="pokemons">
-                <img id="gengar" src="https://img.pokemondb.net/sprites/x-y/normal/gengar.png" alt="Gengar">
-
-                <img id="dragonite" src="https://img.pokemondb.net/sprites/sun-moon/normal/dragonite.png"
-                    alt="Dragonite">
-
-                <img src="https://img.pokemondb.net/sprites/scarlet-violet/normal/metagross.png" alt="Metagross">
-                <img src="https://img.pokemondb.net/sprites/sun-moon/shiny/gyarados-f.png" alt="Gyarados">
-                <img src="https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/sceptile.png"
-                    alt="Sceptile">
-                <img src="https://img.pokemondb.net/sprites/scarlet-violet/normal/charizard.png" alt="Charizard">
-            </div>
-
-            <h5>Charizard</h5>
-            <div>
-
-                <div class="bar-hp">
-                    <p class="hp">78 HP</p>
-                </div>
-            </div>
-            <img src="https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif" alt="Charizard">
-
-            <div class="golpes">
-                <div>
-                    <label for="golpe1">Dragon Claw</label>
-                    <input type="radio" name="golpe" id="golpe1">
-                </div>
-
-                <div>
-                    <label for="golpe2">Ember</label>
-                    <input type="radio" name="golpe" id="golpe2">
-                </div>
-
-                <div>
-                    <label for="golpe3">Fire Fang</label>
-                    <input type="radio" name="golpe" id="golpe3">
-                </div>
-
-                <div>
-                    <label for="golpe4">Slash</label>
-                    <input type="radio" name="golpe" id="golpe4">
-                </div>
-                <button>Atacar</button>
-            </div>
         </div>
     </div>
-
 
     <script type="module" src="script.js"></script>
 </body>

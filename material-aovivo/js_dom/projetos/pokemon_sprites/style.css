@@ -1,3 +1,16 @@
+* {
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgb(121, 2, 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 img {
   zoom: 1.5;
 }
@@ -5,47 +18,64 @@ img {
 .grid {
   display: grid;
   grid-template-columns: auto auto;
+  gap: 10px;
+}
+
+.my-panel {
+}
+
+.versus-panel {
+  background-color: red;
+  width: 300px;
+  height: 300px;
+  background-color: white;
 }
 
 .display {
-  background-color: rgb(209, 233, 211);
+  background-color: rgb(195, 230, 201);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 2px;
+  margin-bottom: 4px;
 }
 
-.pokemons {
+.list-pokemons {
+  background-color: #ededed;
+  display: grid;
+  grid-template-columns: auto auto;
+
   img {
     width: 60px;
     cursor: pointer;
   }
-
-  background-color: #ededed;
-  display: grid;
-  grid-template-columns: auto auto;
 }
 
 .bar-hp {
-    width: 100px;
-    background-color: red;
-    height: 14px;
-    border-radius: 8px;
+  width: 100px;
+  background-color: red;
+  height: 14px;
+  border-radius: 8px;
 }
 
 .hp {
-    font-weight: bold;
-    font-size: 12px;
-    font-family: sans-serif;
-    color: white;
-    text-align: center;
+  font-size: 12px;
+  color: white;
+  text-align: center;
 }
 
 .painel-combate {
   display: flex;
   background-color: #ededed;
-  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 4px;
 }
 
 .painel-info {
-  font-family: serif;
   width: 50%;
+  padding: 2px;
 }
 
 .btn-painel {
@@ -62,12 +92,56 @@ img {
   background-color: rgb(95, 11, 11);
 }
 
+#painel-golpes {
+  background-color: rgb(195, 230, 201);
+  width: 50%;
+  padding: 2px;
+}
+
 .golpes {
   display: grid;
   grid-template-columns: auto auto;
   gap: 10px;
+  justify-content: space-around;
+}
 
-  button {
-    width: 100px;
-  }
+.move {
+  background-color: rgb(251, 52, 2);
+  width: 100px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.move:hover {
+  background-color: rgb(148, 30, 0);
+  width: 100px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-atack {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.btn-atack:hover {
+  background-color: gold;
+  color: black;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
