@@ -1,11 +1,23 @@
-const vetor1 = [6, 8, 10, 8];
-const vetor2 = [6, 10, 10, 8];
+/*Grupo 12 - N683 Raciocínio lógico algorítmico
+Nomes do integrantes:
+1 - Kayo Magno Dias Santos - Matricula: 2524871
+2 - Samuel de Sousa Avelino - Matrícula: 2524955
+3 - Edilberto Queiroz Do Nascimento Filho - Matricula:
+4 - Maria Eduarda Rocha de Sousa - Matricula: 2524940
+5 - Eduardo Mesquita de Freitas - Matricula: 2524937
+6 - Mario Antonini - Matricula: 2523609*/
+const vetor1 = [];
+const vetor2 = [];
 const medias = [];
 
-// estrutura de repeticao
-for (let index = 0; index < vetor1.length; index++) {
-  const nota1 = vetor1[index];
-  const nota2 = vetor2[index];
+const tamanho = Number(prompt("Informe o tamanho do vetor de notas:"));
+
+for (let index = 0; index < tamanho; index++) {
+  const nota1 = Number(prompt(`Informe a nota 1 do aluno ${index + 1}:`));
+  const nota2 = Number(prompt(`Informe a nota 2 do aluno ${index + 1}:`));
+
+  vetor1.push(nota1);
+  vetor2.push(nota2);
 
   const media = (nota1 + nota2) / 2;
   medias.push(media);
@@ -21,6 +33,24 @@ for (let i = 0; i < medias.length - 1; i++) {
   }
 }
 
-for (let index = 0; index < vetor1.length; index++) {
-    document.write(`${medias[index]} `)
+/* Contagem de aprovados e reprovados */
+let aprovados = 0;
+let reprovados = 0;
+
+for (let k = 0; k < medias.length; k++) {
+  if (medias[k] > 5) {
+    aprovados++;
+  } else {
+    reprovados++;
+  }
 }
+
+/* Exibir resultados */
+document.write("<h3>Médias ordenadas:</h3>");
+
+for (let index = 0; index < medias.length; index++) {
+  document.write(`${medias[index]} <br>`);
+}
+
+document.write(`<h3>Aprovados: ${aprovados}</h3>`);
+document.write(`<h3>Reprovados: ${reprovados}</h3>`);

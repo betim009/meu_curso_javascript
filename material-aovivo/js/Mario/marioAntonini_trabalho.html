@@ -1,0 +1,64 @@
+<html>
+<title>Mario Antonini - Matricula: 2523609</title>
+
+<script>
+    /*
+    Grupo 12 - N683 Raciocínio lógico algorítmico
+    Nomes do integrantes:
+    1 - Kayo Magno Dias Santos - Matricula: 2524871
+    2 - Samuel de Sousa Avelino - Matrícula: 2524955
+    3 - Edilberto Queiroz Do Nascimento Filho - Matricula:
+    4 - Maria Eduarda Rocha de Sousa - Matricula: 2524940
+    5 - Eduardo Mesquita de Freitas - Matricula: 2524937
+    6 - Mario Antonini - Matricula: 2523609
+    */
+    const vetor1 = [];
+    const vetor2 = [];
+    const medias = [];
+
+    const tamanho = Number(prompt("Informe o tamanho do vetor de notas:"));
+
+    for (let index = 0; index < tamanho; index++) {
+        const nota1 = Number(prompt(`Informe a nota 1 do aluno ${index + 1}:`));
+        const nota2 = Number(prompt(`Informe a nota 2 do aluno ${index + 1}:`));
+
+        vetor1.push(nota1);
+        vetor2.push(nota2);
+
+        const media = (nota1 + nota2) / 2;
+        medias.push(media);
+    }
+
+    for (let i = 0; i < medias.length - 1; i++) {
+        for (let j = 0; j < medias.length - 1 - i; j++) {
+            if (medias[j] > medias[j + 1]) {
+                let temp = medias[j];
+                medias[j] = medias[j + 1];
+                medias[j + 1] = temp;
+            }
+        }
+    }
+
+    let aprovados = 0;
+    let reprovados = 0;
+
+    for (let k = 0; k < medias.length; k++) {
+        if (medias[k] > 5) {
+            aprovados++;
+        } else {
+            reprovados++;
+        }
+    }
+
+    document.write("<h3>Médias ordenadas:</h3>");
+
+    for (let index = 0; index < medias.length; index++) {
+        document.write(`${medias[index]} <br>`);
+    }
+
+    document.write(`<h3>Aprovados: ${aprovados}</h3>`);
+    document.write(`<h3>Reprovados: ${reprovados}</h3>`);
+
+</script>
+
+</html>
