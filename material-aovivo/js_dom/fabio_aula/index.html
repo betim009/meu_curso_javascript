@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container-inputs {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        #input-nome {
+            width: 220px;
+        }
+
+        .my-input {
+            border-radius: 8px;
+            width: 120px;
+        }
+
+        .my-btn {
+            width: 220px;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        #btn-calcular {
+            background-color: darkgray;
+        }
+
+        #btn-limpar {
+            background-color: darkcyan;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container-inputs">
+        <input type="text" name="" class="my-input" id="input-nome" placeholder="nome do aluno">
+        <input type="number" name="" class="my-input" id="input-nota1" placeholder="nota 1">
+        <input type="number" name="" class="my-input" id="input-nota2" placeholder="nota 2">
+
+        <div id="resultado">
+
+        </div>
+
+
+        <button class="my-btn" id="btn-calcular">Calcular media</button>
+        <button class="my-btn" id="btn-limpar">Limpar Campos</button>
+    </div>
+
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
