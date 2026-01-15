@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  background-color: #edededed;
+  flex-direction: column;
+}
+
+.div-colunas-dias {
+  display: flex;
+  background-color: darkgrey;
+  width: 700px;
+  justify-content: center;
+  height: 30px;
+  align-items: center;
+}
+
+.h4-dia {
+  border: solid 2px black;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  font-size: 14px;
+}
+
+.div-linha-dias {
+  display: flex;
+}
+
+.vazio {
+  height: 40px;
+  border: 2px solid black;
+  width: 96px;
+  background-color: rgb(191, 191, 191);
+}
+
+.vazio:hover {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.feriado {
+  height: 40px;
+  border: 2px solid black;
+  width: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(213, 85, 85);
+}
+
+.feriado:hover {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.dia {
+  height: 40px;
+  border: 2px solid black;
+  width: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dia:hover {
+  cursor: pointer;
+  font-size: 24px;
+}
