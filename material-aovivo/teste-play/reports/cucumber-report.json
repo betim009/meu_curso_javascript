@@ -1,0 +1,92 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "miracle74-account-management;open-account-management-page",
+        "keyword": "Scenario",
+        "line": 2,
+        "name": "Open account management page",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 984065208
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 3,
+            "name": "I open the Miracle74 site",
+            "match": {
+              "location": "src/steps/example.steps.ts:5"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 734717749
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 4,
+            "name": "I click on \"Account\"",
+            "match": {
+              "location": "src/steps/example.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 167068792
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "I click on \"Account Management\"",
+            "match": {
+              "location": "src/steps/example.steps.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 256175583
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the URL contains \"subtopic=accountmanagement\"",
+            "match": {
+              "location": "src/steps/example.steps.ts:44"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 26163083
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 25766290
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "miracle74-account-management",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Miracle74 account management",
+    "tags": [],
+    "uri": "features/example.feature"
+  }
+]

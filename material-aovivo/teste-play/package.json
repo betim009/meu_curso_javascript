@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "pretest": "mkdir -p reports",
+    "test": "cucumber-js --config cucumber.js"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.5.0",
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.9",
+    "cucumber-html-reporter": "^7.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
