@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+
+
+
+    <script>
+        const divContainer = document.getElementById("container");
+
+        async function searchSounds(sounds) {
+            const artist = [];
+
+            for (const sound of sounds) {
+                const url = `https://api.deezer.com/search?q=track:"${sound.sound}" artist:"${sound.artist}"`;
+                const req = await fetch(url);
+                const res = await req.json();
+        
+                artist.push(res.data[0])
+            }
+
+            artist.forEach((sound) => {
+                divContainer.innerHTML += `
+                    <div>
+                        <h2>${sound.title}</h2>
+                    </div>
+                `
+            })
+          
+        }
+
+        searchSounds(
+            [
+                {
+                    "sound": "Pontes Indestrutiveis",
+                    "artist": "Charlie Brown Jr"
+                },
+                {
+                    "sound": "Ceu Azul",
+                    "artist": "Charlie Brown Jr"
+                },
+                {
+                    "sound": "Zoio de Lula",
+                    "artist": "Charlie Brown Jr"
+                },
+                {
+                    "sound": "Samba Makossa",
+                    "artist": "Charlie Brown Jr"
+                },
+            ]
+        )
+
+        searchSounds(
+            [
+                {
+                    "sound": "A Feira",
+                    "artist": "O rappa"
+                },
+                {
+                    "sound": "Mar de Gente",
+                    "artist": "O rappa"
+                },
+                {
+                    "sound": "Vapor barato",
+                    "artist": "O rappa"
+                },
+                {
+                    "sound": "Lado a lado B",
+                    "artist": "O rappa"
+                },
+            ]
+        )
+
+
+    </script>
+</body>
+
+</html>

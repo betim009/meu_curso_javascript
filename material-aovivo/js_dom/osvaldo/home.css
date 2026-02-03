@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: sans-serif;
+}
+
+#div-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.card {
+    img {
+        width: 140px;
+    }
+
+    border: 1px solid black;
+    width: 240px;
+}
