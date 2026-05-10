@@ -8,13 +8,11 @@
 
 | Módulo | Status |
 |--------|--------|
-| conteudo-js (módulos 0–8) | ✅ Base completa |
-| conteudo-dom (todos os módulos) | ✅ Base completa |
-| Exercícios DOM com gabarito | ✅ Concluído (todos os 5 módulos) |
-| Mini-projetos DOM | ✅ Concluído (5 projetos) |
-| Módulo 7 — Fetch e APIs | ✅ Concluído |
-| Módulo 8 — LocalStorage | ✅ Concluído |
-| README.md principal | ✅ Atualizado (módulos 7, 8 e projeto 05) |
+| conteudo-js (módulos 0–9) | ✅ Base completa |
+| conteudo-dom (todos os módulos + exercícios) | ✅ Completo |
+| Mini-projetos DOM | ✅ Concluído (6 projetos) |
+| Exercícios HTML/CSS com gabarito | ✅ Concluído (HTML semântico + Flexbox) |
+| README.md principal | ✅ Atualizado |
 | conteudo-html-css/README.md | ✅ Concluído |
 | READMEs projetos DOM | ✅ Todos os projetos documentados |
 | PLANS.md criado | ✅ Concluído |
@@ -23,12 +21,12 @@
 
 ## Tarefas Próximas
 
-### Fase 6 — Melhorias futuras
-- [ ] Criar exercícios HTML/CSS com gabarito (flexbox e semântica)
+### Fase 7 — Melhorias futuras
 - [ ] Melhorar módulo `conteudo-js/conteudos/02-condicoes/` com gabarito separado
-- [ ] Criar mini-projeto com LocalStorage (carrinho ou preferências)
-- [ ] Adicionar módulo de manipulação de strings (Módulo 9)
 - [ ] Revisar e melhorar módulo 00-intro (exemplos mais didáticos)
+- [ ] Criar mini-projeto que combine fetch + LocalStorage (cache de dados)
+- [ ] Adicionar exercícios de CSS avançado (grid, responsividade)
+- [ ] Criar módulo 10 — Debugging e erros comuns
 
 ---
 
@@ -53,6 +51,11 @@
 - ✅ README: `01-pj_metros_quadrados/README.md` criado (2026-05-10)
 - ✅ README: `02-login_storage/README.md` criado (2026-05-10)
 - ✅ README.md raiz: Módulo 8, Projeto 05, projetos com links atualizados (2026-05-10)
+- ✅ Exercícios HTML/CSS: `01-html-semantico.md` + gabarito (2026-05-10)
+- ✅ Exercícios HTML/CSS: `02-flexbox.md` + gabarito (2026-05-10)
+- ✅ Módulo 9 — Strings: intro + exercícios com gabarito (2026-05-10)
+- ✅ Mini-projeto: Carrinho de Compras em `conteudo-dom/projetos/06-carrinho_compras/` (2026-05-10)
+- ✅ README.md raiz: Módulo 9, Projeto 06, seção HTML/CSS expandida (2026-05-10)
 
 ---
 
@@ -79,3 +82,5 @@
 | 2026-05-10 | Mini-projeto IMC escolhido como segundo projeto DOM | Usa formulário, parseFloat, lógica condicional e classList |
 | 2026-05-10 | Buscador GitHub usa tema escuro inspirado no GitHub | Mais realista e serve de motivação para alunos |
 | 2026-05-10 | LocalStorage apresentado antes de projetos avançados | Projeto Login já usa LocalStorage; módulo serve de base teórica |
+| 2026-05-10 | Carrinho usa delegação de eventos | Mais eficiente que adicionar listener em cada botão |
+| 2026-05-10 | Módulo Strings separado do Módulo Dados | Strings merecem atenção especial: são usadas em todo tipo de projeto |

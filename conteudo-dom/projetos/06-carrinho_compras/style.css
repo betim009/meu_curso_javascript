@@ -1,0 +1,339 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  height: 64px;
+  background-color: #2c3e50;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.cabecalho h1 {
+  font-size: 22px;
+}
+
+.btn-carrinho {
+  position: relative;
+  padding: 8px 18px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-carrinho:hover {
+  background-color: #219a52;
+}
+
+.badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #e74c3c;
+  color: white;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Layout principal ───────────────────────────────────────────────────── */
+.conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.catalogo h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* ── Grade de produtos ──────────────────────────────────────────────────── */
+.grade-produtos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card-produto {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.card-produto:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.produto-emoji {
+  font-size: 48px;
+}
+
+.produto-nome {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.produto-preco {
+  font-size: 17px;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.btn-adicionar {
+  width: 100%;
+  padding: 8px 0;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-adicionar:hover {
+  background-color: #2980b9;
+}
+
+/* ── Painel do carrinho ─────────────────────────────────────────────────── */
+.painel-carrinho {
+  position: fixed;
+  top: 64px;
+  right: 0;
+  width: 360px;
+  height: calc(100vh - 64px);
+  background-color: white;
+  border-left: 1px solid #ddd;
+  box-shadow: -4px 0 16px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 9;
+}
+
+.painel-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.painel-topo h2 {
+  font-size: 20px;
+}
+
+#btn-fechar {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999;
+  line-height: 1;
+}
+
+#btn-fechar:hover {
+  color: #333;
+}
+
+/* ── Itens do carrinho ──────────────────────────────────────────────────── */
+.itens-carrinho {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 20px;
+}
+
+.carrinho-vazio {
+  text-align: center;
+  color: #aaa;
+  margin-top: 40px;
+  font-size: 15px;
+}
+
+.item-carrinho {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.item-emoji {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.item-nome {
+  display: block;
+  font-size: 13px;
+  font-weight: bold;
+  color: #2c3e50;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-preco-unit {
+  display: block;
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.item-controles {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-qtd {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.btn-qtd:hover {
+  background-color: #e0e0e0;
+}
+
+.item-qtd {
+  font-size: 14px;
+  font-weight: bold;
+  min-width: 20px;
+  text-align: center;
+}
+
+.btn-remover {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #e74c3c;
+  cursor: pointer;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.btn-remover:hover {
+  color: #c0392b;
+}
+
+/* ── Rodapé do painel ───────────────────────────────────────────────────── */
+.painel-rodape {
+  padding: 16px 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.total {
+  font-size: 18px;
+}
+
+.btn-finalizar {
+  padding: 12px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-finalizar:hover {
+  background-color: #219a52;
+}
+
+.btn-limpar {
+  padding: 8px;
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  color: #888;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-limpar:hover {
+  background-color: #fdecea;
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+/* ── Notificação ────────────────────────────────────────────────────────── */
+.notificacao {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2c3e50;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 14px;
+  animation: fadeInOut 2s ease forwards;
+  z-index: 100;
+}
+
+@keyframes fadeInOut {
+  0%   { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  15%  { opacity: 1; transform: translateX(-50%) translateY(0); }
+  75%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ── Utilitário ─────────────────────────────────────────────────────────── */
+.oculto {
+  display: none !important;
+}

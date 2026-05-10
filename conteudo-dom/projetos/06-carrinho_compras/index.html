@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja — Carrinho de Compras</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <h1>Loja JS</h1>
+    <button id="btn-carrinho" class="btn-carrinho">
+      Carrinho
+      <span id="badge" class="badge oculto">0</span>
+    </button>
+  </header>
+
+  <main class="conteudo">
+
+    <!-- Catálogo de produtos -->
+    <section class="catalogo">
+      <h2>Produtos</h2>
+      <div id="lista-produtos" class="grade-produtos"></div>
+    </section>
+
+    <!-- Painel do carrinho -->
+    <aside id="painel-carrinho" class="painel-carrinho oculto">
+      <div class="painel-topo">
+        <h2>Carrinho</h2>
+        <button id="btn-fechar">×</button>
+      </div>
+
+      <div id="itens-carrinho" class="itens-carrinho"></div>
+
+      <div class="painel-rodape">
+        <p class="total">Total: <strong id="total">R$ 0,00</strong></p>
+        <button id="btn-finalizar" class="btn-finalizar">Finalizar pedido</button>
+        <button id="btn-limpar" class="btn-limpar">Limpar carrinho</button>
+      </div>
+    </aside>
+
+  </main>
+
+  <script src="produtos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -118,6 +118,13 @@ Seja muito bem-vindo(a)! Este repositório é dedicado ao ensino de **JavaScript
 | [01-introducao.md](conteudo-js/conteudos/08-localstorage/01-introducao.md) | O que é LocalStorage, setItem, getItem, objetos e arrays |
 | [02-exercicios.md](conteudo-js/conteudos/08-localstorage/02-exercicios.md) | Exercícios com gabarito |
 
+### Módulo 9 — Strings
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [01-introducao.md](conteudo-js/conteudos/09-strings/01-introducao.md) | Métodos de string: trim, split, replace, slice, padStart e mais |
+| [02-exercicios.md](conteudo-js/conteudos/09-strings/02-exercicios.md) | Exercícios com gabarito |
+
 ---
 
 ## DOM na Prática
@@ -147,6 +154,7 @@ Mini-projetos práticos que combinam múltiplos conceitos do DOM:
 | [03 - Lista de Tarefas](conteudo-dom/projetos/03-lista_tarefas/) | Adicionar, concluir e remover tarefas | Seletores, criar elementos, eventos, toggle de classe |
 | [04 - Calculadora de IMC](conteudo-dom/projetos/04-calculadora_imc/) | Calcula e classifica o IMC | Formulários, parseFloat, classList, mostrar/ocultar elementos |
 | [05 - Buscador GitHub](conteudo-dom/projetos/05-buscador_github/) | Busca perfis do GitHub pela API | fetch, async/await, try/catch, DOM dinâmico |
+| [06 - Carrinho de Compras](conteudo-dom/projetos/06-carrinho_compras/) | Loja com carrinho persistente | LocalStorage, delegação de eventos, reduce, renderização dinâmica |
 
 ---
 
@@ -166,6 +174,14 @@ Material de apoio com exemplos de HTML semântico, CSS e Flexbox.
 
 - [conteudo-html-css/README.md](conteudo-html-css/README.md) — Guia completo do módulo HTML/CSS
 - [Atividades de Flexbox](conteudo-html-css/atividades/) — Exercícios práticos de layout
+
+### Exercícios HTML/CSS com gabarito
+
+| Exercício | Gabarito |
+|-----------|---------|
+| [01 - HTML Semântico](conteudo-html-css/exercicios/01-html-semantico.md) | [gabarito](conteudo-html-css/exercicios/01-html-semantico-gabarito.md) |
+| [02 - Flexbox](conteudo-html-css/exercicios/02-flexbox.md) | [gabarito](conteudo-html-css/exercicios/02-flexbox-gabarito.md) |
+
 - [Projetos](conteudo-html-css/projeto/) — Portfólios e projetos visuais
 
 ---
