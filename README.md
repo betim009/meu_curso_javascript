@@ -111,6 +111,13 @@ Seja muito bem-vindo(a)! Este repositório é dedicado ao ensino de **JavaScript
 | [01-introducao.md](conteudo-js/conteudos/07-fetch/01-introducao.md) | O que é fetch, APIs, async/await, tratamento de erros |
 | [02-exercicios.md](conteudo-js/conteudos/07-fetch/02-exercicios.md) | Exercícios com gabarito usando APIs públicas |
 
+### Módulo 8 — LocalStorage
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [01-introducao.md](conteudo-js/conteudos/08-localstorage/01-introducao.md) | O que é LocalStorage, setItem, getItem, objetos e arrays |
+| [02-exercicios.md](conteudo-js/conteudos/08-localstorage/02-exercicios.md) | Exercícios com gabarito |
+
 ---
 
 ## DOM na Prática
@@ -135,10 +142,11 @@ Mini-projetos práticos que combinam múltiplos conceitos do DOM:
 
 | Projeto | Descrição | Conceitos |
 |---------|-----------|-----------|
-| [01 - Metros Quadrados](conteudo-dom/projetos/01-pj_metros_quadrados/) | Calculadora de área | Formulários, eventos, manipulação de texto |
-| [02 - Login com Storage](conteudo-dom/projetos/02-login_storage/) | Sistema de login e cadastro | LocalStorage, formulários, redirecionamento |
+| [01 - Metros Quadrados](conteudo-dom/projetos/01-pj_metros_quadrados/) | Calculadora de área com visual dinâmico | Formulários, eventos, estilos inline, createElement |
+| [02 - Login com Storage](conteudo-dom/projetos/02-login_storage/) | Sistema de login e cadastro | LocalStorage, JSON, formulários, redirecionamento |
 | [03 - Lista de Tarefas](conteudo-dom/projetos/03-lista_tarefas/) | Adicionar, concluir e remover tarefas | Seletores, criar elementos, eventos, toggle de classe |
 | [04 - Calculadora de IMC](conteudo-dom/projetos/04-calculadora_imc/) | Calcula e classifica o IMC | Formulários, parseFloat, classList, mostrar/ocultar elementos |
+| [05 - Buscador GitHub](conteudo-dom/projetos/05-buscador_github/) | Busca perfis do GitHub pela API | fetch, async/await, try/catch, DOM dinâmico |
 
 ---
 

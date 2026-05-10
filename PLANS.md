@@ -8,25 +8,27 @@
 
 | Módulo | Status |
 |--------|--------|
-| conteudo-js (todos os módulos) | ✅ Base completa |
+| conteudo-js (módulos 0–8) | ✅ Base completa |
 | conteudo-dom (todos os módulos) | ✅ Base completa |
 | Exercícios DOM com gabarito | ✅ Concluído (todos os 5 módulos) |
-| Mini-projetos DOM | ✅ Concluído (4 projetos) |
+| Mini-projetos DOM | ✅ Concluído (5 projetos) |
 | Módulo 7 — Fetch e APIs | ✅ Concluído |
-| README.md principal | ✅ Concluído e atualizado |
+| Módulo 8 — LocalStorage | ✅ Concluído |
+| README.md principal | ✅ Atualizado (módulos 7, 8 e projeto 05) |
 | conteudo-html-css/README.md | ✅ Concluído |
+| READMEs projetos DOM | ✅ Todos os projetos documentados |
 | PLANS.md criado | ✅ Concluído |
 
 ---
 
 ## Tarefas Próximas
 
-### Fase 5 — Melhorias futuras
-- [ ] Criar mini-projeto com fetch (buscador de usuário GitHub na DOM)
-- [ ] Adicionar módulo de LocalStorage no conteudo-js
-- [ ] Criar exercícios com gabarito para `conteudo-html-css/`
+### Fase 6 — Melhorias futuras
+- [ ] Criar exercícios HTML/CSS com gabarito (flexbox e semântica)
 - [ ] Melhorar módulo `conteudo-js/conteudos/02-condicoes/` com gabarito separado
-- [ ] Adicionar README aos projetos existentes sem documentação
+- [ ] Criar mini-projeto com LocalStorage (carrinho ou preferências)
+- [ ] Adicionar módulo de manipulação de strings (Módulo 9)
+- [ ] Revisar e melhorar módulo 00-intro (exemplos mais didáticos)
 
 ---
 
@@ -46,6 +48,11 @@
 - ✅ README: `conteudo-html-css/README.md` criado com estrutura completa (2026-05-10)
 - ✅ README: `conteudo-dom/6_desafios/01-desafio/README.md` criado (2026-05-10)
 - ✅ Correção de typo em `6_desafios/01-desafio/src/script.js` (2026-05-10)
+- ✅ Módulo 8 — LocalStorage: intro + exercícios com gabarito (2026-05-10)
+- ✅ Mini-projeto: Buscador GitHub em `conteudo-dom/projetos/05-buscador_github/` (2026-05-10)
+- ✅ README: `01-pj_metros_quadrados/README.md` criado (2026-05-10)
+- ✅ README: `02-login_storage/README.md` criado (2026-05-10)
+- ✅ README.md raiz: Módulo 8, Projeto 05, projetos com links atualizados (2026-05-10)
 
 ---
 
@@ -70,3 +77,5 @@
 | 2026-05-10 | Manter gabarito em arquivo separado no DOM | Padrão já usado no conteudo-js |
 | 2026-05-10 | Módulo Fetch usa APIs públicas (GitHub, restcountries) | Não requerem cadastro ou chave, fáceis de usar em aula |
 | 2026-05-10 | Mini-projeto IMC escolhido como segundo projeto DOM | Usa formulário, parseFloat, lógica condicional e classList |
+| 2026-05-10 | Buscador GitHub usa tema escuro inspirado no GitHub | Mais realista e serve de motivação para alunos |
+| 2026-05-10 | LocalStorage apresentado antes de projetos avançados | Projeto Login já usa LocalStorage; módulo serve de base teórica |

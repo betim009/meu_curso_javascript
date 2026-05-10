@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buscador GitHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Buscador GitHub</h1>
+
+    <div class="busca">
+      <input
+        type="text"
+        id="campo-usuario"
+        placeholder="Digite um username do GitHub..."
+        autocomplete="off"
+      >
+      <button id="btn-buscar">Buscar</button>
+    </div>
+
+    <div id="estado" class="estado oculto"></div>
+
+    <div id="perfil" class="perfil oculto">
+      <img id="avatar" src="" alt="Foto do perfil">
+      <div class="info">
+        <h2 id="nome-usuario"></h2>
+        <p id="bio"></p>
+        <div class="estatisticas">
+          <div class="stat">
+            <span id="repos" class="numero"></span>
+            <span class="label">Repositórios</span>
+          </div>
+          <div class="stat">
+            <span id="seguidores" class="numero"></span>
+            <span class="label">Seguidores</span>
+          </div>
+          <div class="stat">
+            <span id="seguindo" class="numero"></span>
+            <span class="label">Seguindo</span>
+          </div>
+        </div>
+        <a id="link-perfil" href="" target="_blank" rel="noopener">
+          Ver perfil no GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
