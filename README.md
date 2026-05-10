@@ -8,8 +8,9 @@ Seja muito bem-vindo(a)! Este repositório é dedicado ao ensino de **JavaScript
 
 - [Fundamentos de JavaScript](#fundamentos-de-javascript)
 - [DOM na Prática](#dom-na-prática)
-- [HTML e CSS](#html-e-css)
 - [Projetos DOM](#projetos-dom)
+- [Desafios DOM](#desafios-dom)
+- [HTML e CSS](#html-e-css)
 - [Material de Aulas ao Vivo](#material-de-aulas-ao-vivo)
 
 ---
@@ -18,7 +19,7 @@ Seja muito bem-vindo(a)! Este repositório é dedicado ao ensino de **JavaScript
 
 > Do básico ao intermediário, com foco total na prática.
 
-### Modulo 0 — Introducao
+### Módulo 0 — Introdução
 
 | Arquivo | Descrição |
 |---------|-----------|
@@ -48,7 +49,7 @@ Seja muito bem-vindo(a)! Este repositório é dedicado ao ensino de **JavaScript
 | [04-switch-case.md](conteudo-js/conteudos/02-condicoes/04-switch-case.md) | switch / case |
 | [05-boas-praticas.md](conteudo-js/conteudos/02-condicoes/05-boas-praticas.md) | Boas práticas |
 | [06-projeto-pratico.md](conteudo-js/conteudos/02-condicoes/06-projeto-pratico.md) | Projeto prático |
-| [08-atividades.md](conteudo-js/conteudos/02-condicoes/08-atividades.md) | Atividades |
+| [08-atividades.md](conteudo-js/conteudos/02-condicoes/08-atividades.md) | Atividades com gabarito |
 
 ### Módulo 3 — Loops e Métodos de Array
 
@@ -103,6 +104,13 @@ Seja muito bem-vindo(a)! Este repositório é dedicado ao ensino de **JavaScript
 | [02-atividades.md](conteudo-js/conteudos/06-classes/02-atividades.md) | Atividades |
 | [03-gabarito.md](conteudo-js/conteudos/06-classes/03-gabarito.md) | Gabarito |
 
+### Módulo 7 — Fetch e APIs
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [01-introducao.md](conteudo-js/conteudos/07-fetch/01-introducao.md) | O que é fetch, APIs, async/await, tratamento de erros |
+| [02-exercicios.md](conteudo-js/conteudos/07-fetch/02-exercicios.md) | Exercícios com gabarito usando APIs públicas |
+
 ---
 
 ## DOM na Prática
@@ -115,7 +123,7 @@ Seja muito bem-vindo(a)! Este repositório é dedicado ao ensino de **JavaScript
 |--------|--------|------------|---------|
 | Seletores | [readme.md](conteudo-dom/1_seletores/readme.md) | [exercicios.md](conteudo-dom/1_seletores/exercicios.md) | [gabarito](conteudo-dom/1_seletores/exercicios-gabarito.md) |
 | Criação de Elementos | [readme.md](conteudo-dom/2_createElements/readme.md) | [exercicios.md](conteudo-dom/2_createElements/exercicios.md) | [gabarito](conteudo-dom/2_createElements/exercicios-gabarito.md) |
-| Eventos | [readme.md](conteudo-dom/3_eventos/readme.md) | (incluído no readme) | (incluído no readme) |
+| Eventos | [readme.md](conteudo-dom/3_eventos/readme.md) | [exercicios.md](conteudo-dom/3_eventos/exercicios.md) | [gabarito](conteudo-dom/3_eventos/exercicios-gabarito.md) |
 | Estilos | [readme.md](conteudo-dom/4_styles/readme.md) | [exercicios.md](conteudo-dom/4_styles/exercicios.md) | [gabarito](conteudo-dom/4_styles/exercicios-gabarito.md) |
 | Formulários | [readme.md](conteudo-dom/5_formularios/readme.md) | (desafio no readme) | [gabarito-desafio.md](conteudo-dom/5_formularios/gabarito-desafio.md) |
 
@@ -130,6 +138,17 @@ Mini-projetos práticos que combinam múltiplos conceitos do DOM:
 | [01 - Metros Quadrados](conteudo-dom/projetos/01-pj_metros_quadrados/) | Calculadora de área | Formulários, eventos, manipulação de texto |
 | [02 - Login com Storage](conteudo-dom/projetos/02-login_storage/) | Sistema de login e cadastro | LocalStorage, formulários, redirecionamento |
 | [03 - Lista de Tarefas](conteudo-dom/projetos/03-lista_tarefas/) | Adicionar, concluir e remover tarefas | Seletores, criar elementos, eventos, toggle de classe |
+| [04 - Calculadora de IMC](conteudo-dom/projetos/04-calculadora_imc/) | Calcula e classifica o IMC | Formulários, parseFloat, classList, mostrar/ocultar elementos |
+
+---
+
+## Desafios DOM
+
+Desafios práticos que combinam DOM com lógica de programação:
+
+| Desafio | Descrição |
+|---------|-----------|
+| [01 - Soma de Números](conteudo-dom/6_desafios/01-desafio/) | Formulário que calcula a soma de dois números |
 
 ---
 
@@ -137,7 +156,9 @@ Mini-projetos práticos que combinam múltiplos conceitos do DOM:
 
 Material de apoio com exemplos de HTML semântico, CSS e Flexbox.
 
-- [conteudo-html-css/](conteudo-html-css/) — Exemplos e atividades de HTML/CSS
+- [conteudo-html-css/README.md](conteudo-html-css/README.md) — Guia completo do módulo HTML/CSS
+- [Atividades de Flexbox](conteudo-html-css/atividades/) — Exercícios práticos de layout
+- [Projetos](conteudo-html-css/projeto/) — Portfólios e projetos visuais
 
 ---
 

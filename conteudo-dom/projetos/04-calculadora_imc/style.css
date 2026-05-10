@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f8;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+.container {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 36px;
+  width: 100%;
+  max-width: 420px;
+}
+
+h1 {
+  font-size: 26px;
+  color: #2c3e50;
+  margin-bottom: 4px;
+}
+
+.subtitulo {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-bottom: 28px;
+}
+
+.campo {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="number"] {
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="number"]:focus {
+  border-color: #3498db;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9;
+}
+
+.resultado {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.oculto {
+  display: none;
+}
+
+.valor-imc {
+  font-size: 42px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.classificacao {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  padding: 8px 20px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.classificacao.abaixo    { background-color: #d6eaf8; color: #1a5276; }
+.classificacao.normal    { background-color: #d5f5e3; color: #1e8449; }
+.classificacao.sobrepeso { background-color: #fef9e7; color: #b7950b; }
+.classificacao.obesidade-i  { background-color: #fdebd0; color: #a04000; }
+.classificacao.obesidade-ii { background-color: #fdedec; color: #922b21; }
+.classificacao.obesidade-iii{ background-color: #f9ebea; color: #641e16; }
+
+.tabela-imc {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.tabela-imc h3 {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.tabela-imc ul {
+  list-style: none;
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#btn-novo {
+  background: none;
+  border: 2px solid #3498db;
+  color: #3498db;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#btn-novo:hover {
+  background-color: #3498db;
+  color: white;
+}

@@ -11,7 +11,7 @@ function enviaValor() {
 
     const soma = (campoA + campoB);
 
-    alert('reusltado: ' + soma);
+    alert('resultado: ' + soma);
 
     location.reload();
 };
