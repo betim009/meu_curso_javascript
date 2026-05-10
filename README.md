@@ -1,98 +1,160 @@
-# 👨‍🏫 Meu Curso de JavaScript
+# Meu Curso de JavaScript
 
 Seja muito bem-vindo(a)! Este repositório é dedicado ao ensino de **JavaScript para iniciantes**, com linguagem simples, explicações claras e exemplos práticos em todos os módulos.
 
 ---
 
-## 📘 Curso Principal: Fundamentos de JavaScript
+## Sumário
 
-> 🧠 Do básico ao intermediário, com foco total na prática.
-
-### 📚 Conteúdo
-
-- 🟢 **0 - Introdução**
-  - [00-intro](conteudo-js/conteudos/00-intro/)
-
-- 🔢 **1 - Tipos de Dados**
-  - [01-introducao.md](conteudo-js/conteudos/01-dados/01-introducao.md)
-  - [02-arrays.md](conteudo-js/conteudos/01-dados/02-arrays.md)
-  - [03-objetos.md](conteudo-js/conteudos/01-dados/03-objetos.md)
-  - [04-metodos.md](conteudo-js/conteudos/01-dados/04-metodos.md)
-  - [05-datas.md](conteudo-js/conteudos/01-dados/05-datas.md)
-  - [06-tabela-resumo.md](conteudo-js/conteudos/01-dados/06-tabela-resumo.md)
-
-- 🟠 **2 - Estruturas Condicionais**
-  - [01-introducao.md](conteudo-js/conteudos/02-condicoes/01-introducao.md)
-  - [02-if-else.md](conteudo-js/conteudos/02-condicoes/02-if-else.md)
-  - [03-operador-ternario.md](conteudo-js/conteudos/02-condicoes/03-operador-ternario.md)
-  - [04-switch-case.md](conteudo-js/conteudos/02-condicoes/04-switch-case.md)
-  - [05-boas-praticas.md](conteudo-js/conteudos/02-condicoes/05-boas-praticas.md)
-  - [06-projeto-pratico.md](conteudo-js/conteudos/02-condicoes/06-projeto-pratico.md)
-  - [08-atividades.md](conteudo-js/conteudos/02-condicoes/08-atividades.md)
-
-- 🔁 **3 - Loops e Métodos de Array**
-  - [00-guia-rapido.md](conteudo-js/conteudos/03-arrays-loops/00-guia-rapido.md)
-  - [01-introducao.md](conteudo-js/conteudos/03-arrays-loops/01-introducao.md)
-  - [02-avancando.md](conteudo-js/conteudos/03-arrays-loops/02-avancando.md)
-  - [03-metodos-arrays-ecma.md](conteudo-js/conteudos/03-arrays-loops/03-metodos-arrays-ecma.md)
-  - [04-boas-praticas.md](conteudo-js/conteudos/03-arrays-loops/04-boas-praticas.md)
-  - [05-atividades.md](conteudo-js/conteudos/03-arrays-loops/05-atividades.md)
-    - [05-atividades-gabarito.md](conteudo-js/conteudos/03-arrays-loops/05-atividades-gabarito.md)
-  - [06-projeto-pratico.md](conteudo-js/conteudos/03-arrays-loops/06-projeto-pratico.md)
-    - [06-projeto-pratico-gabarito.md](conteudo-js/conteudos/03-arrays-loops/06-projeto-pratico-gabarito.md)
-  - [01-exercicios-numeros.md](conteudo-js/conteudos/03-arrays-loops/01-exercicios-numeros.md)
-    - [01-exercicios-numeros-gabarito.md](conteudo-js/conteudos/03-arrays-loops/01-exercicios-numeros-gabarito.md)
-  - [02-exercicios-loops.md](conteudo-js/conteudos/03-arrays-loops/02-exercicios-loops.md)
-    - [02-exercicios-loops-gabarito.md](conteudo-js/conteudos/03-arrays-loops/02-exercicios-loops-gabarito.md)
-  - [07-projeto-bonus.md](conteudo-js/conteudos/03-arrays-loops/07-projeto-bonus.md)
-
-- 🧮 **4 - Funções**
-  - [01-introducao.md](conteudo-js/conteudos/04-funcoes/01-introducao.md)
-  - [02-tipos-funcoes.md](conteudo-js/conteudos/04-funcoes/02-tipos-funcoes.md)
-  - [03-formas-de-escrever.md](conteudo-js/conteudos/04-funcoes/03-formas-de-escrever.md)
-  - [04-funcoes-em-arrays.md](conteudo-js/conteudos/04-funcoes/04-funcoes-em-arrays.md)
-  - [05-funcoes-aninhadas.md](conteudo-js/conteudos/04-funcoes/05-funcoes-aninhadas.md)
-  - [06-funcoes-assincronas.md](conteudo-js/conteudos/04-funcoes/06-funcoes-assincronas.md)
-  - [07-boas-praticas.md](conteudo-js/conteudos/04-funcoes/07-boas-praticas.md)
-  - [08-atividades.md](conteudo-js/conteudos/04-funcoes/08-atividades.md)
-  - [09-atividades-gabarito.md](conteudo-js/conteudos/04-funcoes/09-atividades-gabarito.md)
-  - [10-exercicios-extras.md](conteudo-js/conteudos/04-funcoes/10-exercicios-extras.md)
-  - [11-gabarito-extras.md](conteudo-js/conteudos/04-funcoes/11-gabarito-extras.md)
-  - [10-desafio-pratico.md](conteudo-js/conteudos/04-funcoes/10-desafio-pratico.md)
-  - [12-exercicios-geometria.md](conteudo-js/conteudos/04-funcoes/12-exercicios-geometria.md)
-  - [12-gabarito-geometria.md](conteudo-js/conteudos/04-funcoes/12-gabarito-geometria.md)
-
-- 🧱 **5 - Objetos**
-  - [readme.md](conteudo-js/conteudos/4_objetos/readme.md)
-
-- 📦 **6 - JSON**
-  - [01-introducao.md](conteudo-js/conteudos/5-json/01-introducao.md)
-  - [02-exercicios.md](conteudo-js/conteudos/5-json/02-exercicios.md)
-
-- 🏗️ **7 - Classes**
-  - [01-introducao.md](conteudo-js/conteudos/6_classes/01-introducao.md)
-  - [02-atividades.md](conteudo-js/conteudos/6_classes/02-atividades.md)
-  - [03-gabarito.md](conteudo-js/conteudos/6_classes/03-gabarito.md)
+- [Fundamentos de JavaScript](#fundamentos-de-javascript)
+- [DOM na Prática](#dom-na-prática)
+- [HTML e CSS](#html-e-css)
+- [Projetos DOM](#projetos-dom)
+- [Material de Aulas ao Vivo](#material-de-aulas-ao-vivo)
 
 ---
 
-## 🎨 DOM na Prática
+## Fundamentos de JavaScript
 
-> 🖱️ Tudo que você precisa para manipular elementos na tela com JavaScript puro.
+> Do básico ao intermediário, com foco total na prática.
 
-### 🧩 Módulos
+### Modulo 0 — Introducao
 
-- 🔍 [1 - Seletores](conteudo-dom/1_seletores/)
-- 🧱 [2 - Criação e Manipulação de Elementos](conteudo-dom/2_createElements/readme.md)
-- 🧠 [3 - Eventos](conteudo-dom/3_eventos/)
-- 🎨 [4 - Estilos](conteudo-dom/4_styles/)
-- 📥 [5 - Formulários](conteudo-dom/5_formularios/)
+| Arquivo | Descrição |
+|---------|-----------|
+| [readme.md](conteudo-js/conteudos/00-intro/readme.md) | Variáveis e tipos de dados |
+| [ex_1.md](conteudo-js/conteudos/00-intro/ex_1.md) | Exercícios de variáveis com gabarito |
+| [ex_2.md](conteudo-js/conteudos/00-intro/ex_2.md) | Exercícios de objetos com gabarito |
+
+### Módulo 1 — Tipos de Dados
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [01-introducao.md](conteudo-js/conteudos/01-dados/01-introducao.md) | Introdução aos tipos de dados |
+| [02-arrays.md](conteudo-js/conteudos/01-dados/02-arrays.md) | Arrays em JavaScript |
+| [03-objetos.md](conteudo-js/conteudos/01-dados/03-objetos.md) | Objetos em JavaScript |
+| [04-metodos.md](conteudo-js/conteudos/01-dados/04-metodos.md) | Métodos úteis |
+| [05-datas.md](conteudo-js/conteudos/01-dados/05-datas.md) | Trabalhando com datas |
+| [06-tabela-resumo.md](conteudo-js/conteudos/01-dados/06-tabela-resumo.md) | Tabela resumo dos tipos |
+| [07-atividade.md](conteudo-js/conteudos/01-dados/07-atividade.md) | Atividades com gabarito |
+
+### Módulo 2 — Estruturas Condicionais
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [01-introducao.md](conteudo-js/conteudos/02-condicoes/01-introducao.md) | Introdução às condicionais |
+| [02-if-else.md](conteudo-js/conteudos/02-condicoes/02-if-else.md) | if / else |
+| [03-operador-ternario.md](conteudo-js/conteudos/02-condicoes/03-operador-ternario.md) | Operador ternário |
+| [04-switch-case.md](conteudo-js/conteudos/02-condicoes/04-switch-case.md) | switch / case |
+| [05-boas-praticas.md](conteudo-js/conteudos/02-condicoes/05-boas-praticas.md) | Boas práticas |
+| [06-projeto-pratico.md](conteudo-js/conteudos/02-condicoes/06-projeto-pratico.md) | Projeto prático |
+| [08-atividades.md](conteudo-js/conteudos/02-condicoes/08-atividades.md) | Atividades |
+
+### Módulo 3 — Loops e Métodos de Array
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [00-guia-rapido.md](conteudo-js/conteudos/03-arrays-loops/00-guia-rapido.md) | Guia rápido de referência |
+| [01-introducao.md](conteudo-js/conteudos/03-arrays-loops/01-introducao.md) | Introdução aos loops |
+| [02-avancando.md](conteudo-js/conteudos/03-arrays-loops/02-avancando.md) | Avançando nos loops |
+| [03-metodos-arrays-ecma.md](conteudo-js/conteudos/03-arrays-loops/03-metodos-arrays-ecma.md) | map, filter, reduce |
+| [04-boas-praticas.md](conteudo-js/conteudos/03-arrays-loops/04-boas-praticas.md) | Boas práticas |
+| [05-atividades.md](conteudo-js/conteudos/03-arrays-loops/05-atividades.md) | Atividades |
+| [05-atividades-gabarito.md](conteudo-js/conteudos/03-arrays-loops/05-atividades-gabarito.md) | Gabarito |
+| [01-exercicios-numeros.md](conteudo-js/conteudos/03-arrays-loops/01-exercicios-numeros.md) | Exercícios com números |
+| [01-exercicios-numeros-gabarito.md](conteudo-js/conteudos/03-arrays-loops/01-exercicios-numeros-gabarito.md) | Gabarito |
+| [02-exercicios-loops.md](conteudo-js/conteudos/03-arrays-loops/02-exercicios-loops.md) | Exercícios de loops |
+| [02-exercicios-loops-gabarito.md](conteudo-js/conteudos/03-arrays-loops/02-exercicios-loops-gabarito.md) | Gabarito |
+| [06-projeto-pratico.md](conteudo-js/conteudos/03-arrays-loops/06-projeto-pratico.md) | Projeto prático |
+| [06-projeto-pratico-gabarito.md](conteudo-js/conteudos/03-arrays-loops/06-projeto-pratico-gabarito.md) | Gabarito do projeto |
+| [07-projeto-bonus.md](conteudo-js/conteudos/03-arrays-loops/07-projeto-bonus.md) | Projeto bônus |
+
+### Módulo 4 — Funções
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [01-introducao.md](conteudo-js/conteudos/04-funcoes/01-introducao.md) | O que são funções |
+| [02-tipos-funcoes.md](conteudo-js/conteudos/04-funcoes/02-tipos-funcoes.md) | Tipos de funções |
+| [03-formas-de-escrever.md](conteudo-js/conteudos/04-funcoes/03-formas-de-escrever.md) | Formas de declarar |
+| [04-funcoes-em-arrays.md](conteudo-js/conteudos/04-funcoes/04-funcoes-em-arrays.md) | Funções em arrays |
+| [05-funcoes-aninhadas.md](conteudo-js/conteudos/04-funcoes/05-funcoes-aninhadas.md) | Funções aninhadas |
+| [06-funcoes-assincronas.md](conteudo-js/conteudos/04-funcoes/06-funcoes-assincronas.md) | Funções assíncronas (async/await) |
+| [07-boas-praticas.md](conteudo-js/conteudos/04-funcoes/07-boas-praticas.md) | Boas práticas |
+| [08-atividades.md](conteudo-js/conteudos/04-funcoes/08-atividades.md) | Atividades |
+| [09-atividades-gabarito.md](conteudo-js/conteudos/04-funcoes/09-atividades-gabarito.md) | Gabarito |
+| [10-exercicios-extras.md](conteudo-js/conteudos/04-funcoes/10-exercicios-extras.md) | Exercícios extras |
+| [11-gabarito-extras.md](conteudo-js/conteudos/04-funcoes/11-gabarito-extras.md) | Gabarito extras |
+| [10-desafio-pratico.md](conteudo-js/conteudos/04-funcoes/10-desafio-pratico.md) | Desafio prático |
+| [12-exercicios-geometria.md](conteudo-js/conteudos/04-funcoes/12-exercicios-geometria.md) | Exercícios de geometria |
+| [12-gabarito-geometria.md](conteudo-js/conteudos/04-funcoes/12-gabarito-geometria.md) | Gabarito geometria |
+
+### Módulo 5 — JSON
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [01-introducao.md](conteudo-js/conteudos/05-json/01-introducao.md) | O que é JSON, parse e stringify |
+| [02-exercicios.md](conteudo-js/conteudos/05-json/02-exercicios.md) | Exercícios com gabarito |
+
+### Módulo 6 — Classes
+
+| Arquivo | Descrição |
+|---------|-----------|
+| [01-introducao.md](conteudo-js/conteudos/06-classes/01-introducao.md) | Classes, herança, getters/setters, métodos estáticos |
+| [02-atividades.md](conteudo-js/conteudos/06-classes/02-atividades.md) | Atividades |
+| [03-gabarito.md](conteudo-js/conteudos/06-classes/03-gabarito.md) | Gabarito |
 
 ---
 
-## 🚧 Em constante atualização!
+## DOM na Prática
 
-📌 Novos módulos e atividades serão adicionados conforme o curso evolui.  
-⭐ Marque este repositório como favorito e acompanhe as atualizações!
+> Tudo que você precisa para manipular elementos na tela com JavaScript puro.
+
+### Módulos Teóricos com Exercícios
+
+| Módulo | Teoria | Exercícios | Gabarito |
+|--------|--------|------------|---------|
+| Seletores | [readme.md](conteudo-dom/1_seletores/readme.md) | [exercicios.md](conteudo-dom/1_seletores/exercicios.md) | [gabarito](conteudo-dom/1_seletores/exercicios-gabarito.md) |
+| Criação de Elementos | [readme.md](conteudo-dom/2_createElements/readme.md) | [exercicios.md](conteudo-dom/2_createElements/exercicios.md) | [gabarito](conteudo-dom/2_createElements/exercicios-gabarito.md) |
+| Eventos | [readme.md](conteudo-dom/3_eventos/readme.md) | (incluído no readme) | (incluído no readme) |
+| Estilos | [readme.md](conteudo-dom/4_styles/readme.md) | [exercicios.md](conteudo-dom/4_styles/exercicios.md) | [gabarito](conteudo-dom/4_styles/exercicios-gabarito.md) |
+| Formulários | [readme.md](conteudo-dom/5_formularios/readme.md) | (desafio no readme) | [gabarito-desafio.md](conteudo-dom/5_formularios/gabarito-desafio.md) |
 
 ---
+
+## Projetos DOM
+
+Mini-projetos práticos que combinam múltiplos conceitos do DOM:
+
+| Projeto | Descrição | Conceitos |
+|---------|-----------|-----------|
+| [01 - Metros Quadrados](conteudo-dom/projetos/01-pj_metros_quadrados/) | Calculadora de área | Formulários, eventos, manipulação de texto |
+| [02 - Login com Storage](conteudo-dom/projetos/02-login_storage/) | Sistema de login e cadastro | LocalStorage, formulários, redirecionamento |
+| [03 - Lista de Tarefas](conteudo-dom/projetos/03-lista_tarefas/) | Adicionar, concluir e remover tarefas | Seletores, criar elementos, eventos, toggle de classe |
+
+---
+
+## HTML e CSS
+
+Material de apoio com exemplos de HTML semântico, CSS e Flexbox.
+
+- [conteudo-html-css/](conteudo-html-css/) — Exemplos e atividades de HTML/CSS
+
+---
+
+## Material de Aulas ao Vivo
+
+Código produzido e explorado durante as aulas em tempo real:
+
+| Subpasta | Descrição |
+|----------|-----------|
+| [projeto_FABIO/](material-aovivo/projeto_FABIO/) | Loja virtual com Bootstrap e renderização dinâmica de cards |
+| [FabioFlex/](material-aovivo/FabioFlex/) | Exercício de layout com Flexbox e CSS |
+| [simplesfullstack/](material-aovivo/simplesfullstack/) | Exemplo simples de aplicação fullstack com Node.js |
+| [ts/](material-aovivo/ts/) | Introdução a TypeScript: configuração e primeiros exemplos |
+| [teste-play/](material-aovivo/teste-play/) | Estrutura de testes E2E com Cucumber + Playwright + TypeScript |
+| [js/](material-aovivo/js/) | Scripts de atividades feitos ao vivo |
+| [old/](material-aovivo/old/) | Arquivos de sessões anteriores |
+
+---
+
+Em constante atualização — novos módulos e atividades são adicionados conforme o curso avança.
